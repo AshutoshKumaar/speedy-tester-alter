@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Mooli', sans-serif;
+    color: #3f434a;
+    background: #ffffff;
+    transition: background 260ms ease, color 200ms ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6, button, input, textarea {
+    font-family: 'Mooli', sans-serif;
+  }
+}
+
+:root {
+  --blue: #2798c9;
+  --blue-dark: #176e9c;
+  --green: #78bd67;
+  --gold: #ffc83d;
+  --orange: #ff7f24;
+  --red: #ef5d5d;
+  --ink: #3f434a;
+  --muted: #707986;
+  --line: #d9dfe5;
+  --panel: #ffffff;
+  --page: #f3f3f3;
+  --soft: #f7fafc;
+  --shadow: 0 18px 45px rgba(41, 56, 73, 0.16);
+  --theme-scene-image: none;
+  --avatar-image: none;
+  --mascot-image: none;
+  --theme-main: #2798c9;
+  --theme-dark: #176e9c;
+  --theme-soft: #e9f7ff;
+  --theme-accent: #ffc83d;
+  --theme-glow: color-mix(in srgb, var(--theme-main), white 74%);
+  --theme-transition: 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Theme Background Layering & Saturation */
+body[data-theme] {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  transition: all var(--theme-transition);
+}
+
+body[data-theme]::before {
+  content: '';
+  position: fixed;
+  inset: 64px 0 0;
+  z-index: -2;
+  background: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.9) 46%, rgba(255, 255, 255, 0.72)),
+    var(--theme-scene-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1;
+  filter: saturate(1.15) brightness(1.05);
+  pointer-events: none;
+  transition: all var(--theme-transition);
+}
+
+body.theme-is-changing::before {
+  opacity: 0.08;
+  filter: saturate(0.8) blur(3px);
+}
+
+body[data-theme-applied="false"] {
+  background: #ffffff;
+}
+
+body[data-theme-applied="false"]::before {
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes soundPulse {
+  0% { height: 15px; }
+  100% { height: 80px; }
+}
+
+@keyframes pageSettle {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-page-settle {
+  animation: pageSettle 220ms ease both;
+}
+
+/* Custom WebGL Canvas bounds */
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Active typing text coloring hooks */
+.typing-line span {
+  position: relative;
+  transition: all 100ms ease;
+}
+.typing-line span.correct {
+  color: #10b981 !important; /* Green */
+}
+.typing-line span.incorrect {
+  color: #ef4444 !important; /* Red */
+  background: rgba(239, 68, 68, 0.15);
+  border-radius: 4px;
+}
+.typing-line span.current {
+  color: #3b82f6 !important; /* Blue active */
+  border-bottom: 3px solid #3b82f6;
+}
+
+/* Theme overrides for data attribute classes */
+body[data-theme="princess"] {
+  --theme-main: #e66cb1;
+  --theme-dark: #8d3c78;
+  --theme-soft: #fff0f8;
+  --theme-accent: #ffd166;
+}
+body[data-theme="dino"] {
+  --theme-main: #55aa55;
+  --theme-dark: #23633d;
+  --theme-soft: #effbed;
+  --theme-accent: #ffb347;
+}
+body[data-theme="space"] {
+  --theme-main: #5657d9;
+  --theme-dark: #252664;
+  --theme-soft: #eeeeff;
+  --theme-accent: #58d6ff;
+}
+body[data-theme="candy"] {
+  --theme-main: #ef6a9d;
+  --theme-dark: #8b3157;
+  --theme-soft: #fff0f6;
+  --theme-accent: #ffd166;
+}
+body[data-theme="ocean"] {
+  --theme-main: #2fa9c9;
+  --theme-dark: #146987;
+  --theme-soft: #e9fbff;
+  --theme-accent: #77e1ff;
+}
+body[data-theme="robot"] {
+  --theme-main: #5f7ee8;
+  --theme-dark: #283b7a;
+  --theme-soft: #eef2ff;
+  --theme-accent: #7ee0cf;
+}
+body[data-theme="jungle"] {
+  --theme-main: #3fa66b;
+  --theme-dark: #1c5c3c;
+  --theme-soft: #effaf2;
+  --theme-accent: #f5c542;
+}
+body[data-theme="superhero"] {
+  --theme-main: #f05a5a;
+  --theme-dark: #802d55;
+  --theme-soft: #fff1f1;
+  --theme-accent: #ffd84d;
+}
+body[data-theme="sports"] {
+  --theme-main: #30a871;
+  --theme-dark: #195f48;
+  --theme-soft: #edfff6;
+  --theme-accent: #ffc83d;
+}
+body[data-theme="music"] {
+  --theme-main: #9b5de5;
+  --theme-dark: #4b287a;
+  --theme-soft: #f6efff;
+  --theme-accent: #00d4ff;
+}
+body[data-theme="adventure"] {
+  --theme-main: #7c3aed;
+  --theme-dark: #5b21b6;
+  --theme-soft: #ede9fe;
+  --theme-accent: #a78bfa;
+}
+body[data-theme="cosmic"] {
+  --theme-main: #ec4899;
+  --theme-dark: #be185d;
+  --theme-soft: #fce7f3;
+  --theme-accent: #f472b6;
+}
