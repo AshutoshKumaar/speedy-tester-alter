@@ -12,6 +12,7 @@ export default function LessonsPage({ onStartTest }) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const selectedVideo = stageData.videos[selectedVideoIndex] || stageData.videos[0];
+  const youtubeId = selectedVideo[3] || "9B00T75VwSg";
 
   const handleStageChange = (stageKey) => {
     setActiveStage(stageKey);
@@ -33,7 +34,10 @@ export default function LessonsPage({ onStartTest }) {
       <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-6">
         <aside className="grid content-start gap-2.5 rounded-xl bg-white/95 border border-theme-main/20 p-5 shadow-md h-fit">
           <div className="flex items-center gap-3.5 pb-4 border-b border-theme-main/10">
-            <span className="w-12 h-12 rounded-full bg-[var(--avatar-image)] bg-center bg-cover border-2 border-theme-main/50 shadow-sm"></span>
+            <span 
+              className="w-12 h-12 rounded-full bg-center bg-cover border-2 border-theme-main/50 shadow-sm"
+              style={{ backgroundImage: 'var(--avatar-image)' }}
+            ></span>
             <div>
               <strong className="block text-slate-800 text-base leading-tight font-bold">Typing World Tour</strong>
               <span className="block text-xs text-muted leading-tight font-bold mt-0.5">Lessons for curious kids.</span>
@@ -61,7 +65,7 @@ export default function LessonsPage({ onStartTest }) {
           <div 
             className="relative grid grid-cols-1 sm:grid-cols-[1fr_150px] gap-6 items-center min-h-[190px] p-[34px] rounded-xl text-white shadow-lg bg-gradient-to-br from-theme-main to-theme-dark border border-white/10 overflow-hidden mb-6"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.1) 42%, rgba(255, 255, 255, 0.78)), var(--theme-scene-image)`,
+              backgroundImage: "linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 50%, rgba(15, 23, 42, 0.75) 100%), url('/lesson_thumbnail.png')",
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}
@@ -80,28 +84,47 @@ export default function LessonsPage({ onStartTest }) {
 
           <div className="grid grid-cols-1 xl:grid-cols-[420px_1fr] gap-6">
             <section className="flex flex-col gap-4">
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border-2 border-theme-main/30 bg-black flex flex-col justify-end p-5">
-                {/* Playing simulation video animation */}
-                <div className={`absolute inset-0 flex items-center justify-around p-6 transition-all duration-300 ${isVideoPlaying ? "opacity-100 bg-theme-dark/40" : "opacity-40"}`}>
-                  <span className={`w-8 bg-theme-accent rounded-full ${isVideoPlaying ? "animate-[bounce_0.8s_infinite_100ms] h-[40%]" : "h-[10%]"}`}></span>
-                  <span className={`w-8 bg-theme-accent rounded-full ${isVideoPlaying ? "animate-[bounce_0.8s_infinite_300ms] h-[60%]" : "h-[10%]"}`}></span>
-                  <span className={`w-8 bg-theme-accent rounded-full ${isVideoPlaying ? "animate-[bounce_0.8s_infinite_200ms] h-[50%]" : "h-[10%]"}`}></span>
-                </div>
-                
-                <button 
-                  className={`absolute inset-0 m-auto w-16 h-16 rounded-full bg-theme-accent/90 hover:scale-105 active:scale-95 text-white flex items-center justify-center cursor-pointer shadow-lg transition-all z-10 ${isVideoPlaying ? "opacity-20 hover:opacity-100" : ""}`}
-                  type="button" 
-                  onClick={() => setIsVideoPlaying(!isVideoPlaying)}
-                  aria-label="Play lesson video"
-                >
-                  <span className="text-xl font-bold ml-1">{isVideoPlaying ? "⏸" : "▶"}</span>
-                </button>
-                
-                <div className="relative z-10 text-white bg-black/60 backdrop-blur-sm p-3.5 rounded-lg border border-white/10 mt-auto">
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-theme-accent">{isVideoPlaying ? "Now Playing" : "Paused"}</span>
-                  <strong className="block text-base mt-0.5">{selectedVideo[0]}</strong>
-                  <p className="text-xs text-gray-200 mt-1 line-clamp-2 leading-relaxed">{selectedVideo[1]}</p>
-                </div>
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border-2 border-theme-main/30 bg-black flex flex-col justify-end">
+                {isVideoPlaying ? (
+                  <>
+                    <iframe
+                      className="absolute inset-0 w-full h-full border-0"
+                      src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+                      title={selectedVideo[0]}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                    <button
+                      className="absolute top-3 right-3 bg-black/80 hover:bg-black text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-white/20 z-20 hover:scale-105 active:scale-95 transition-all"
+                      onClick={() => setIsVideoPlaying(false)}
+                      type="button"
+                    >
+                      Close Video
+                    </button>
+                  </>
+                ) : (
+                  <div className="w-full h-full flex flex-col justify-end p-5 relative group/player cursor-pointer" onClick={() => setIsVideoPlaying(true)}>
+                    <div 
+                      className="absolute inset-0 opacity-80 bg-cover bg-center transition-all duration-300 group-hover/player:scale-[1.02]"
+                      style={{ backgroundImage: `url('https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg')` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 z-0" />
+                    
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <div className="w-16 h-11 rounded-2xl bg-red-600 text-white flex items-center justify-center shadow-md transition-all duration-200 group-hover/player:scale-110 group-hover/player:bg-red-500">
+                        <svg className="w-5 h-5 fill-current translate-x-[2px]" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    
+                    <div className="relative z-10 text-white bg-black/50 backdrop-blur-sm p-3.5 rounded-lg border border-white/10 mt-auto pointer-events-none">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-theme-accent">Paused</span>
+                      <strong className="block text-base mt-0.5">{selectedVideo[0]}</strong>
+                      <p className="text-xs text-gray-200 mt-1 line-clamp-2 leading-relaxed">{selectedVideo[1]}</p>
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div className="flex flex-col gap-2.5 max-h-[300px] overflow-y-auto pr-1">
@@ -162,6 +185,44 @@ export default function LessonsPage({ onStartTest }) {
                 ))}
               </div>
             </section>
+          </div>
+
+          {/* Guide Section */}
+          <div className="mt-8 bg-white/95 backdrop-blur border border-theme-main/20 p-6 md:p-8 rounded-2xl shadow-md font-mooli">
+            <h3 className="font-mooli font-bold text-lg text-slate-800 mb-4 flex items-center gap-2">
+              <span className="grid place-items-center w-6 h-6 rounded-full bg-theme-main text-white text-xs font-bold">?</span>
+              How to Start and Complete Your Typing Challenges
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="flex flex-col gap-2 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span className="text-xs uppercase tracking-widest text-theme-main font-extrabold font-mooli">Step 1</span>
+                <strong className="text-slate-800 text-sm font-bold">Watch & Learn</strong>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Select a video lesson from the video list. Click the <b>Play</b> button to watch a quick touch-typing demo.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span className="text-xs uppercase tracking-widest text-theme-main font-extrabold font-mooli">Step 2</span>
+                <strong className="text-slate-800 text-sm font-bold">Start a Challenge</strong>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Choose a mission card (like <i>Home Row Warmup</i>) and click the <b>Start Typing</b> button.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span className="text-xs uppercase tracking-widest text-theme-main font-extrabold font-mooli">Step 3</span>
+                <strong className="text-slate-800 text-sm font-bold">Type Accurately</strong>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Press any key to start the timer. Type the highlighted characters carefully. Make corrections using Backspace.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <span className="text-xs uppercase tracking-widest text-theme-main font-extrabold font-mooli">Step 4</span>
+                <strong className="text-slate-800 text-sm font-bold">Complete & Save</strong>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Keep typing until the timer expires. Your score will be saved automatically, and your progress bar will advance!
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </div>

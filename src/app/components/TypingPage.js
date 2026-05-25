@@ -36,6 +36,7 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
   const timerRef = useRef(null);
   const startTimeRef = useRef(null);
   const displayRef = useRef(null);
+  const timeLeftRef = useRef(duration);
 
   // Sync refs to prevent stale closures inside timers/intervals
   const totalCorrectRef = useRef(totalCorrect);
@@ -115,6 +116,7 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     setTotalErrors(0);
     totalErrorsRef.current = 0;
     setTimeLeft(duration);
+    timeLeftRef.current = duration;
 
     if (newSentence) {
       const initialIndex = 0;
@@ -128,15 +130,15 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     setHasStarted(true);
     hasStartedRef.current = true;
     startTimeRef.current = Date.now();
+    timeLeftRef.current = duration;
     timerRef.current = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          if (timerRef.current) clearInterval(timerRef.current);
-          finishTest();
-          return 0;
-        }
-        return prev - 1;
-      });
+      timeLeftRef.current -= 1;
+      const currentVal = timeLeftRef.current;
+      setTimeLeft(currentVal);
+      if (currentVal <= 0) {
+        if (timerRef.current) clearInterval(timerRef.current);
+        finishTest();
+      }
     }, 1000);
   };
 

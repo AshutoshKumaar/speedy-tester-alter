@@ -62,9 +62,9 @@ export const LESSON_STAGES = {
   beginner: {
     title: "Beginner Missions",
     videos: [
-      ["Home Row Finger Dance", "Meet the home row keys with a short animated finger dance.", "easy"],
-      ["Tiny Word Builder", "Learn how small words become confident typing steps.", "easy"],
-      ["Space Bar Bounce", "Practice spaces, rhythm, and relaxed hands.", "easy"]
+      ["Home Row Finger Dance", "Meet the home row keys with a short animated finger dance.", "easy", "9B00T75VwSg"],
+      ["Tiny Word Builder", "Learn how small words become confident typing steps.", "easy", "1ArO3czHYS4"],
+      ["Space Bar Bounce", "Practice spaces, rhythm, and relaxed hands.", "easy", "y8Gq3oYmPrQ"]
     ],
     missions: [
       ["Home Row Warmup", "Start with easy words and smooth finger placement.", "easy"],
@@ -75,9 +75,9 @@ export const LESSON_STAGES = {
   intermediate: {
     title: "Intermediate Missions",
     videos: [
-      ["Capital Letter Magic", "See how Shift helps names, places, and sentence starts.", "medium"],
-      ["Punctuation Power", "Turn commas, periods, and question marks into easy moves.", "medium"],
-      ["World Word Sprint", "Practice travel, food, school, and story words from everywhere.", "medium"]
+      ["Capital Letter Magic", "See how Shift helps names, places, and sentence starts.", "medium", "b-z73K8XU7s"],
+      ["Punctuation Power", "Turn commas, periods, and question marks into easy moves.", "medium", "ZtP0hZ5N_lU"],
+      ["World Word Sprint", "Practice travel, food, school, and story words from everywhere.", "medium", "f9QG7Z9f-dI"]
     ],
     missions: [
       ["Castle Home Row", "Use both hands and keep the rhythm steady.", "medium"],
@@ -88,9 +88,9 @@ export const LESSON_STAGES = {
   advanced: {
     title: "Advanced Missions",
     videos: [
-      ["Speed Without Panic", "Learn how fast typing still starts with calm accuracy.", "hard"],
-      ["Paragraph Quest", "Watch how to scan ahead before long lines appear.", "hard"],
-      ["Mistake Recovery", "Learn how to recover quickly after a wrong key.", "hard"]
+      ["Speed Without Panic", "Learn how fast typing still starts with calm accuracy.", "hard", "tS_a3K6X5Y4"],
+      ["Paragraph Quest", "Watch how to scan ahead before long lines appear.", "hard", "UaJ1cM2lY58"],
+      ["Mistake Recovery", "Learn how to recover quickly after a wrong key.", "hard", "t_3yD0p37wM"]
     ],
     missions: [
       ["Dragon Speed Builder", "Longer lines, faster rhythm, and careful focus.", "hard"],
@@ -101,9 +101,9 @@ export const LESSON_STAGES = {
   library: {
     title: "Video Library Missions",
     videos: [
-      ["Keyboard Explorer", "Tour the keyboard like a map full of hidden paths.", "easy"],
-      ["Typing Around the World", "Learn words inspired by school, games, food, and travel.", "medium"],
-      ["Focus Like a Pro", "A short video about posture, breathing, and attention.", "hard"]
+      ["Keyboard Explorer", "Tour the keyboard like a map full of hidden paths.", "easy", "48Vp9f_C7p8"],
+      ["Typing Around the World", "Learn words inspired by school, games, food, and travel.", "medium", "b6v_v8C2Nbg"],
+      ["Focus Like a Pro", "A short video about posture, breathing, and attention.", "hard", "7Q8s_vVvK0M"]
     ],
     missions: [
       ["Keyboard Explorer", "Practice every corner of the keyboard.", "easy"],
@@ -229,6 +229,16 @@ export function ThemeProvider({ children }) {
     const data = THEME_DATA[selectedTheme] || THEME_DATA.princess;
     const root = document.documentElement;
 
+    // Dynamic Avatar resolving
+    const avatarIndex = data.avatars.indexOf(selectedAvatar) !== -1 ? data.avatars.indexOf(selectedAvatar) : 0;
+    const isAIAvatar = ["ocean", "adventure", "cosmic", "candy", "princess"].includes(selectedTheme) && avatarIndex === 0;
+    const avatarUrl = isAIAvatar ? `url('/avatars/${selectedTheme}.png')` : getSvgDataUrl(getAvatarSvg(selectedTheme, avatarIndex, selectedAvatar || data.avatars[0]));
+    root.style.setProperty("--avatar-image", avatarUrl);
+
+    // Mascot resolving
+    const mascotUrl = getSvgDataUrl(getMascotSvg(selectedTheme));
+    root.style.setProperty("--mascot-image", mascotUrl);
+
     if (isThemeApplied) {
       document.body.dataset.theme = selectedTheme;
       document.body.dataset.themeApplied = "true";
@@ -243,16 +253,6 @@ export function ThemeProvider({ children }) {
       const themeBgUrl = `url('/themes/${selectedTheme}.png')`;
       root.style.setProperty("--theme-scene-image", themeBgUrl);
       root.style.setProperty("--theme-image", themeBgUrl);
-
-      // Dynamic Avatar resolving
-      const avatarIndex = data.avatars.indexOf(selectedAvatar);
-      const isAIAvatar = ["ocean", "adventure", "cosmic", "candy", "princess"].includes(selectedTheme) && avatarIndex === 0;
-      const avatarUrl = isAIAvatar ? `url('/avatars/${selectedTheme}.png')` : getSvgDataUrl(getAvatarSvg(selectedTheme, avatarIndex, selectedAvatar));
-      root.style.setProperty("--avatar-image", avatarUrl);
-
-      // Mascot resolving
-      const mascotUrl = getSvgDataUrl(getMascotSvg(selectedTheme));
-      root.style.setProperty("--mascot-image", mascotUrl);
 
       document.body.style.backgroundImage = `linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.88)), ${themeBgUrl}`;
       document.body.style.backgroundSize = "cover";
@@ -274,8 +274,6 @@ export function ThemeProvider({ children }) {
       root.style.setProperty("--theme-accent", "#ffc83d");
       root.style.setProperty("--theme-scene-image", "none");
       root.style.setProperty("--theme-image", "none");
-      root.style.setProperty("--avatar-image", "none");
-      root.style.setProperty("--mascot-image", "none");
 
       document.body.style.backgroundImage = "none";
       document.body.style.background = "#ffffff";

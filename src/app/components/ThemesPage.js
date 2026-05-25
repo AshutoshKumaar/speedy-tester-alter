@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import { useTheme, getAvatarSvg, getSvgDataUrl } from "../ThemeContext";
 
-function Theme3DCanvas({ themeKey }) {
+function Theme3DCanvas({ themeKey, avatarName }) {
   const canvasRef = useRef(null);
   const { themeData } = useTheme();
 
@@ -44,13 +44,29 @@ function Theme3DCanvas({ themeKey }) {
     floor.position.y = -0.9;
     world.add(floor);
 
-    // Hero (Sphere)
-    const hero = new THREE.Mesh(
-      new THREE.SphereGeometry(0.58, 32, 32),
-      new THREE.MeshStandardMaterial({ color: new THREE.Color(data.main), roughness: 0.35 })
-    );
-    hero.position.set(-0.82, 0.05, 0);
-    world.add(hero);
+    // Dynamic Avatar Texture Loading
+    const img = new Image();
+    const texture = new THREE.Texture(img);
+    img.onload = () => {
+      texture.needsUpdate = true;
+    };
+
+    const avatarIndex = data.avatars.indexOf(avatarName) !== -1 ? data.avatars.indexOf(avatarName) : 0;
+    const isAIAvatar = ["ocean", "adventure", "cosmic", "candy", "princess"].includes(themeKey) && avatarIndex === 0;
+    const avatarUrl = isAIAvatar 
+      ? `/avatars/${themeKey}.png` 
+      : `data:image/svg+xml,${encodeURIComponent(getAvatarSvg(themeKey, avatarIndex, avatarName).trim())}`;
+    img.src = avatarUrl;
+
+    const spriteMaterial = new THREE.SpriteMaterial({ 
+      map: texture, 
+      transparent: true,
+      toneMapped: false
+    });
+    const characterSprite = new THREE.Sprite(spriteMaterial);
+    characterSprite.scale.set(1.0, 1.23, 1);
+    characterSprite.position.set(-0.82, 0.05, 0);
+    world.add(characterSprite);
 
     // Tower (Cylinder)
     const tower = new THREE.Mesh(
@@ -74,7 +90,7 @@ function Theme3DCanvas({ themeKey }) {
     let animationFrameId;
     const animate = () => {
       world.rotation.y += 0.008;
-      hero.position.y = 0.06 + Math.sin(Date.now() / 450) * 0.08;
+      characterSprite.position.y = 0.06 + Math.sin(Date.now() / 450) * 0.08;
       renderer.render(scene, camera);
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -85,9 +101,239 @@ function Theme3DCanvas({ themeKey }) {
       cancelAnimationFrame(animationFrameId);
       renderer.dispose();
     };
-  }, [themeKey, themeData]);
+  }, [themeKey, avatarName, themeData]);
 
   return <canvas ref={canvasRef} className="w-full h-full block" />;
+}
+
+function Theme3DWorld({ themeKey }) {
+  const canvasRef = useRef(null);
+  const { themeData } = useTheme();
+  const mouse = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const data = themeData[themeKey] || themeData.princess;
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(data.dark, 0.08);
+
+    const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
+    camera.position.set(0, 2.2, 7.5);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: false, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(data.dark, 1);
+
+    const handleResize = () => {
+      const rect = canvas.getBoundingClientRect();
+      renderer.setSize(rect.width, rect.height, false);
+      camera.aspect = rect.width / Math.max(rect.height, 1);
+      camera.updateProjectionMatrix();
+    };
+
+    const worldGroup = new THREE.Group();
+    scene.add(worldGroup);
+
+    // Light rigging
+    scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+    const spotLight = new THREE.DirectionalLight(0xffffff, 1.2);
+    spotLight.position.set(5, 10, 5);
+    scene.add(spotLight);
+
+    // Island platform (Cylinder)
+    const island = new THREE.Mesh(
+      new THREE.CylinderGeometry(3.5, 3.5, 0.4, 32),
+      new THREE.MeshStandardMaterial({ color: new THREE.Color(data.main), roughness: 0.6 })
+    );
+    island.position.y = -0.5;
+    worldGroup.add(island);
+
+    // Island bottom cone
+    const base = new THREE.Mesh(
+      new THREE.ConeGeometry(3.5, 2.0, 32),
+      new THREE.MeshStandardMaterial({ color: new THREE.Color(data.dark), roughness: 0.8 })
+    );
+    base.position.y = -1.7;
+    base.rotation.x = Math.PI;
+    worldGroup.add(base);
+
+    // World decorations
+    const worldItems = new THREE.Group();
+    worldGroup.add(worldItems);
+
+    if (["space", "cosmic"].includes(themeKey)) {
+      // Planet Sphere
+      const planet = new THREE.Mesh(
+        new THREE.SphereGeometry(1.2, 32, 32),
+        new THREE.MeshStandardMaterial({ color: new THREE.Color(data.accent), roughness: 0.25 })
+      );
+      planet.position.set(0, 0.8, 0);
+      worldItems.add(planet);
+
+      // Torus planet ring
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(2.0, 0.15, 8, 32),
+        new THREE.MeshStandardMaterial({ color: new THREE.Color(data.main), transparent: true, opacity: 0.75 })
+      );
+      ring.rotation.x = Math.PI / 2.5;
+      ring.position.set(0, 0.8, 0);
+      worldItems.add(ring);
+    } else if (["ocean"].includes(themeKey)) {
+      // Kelp plants (Cylinders)
+      for (let i = 0; i < 6; i++) {
+        const height = 1.4 + Math.random() * 0.8;
+        const kelp = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.06, 0.1, height, 8),
+          new THREE.MeshStandardMaterial({ color: new THREE.Color(data.accent), roughness: 0.9 })
+        );
+        kelp.position.set(-1.8 + Math.random() * 3.6, height/2 - 0.5, -1.8 + Math.random() * 3.6);
+        kelp.rotation.z = (Math.random() - 0.5) * 0.25;
+        worldItems.add(kelp);
+      }
+    } else if (["dino", "jungle"].includes(themeKey)) {
+      // Low-poly green trees
+      for (let i = 0; i < 4; i++) {
+        const height = 0.8 + Math.random() * 0.6;
+        const trunk = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.12, 0.16, height, 8),
+          new THREE.MeshStandardMaterial({ color: 0x7a4d2a, roughness: 0.85 })
+        );
+        trunk.position.set(-2.0 + Math.random() * 4.0, height/2 - 0.3, -2.0 + Math.random() * 4.0);
+        
+        const foliage = new THREE.Mesh(
+          new THREE.SphereGeometry(0.48, 8, 8),
+          new THREE.MeshStandardMaterial({ color: new THREE.Color(data.accent), roughness: 0.8 })
+        );
+        foliage.position.y = height/2 + 0.25;
+        trunk.add(foliage);
+        worldItems.add(trunk);
+      }
+    } else if (["princess", "adventure"].includes(themeKey)) {
+      // Magic glowing crystal towers
+      for (let i = 0; i < 3; i++) {
+        const x = [-1.4, 0, 1.4][i];
+        const z = [-0.8, -1.2, -0.8][i];
+        const h = [1.5, 2.1, 1.5][i];
+        
+        const tower = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.28, 0.28, h, 8),
+          new THREE.MeshStandardMaterial({ color: new THREE.Color(data.soft), roughness: 0.4 })
+        );
+        tower.position.set(x, h/2 - 0.3, z);
+        
+        const cap = new THREE.Mesh(
+          new THREE.ConeGeometry(0.38, 0.7, 8),
+          new THREE.MeshStandardMaterial({ color: new THREE.Color(data.accent), roughness: 0.3 })
+        );
+        cap.position.y = h/2 + 0.35;
+        tower.add(cap);
+        worldItems.add(tower);
+      }
+    } else {
+      // Classic block geometries
+      for (let i = 0; i < 6; i++) {
+        const mesh = new THREE.Mesh(
+          new THREE.BoxGeometry(0.4, 0.7, 0.4),
+          new THREE.MeshStandardMaterial({ color: i % 2 === 0 ? new THREE.Color(data.accent) : new THREE.Color(data.soft), roughness: 0.4 })
+        );
+        mesh.position.set(-1.8 + Math.random() * 3.6, 0.3, -1.8 + Math.random() * 3.6);
+        mesh.rotation.y = Math.random() * Math.PI;
+        worldItems.add(mesh);
+      }
+    }
+
+    // Interactive Floating Particles (Stars, sparkles, bubble spheres)
+    const count = 150;
+    const geo = new THREE.BufferGeometry();
+    const pos = new Float32Array(count * 3);
+    const vels = [];
+
+    for (let i = 0; i < count * 3; i += 3) {
+      pos[i] = (Math.random() - 0.5) * 12; // X
+      pos[i + 1] = Math.random() * 6 - 2;   // Y
+      pos[i + 2] = (Math.random() - 0.5) * 12; // Z
+      vels.push({
+        y: 0.005 + Math.random() * 0.012,
+        x: (Math.random() - 0.5) * 0.004,
+        z: (Math.random() - 0.5) * 0.004
+      });
+    }
+
+    geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+    const pMat = new THREE.PointsMaterial({
+      color: new THREE.Color(data.accent),
+      size: 0.11,
+      transparent: true,
+      opacity: 0.85,
+      blending: THREE.AdditiveBlending
+    });
+
+    const particles = new THREE.Points(geo, pMat);
+    scene.add(particles);
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    const onMouseMove = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.current.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.current.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    };
+    canvas.addEventListener("mousemove", onMouseMove);
+
+    let animationFrameId;
+    const targetCam = new THREE.Vector3(0, 2.2, 7.5);
+
+    const animate = () => {
+      worldGroup.rotation.y += 0.003;
+      worldItems.children.forEach((child, i) => {
+        child.rotation.y += 0.004;
+        if (themeKey === "ocean") {
+          child.position.y += Math.sin(Date.now() / 500 + i) * 0.0018;
+        }
+      });
+
+      // Drift particle coordinates
+      const positions = particles.geometry.attributes.position.array;
+      for (let i = 0; i < count; i++) {
+        const idx = i * 3;
+        positions[idx + 1] += vels[i].y;
+        positions[idx] += vels[i].x;
+        positions[idx + 2] += vels[i].z;
+
+        if (positions[idx + 1] > 4.5) {
+          positions[idx + 1] = -2;
+          positions[idx] = (Math.random() - 0.5) * 12;
+          positions[idx + 2] = (Math.random() - 0.5) * 12;
+        }
+      }
+      particles.geometry.attributes.position.needsUpdate = true;
+
+      // Smooth hover parallax camera panning
+      targetCam.x = mouse.current.x * 2.8;
+      targetCam.y = 2.2 + mouse.current.y * 1.6;
+      
+      camera.position.x += (targetCam.x - camera.position.x) * 0.045;
+      camera.position.y += (targetCam.y - camera.position.y) * 0.045;
+      camera.lookAt(0, 0.4, 0);
+
+      renderer.render(scene, camera);
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (canvas) canvas.removeEventListener("mousemove", onMouseMove);
+      cancelAnimationFrame(animationFrameId);
+      renderer.dispose();
+    };
+  }, [themeKey, themeData]);
+
+  return <canvas ref={canvasRef} className="w-full h-full block cursor-crosshair" />;
 }
 
 export default function ThemesPage() {
@@ -212,7 +458,15 @@ export default function ThemesPage() {
           </section>
         </>
       ) : (
-        <section aria-label="Theme avatar chooser">
+        <section 
+          aria-label="Theme avatar chooser"
+          style={{
+            "--theme-main": currentThemeData.main,
+            "--theme-dark": currentThemeData.dark,
+            "--theme-soft": currentThemeData.soft,
+            "--theme-accent": currentThemeData.accent,
+          }}
+        >
           <button 
             className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 backdrop-blur border border-slate-200/80 hover:bg-white text-slate-700 font-bold font-mooli text-sm rounded-2xl shadow-sm hover:shadow active:scale-95 transition-all duration-200" 
             type="button"
@@ -236,7 +490,10 @@ export default function ThemesPage() {
           >
             {/* 3D Canvas element positioning */}
             <div className="absolute right-0 top-0 bottom-0 w-full md:w-1/2 z-0 opacity-80 md:opacity-100 pointer-events-none md:pointer-events-auto">
-              <Theme3DCanvas themeKey={previewTheme} />
+              <Theme3DCanvas 
+                themeKey={previewTheme} 
+                avatarName={previewTheme === selectedTheme ? selectedAvatar : currentThemeData.avatars[0]} 
+              />
             </div>
             
             <div className="p-8 relative z-10 flex flex-col justify-between h-full flex-1">
@@ -387,6 +644,20 @@ export default function ThemesPage() {
               </div>
             </section>
           </div>
+
+          {/* Interactive 3D World Tour Explorer */}
+          <section className="bg-slate-950/95 border-2 border-white/20 rounded-3xl p-6 sm:p-8 mt-8 shadow-2xl relative overflow-hidden font-mooli">
+            <div className="relative z-10 max-w-xl text-white mb-6">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-[var(--theme-accent)]">Interactive Experience</span>
+              <h3 className="text-2xl font-black mt-1">Immersive 3D World Tour</h3>
+              <p className="text-slate-300 text-xs mt-2 leading-relaxed">
+                Hover your mouse cursor over the window to pan around and explore this world's floating elements. Move around to discover hidden items!
+              </p>
+            </div>
+            <div className="w-full h-[320px] rounded-2xl overflow-hidden border border-white/10 bg-slate-900 shadow-inner relative">
+              <Theme3DWorld themeKey={previewTheme} />
+            </div>
+          </section>
         </section>
       )}
     </section>

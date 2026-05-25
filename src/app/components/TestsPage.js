@@ -21,6 +21,10 @@ export default function TestsPage({ onStartTest }) {
 
   const recentScores = scores.slice(0, 3);
 
+  // Get last 4 scores for the mini bar chart (chronological)
+  const miniScores = [...scores].reverse().slice(-4);
+  const maxMiniWpm = miniScores.length > 0 ? Math.max(...miniScores.map((s) => s.wpm), 45) : 50;
+
   return (
     <section id="testsPage" className="w-[min(1440px,calc(100%-36px))] mx-auto py-6 md:py-10 animate-page-settle" aria-label="Typing tests">
       <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6">
@@ -147,11 +151,44 @@ export default function TestsPage({ onStartTest }) {
                   <button type="button" className="px-3 py-1 text-xs font-bold rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200">Accuracy (%)</button>
                 </div>
               </div>
-              <div className="h-[120px] flex items-end justify-around gap-2 bg-gray-50/50 p-4 rounded-xl border border-gray-100 mb-6" aria-hidden="true">
-                <span className="w-8 bg-theme-main/40 h-[60%] rounded-t-md"></span>
-                <span className="w-8 bg-theme-main/60 h-[75%] rounded-t-md animate-pulse"></span>
-                <span className="w-8 bg-theme-main/80 h-[90%] rounded-t-md"></span>
-                <span className="w-8 bg-theme-main h-[40%] rounded-t-md"></span>
+              <div className="h-[120px] flex items-end justify-around gap-4 bg-slate-50/60 p-4 rounded-xl border border-slate-200/50 mb-6 font-mooli" aria-label="Speed progress bar chart">
+                {scores.length === 0 ? (
+                  // Demo visual bars
+                  [35, 55, 72, 88].map((val, idx) => (
+                    <div key={idx} className="flex-1 flex flex-col items-center gap-1.5 group/bar">
+                      <div className="w-full relative bg-slate-200 rounded-t-lg transition-all duration-300 group-hover/bar:bg-theme-main shadow-sm" style={{ height: `${val * 0.7}px` }}>
+                        <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] font-black text-slate-500 opacity-0 group-hover/bar:opacity-100 transition-opacity font-mono">
+                          {[15, 22, 29, 43][idx]} WPM
+                        </span>
+                      </div>
+                      <span className="text-[9px] font-bold text-slate-400 font-mono">Run {idx + 1}</span>
+                    </div>
+                  ))
+                ) : (
+                  // Real progress bars
+                  Array.from({ length: 4 }).map((_, idx) => {
+                    const score = miniScores[idx];
+                    if (!score) {
+                      return (
+                        <div key={idx} className="flex-1 flex flex-col items-center gap-1.5 opacity-40">
+                          <div className="w-full bg-slate-100 rounded-t-lg border-2 border-dashed border-slate-200" style={{ height: "10px" }} />
+                          <span className="text-[9px] font-bold text-slate-350 font-mono">--</span>
+                        </div>
+                      );
+                    }
+                    const percentHeight = Math.min(100, Math.round((score.wpm / maxMiniWpm) * 100));
+                    return (
+                      <div key={idx} className="flex-1 flex flex-col items-center gap-1.5 group/bar cursor-pointer">
+                        <div className="w-full relative bg-theme-main hover:bg-theme-dark rounded-t-lg transition-all duration-200 shadow-sm" style={{ height: `${percentHeight * 0.7}px` }}>
+                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] font-black text-theme-dark opacity-0 group-hover/bar:opacity-100 transition-opacity font-mono">
+                            {score.wpm} WPM
+                          </span>
+                        </div>
+                        <span className="text-[9px] font-bold text-slate-500 font-mono truncate max-w-[45px]">{score.date || `R${idx + 1}`}</span>
+                      </div>
+                    );
+                  })
+                )}
               </div>
               <div className="mb-4">
                 <p className="m-0 mb-1 text-xs font-extrabold tracking-wider uppercase text-theme-dark/70">Your Test History</p>
