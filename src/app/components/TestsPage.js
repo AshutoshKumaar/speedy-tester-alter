@@ -12,8 +12,9 @@ export default function TestsPage({ onStartTest }) {
 
   // Calculate daily progress time
   const totalSeconds = scores.reduce((acc, score) => {
-    const sec = score.duration.includes("1 Min") ? 60 : score.duration.includes("3 Min") ? 180 : 300;
-    return acc + sec;
+    const match = score.duration.match(/(\d+)\s*Min/i);
+    const mins = match ? parseInt(match[1], 10) : 5;
+    return acc + mins * 60;
   }, 0);
   const cappedSeconds = Math.min(totalSeconds, 900); // capped at 15 mins
   const progressMinutes = Math.floor(cappedSeconds / 60);
@@ -135,6 +136,19 @@ export default function TestsPage({ onStartTest }) {
                   <div>
                     <span className="block font-mooli text-[1.35rem] text-slate-800">5:00 Test</span>
                     <strong className="font-normal text-xs text-muted block">Full challenge</strong>
+                  </div>
+                  <b className="min-h-[34px] px-3.5 border-2 border-[#9f6a26] bg-[#ffe08a] hover:bg-[#ffd166] text-[#644400] font-bold rounded-lg transition-all flex items-center shadow-sm">
+                    Start Test
+                  </b>
+                </button>
+                <button 
+                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-lg bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full"
+                  type="button" 
+                  onClick={() => onStartTest(600, "hard")}
+                >
+                  <div>
+                    <span className="block font-mooli text-[1.35rem] text-slate-800">10:00 Test</span>
+                    <strong className="font-normal text-xs text-muted block">Endurance run</strong>
                   </div>
                   <b className="min-h-[34px] px-3.5 border-2 border-[#9f6a26] bg-[#ffe08a] hover:bg-[#ffd166] text-[#644400] font-bold rounded-lg transition-all flex items-center shadow-sm">
                     Start Test
