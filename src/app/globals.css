@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=JetBrains+Mono:wght@500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,13 +56,13 @@ body[data-theme]::before {
   inset: 64px 0 0;
   z-index: -2;
   background: 
-    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.9) 46%, rgba(255, 255, 255, 0.72)),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.10) 0%, rgba(255, 255, 255, 0.20) 45%, rgba(15, 23, 42, 0.12) 100%),
     var(--theme-scene-image);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   opacity: 1;
-  filter: saturate(1.15) brightness(1.05);
+  filter: saturate(1.1) brightness(0.95);
   pointer-events: none;
   transition: all var(--theme-transition);
 }

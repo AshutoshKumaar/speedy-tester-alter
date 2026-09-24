@@ -387,7 +387,7 @@ export default function ThemesPage() {
                 Choose a world for your typing adventure
               </h1>
               <p className="text-slate-600 font-mooli text-lg">
-                Open a theme, select your avatar character, and carry that world's background and accent colors into tests, lessons, games, and scores.
+                Open a theme, select your avatar character, and carry that world&apos;s background and accent colors into tests, lessons, games, and scores.
               </p>
             </div>
             
@@ -651,7 +651,7 @@ export default function ThemesPage() {
               <span className="text-[10px] uppercase font-bold tracking-widest text-[var(--theme-accent)]">Interactive Experience</span>
               <h3 className="text-2xl font-black mt-1">Immersive 3D World Tour</h3>
               <p className="text-slate-300 text-xs mt-2 leading-relaxed">
-                Hover your mouse cursor over the window to pan around and explore this world's floating elements. Move around to discover hidden items!
+                Hover your mouse cursor over the window to pan around and explore this world&apos;s floating elements. Move around to discover hidden items!
               </p>
             </div>
             <div className="w-full h-[320px] rounded-2xl overflow-hidden border border-white/10 bg-slate-900 shadow-inner relative">

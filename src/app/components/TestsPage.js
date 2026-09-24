@@ -29,64 +29,108 @@ export default function TestsPage({ onStartTest }) {
   return (
     <section id="testsPage" className="w-[min(1440px,calc(100%-36px))] mx-auto py-6 md:py-10 animate-page-settle" aria-label="Typing tests">
       <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6">
-        <aside className="grid content-start gap-3 min-h-[calc(100vh-140px)]" aria-label="Practice sidebar">
-          <div className="grid gap-3.5 min-h-[380px] p-[22px] rounded-xl text-[#4e2a55] shadow-lg bg-gradient-to-br from-[#ffe4f4] to-[#f6b0da] border border-[#f067bd]/20">
-            <strong className="font-mooli text-3xl font-normal">Reading Club</strong>
-            <span className="max-w-[180px] text-[#744a7a] font-bold leading-normal">Fun stories, lessons, and games for young learners.</span>
+        <aside className="grid content-start gap-4" aria-label="Practice sidebar">
+          <div className="grid gap-3.5 p-6 rounded-2xl text-[#4e2a55] shadow-lg bg-gradient-to-br from-[#ffe4f4] to-[#f6b0da] border border-[#f067bd]/20">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-[#8b3157]">Typing Academy</span>
+            <strong className="font-mooli text-2xl font-bold leading-tight">Interactive Lessons &amp; Drills</strong>
+            <span className="text-[#744a7a] font-medium text-sm leading-relaxed">Video guides, structured finger training, and beginner-to-advanced missions.</span>
             <button 
-              className="self-end min-h-[42px] border-0 rounded-full text-white bg-[#7fc976] hover:bg-[#6db465] active:scale-95 transition-all font-mooli text-lg font-bold shadow-md"
+              className="mt-2 min-h-[42px] px-5 border-0 rounded-full text-white bg-[#7fc976] hover:bg-[#6db465] active:scale-95 transition-all font-mooli text-base font-bold shadow-md cursor-pointer"
               type="button"
+              onClick={() => setActivePage("lessons")}
             >
-              Know More
+              Start Lessons &rarr;
             </button>
           </div>
-          <div className="grid rounded-xl overflow-hidden bg-white shadow-md border border-gray-100">
-            <a href="#" onClick={(e) => e.preventDefault()} className="p-4 border-b border-gray-100 text-[#42645a] hover:bg-gray-50 transition-all font-bold flex justify-between items-center">
-              <span>Full-Time Jobs</span>
-              <span className="text-sm font-mono">&gt;</span>
-            </a>
-            <a href="#" onClick={(e) => e.preventDefault()} className="p-4 border-b border-gray-100 text-[#42645a] hover:bg-gray-50 transition-all font-bold flex justify-between items-center">
-              <span>Part-Time Jobs</span>
-              <span className="text-sm font-mono">&gt;</span>
-            </a>
-            <a href="#" onClick={(e) => e.preventDefault()} className="p-4 text-[#42645a] hover:bg-gray-50 transition-all font-bold flex justify-between items-center">
-              <span>Freelance Jobs</span>
-              <span className="text-sm font-mono">&gt;</span>
-            </a>
+
+          <div className="grid rounded-2xl overflow-hidden bg-white/95 backdrop-blur border border-theme-main/20 shadow-md">
+            <div className="p-4 bg-slate-50 border-b border-gray-100">
+              <span className="text-xs uppercase tracking-wider font-extrabold text-theme-dark">Quick Test Select</span>
+            </div>
+            <button 
+              type="button"
+              onClick={() => onStartTest(60, "easy")} 
+              className="p-3.5 border-b border-gray-100 text-slate-700 hover:bg-theme-soft/40 transition-all font-bold flex justify-between items-center text-left"
+            >
+              <div className="flex flex-col">
+                <span className="text-sm">1-Minute Test</span>
+                <small className="text-[11px] text-muted font-normal">Fast Warmup</small>
+              </div>
+              <span className="text-xs px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-lg font-mono">60s</span>
+            </button>
+            <button 
+              type="button"
+              onClick={() => onStartTest(180, "medium")} 
+              className="p-3.5 border-b border-gray-100 text-slate-700 hover:bg-theme-soft/40 transition-all font-bold flex justify-between items-center text-left"
+            >
+              <div className="flex flex-col">
+                <span className="text-sm">3-Minute Test</span>
+                <small className="text-[11px] text-muted font-normal">Steady Rhythm</small>
+              </div>
+              <span className="text-xs px-2.5 py-1 bg-blue-100 text-blue-800 rounded-lg font-mono">3m</span>
+            </button>
+            <button 
+              type="button"
+              onClick={() => onStartTest(300, "hard")} 
+              className="p-3.5 border-b border-gray-100 text-slate-700 hover:bg-theme-soft/40 transition-all font-bold flex justify-between items-center text-left"
+            >
+              <div className="flex flex-col">
+                <span className="text-sm">5-Minute Test</span>
+                <small className="text-[11px] text-muted font-normal">Full Challenge</small>
+              </div>
+              <span className="text-xs px-2.5 py-1 bg-purple-100 text-purple-800 rounded-lg font-mono">5m</span>
+            </button>
+            <button 
+              type="button"
+              onClick={() => onStartTest(600, "hard")} 
+              className="p-3.5 text-slate-700 hover:bg-theme-soft/40 transition-all font-bold flex justify-between items-center text-left"
+            >
+              <div className="flex flex-col">
+                <span className="text-sm">10-Minute Test</span>
+                <small className="text-[11px] text-muted font-normal">Stamina Run</small>
+              </div>
+              <span className="text-xs px-2.5 py-1 bg-amber-100 text-amber-800 rounded-lg font-mono">10m</span>
+            </button>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-white/90 border border-theme-main/15 shadow-sm text-xs text-slate-600 font-mooli space-y-2">
+            <strong className="block text-slate-800 font-bold text-sm text-theme-dark">💡 Pro Touch Typing Tip</strong>
+            <p className="leading-relaxed">
+              Never look at your keyboard! Use the tactile bumps on the <b>F</b> and <b>J</b> keys to find your home row position naturally.
+            </p>
           </div>
         </aside>
 
         <div className="min-w-0">
           <div 
-            className="relative grid grid-cols-1 sm:grid-cols-[1fr_180px] gap-6 items-center min-h-[230px] p-[34px] rounded-xl text-white shadow-lg bg-gradient-to-br from-theme-main to-theme-dark border border-white/10 overflow-hidden"
+            className="relative grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-6 items-center min-h-[230px] p-6 sm:p-8 rounded-2xl text-white shadow-xl border border-white/20 overflow-hidden"
             style={{
-              backgroundImage: isThemeApplied ? `linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.1) 42%, rgba(255, 255, 255, 0.78)), var(--theme-scene-image)` : "none",
+              backgroundImage: isThemeApplied 
+                ? `linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.82) 50%, rgba(15, 23, 42, 0.4) 100%), var(--theme-scene-image)`
+                : `linear-gradient(90deg, var(--theme-dark), var(--theme-main))`,
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}
           >
-            <div className="z-10">
-              <p className="m-0 mb-2 text-xs font-extrabold tracking-wider uppercase text-[#707986]" style={{ color: isThemeApplied ? "rgba(255, 255, 255, 0.9)" : "var(--muted)" }}>
+            <div className="z-10 max-w-xl">
+              <p className="m-0 mb-1.5 text-xs font-black tracking-widest uppercase text-[var(--theme-accent)] drop-shadow-sm">
                 {themeName} typing practice
               </p>
-              <h1 className="font-mooli font-normal text-4xl sm:text-5xl leading-none text-slate-800" style={{ color: isThemeApplied ? "white" : "#474b52", textShadow: isThemeApplied ? "0 3px 0 rgba(0,0,0,0.15)" : "none" }}>
+              <h1 className="font-mooli font-black text-3xl sm:text-5xl leading-tight text-white drop-shadow-md">
                 Typing Tests
               </h1>
-              <p className="max-w-[550px] mt-3.5 text-base leading-relaxed text-slate-600" style={{ color: isThemeApplied ? "rgba(255, 255, 255, 0.9)" : "var(--muted)" }}>
-                {themeSubtitle} Choose a timed test, follow your progress, and keep your typing streak alive.
+              <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-slate-100 font-medium max-w-lg drop-shadow-sm">
+                {themeSubtitle}. Choose a timed test, follow your progress, and keep your typing streak alive.
               </p>
             </div>
-            {isThemeApplied && (
-              <div className="relative self-end min-h-[190px]" aria-hidden="true">
-                <span className="absolute bottom-[-14px] left-[4px] w-[138px] h-[190px] bg-[var(--avatar-image)] bg-bottom bg-no-repeat bg-contain filter drop-shadow-[0_12px_14px_rgba(65,39,78,0.32)]"></span>
-                <span className="absolute bottom-[-14px] right-0 w-[126px] h-[150px] bg-[var(--mascot-image)] bg-bottom bg-no-repeat bg-contain filter drop-shadow-[0_12px_14px_rgba(65,39,78,0.32)]"></span>
-              </div>
-            )}
-            <div className="grid w-[150px] h-[150px] place-items-center justify-self-end border-[10px] border-white/50 border-t-theme-accent rounded-full bg-white text-ink text-center shadow-lg z-10 animate-[themePulse_2.5s_ease-in-out_infinite]">
-              <div>
-                <span className="block text-xs font-bold uppercase text-[#707986] !text-muted">Daily Goal</span>
-                <strong className="block text-3xl font-extrabold text-slate-800 !text-ink">{`${progressMinutes}:${progressSeconds}`}</strong>
-                <small className="block text-xs font-bold text-[#707986] !text-muted">/15:00</small>
+            
+            <div className="flex items-center gap-4 justify-self-end z-10">
+              <div className="grid w-[130px] h-[130px] sm:w-[145px] sm:h-[145px] place-items-center border-[8px] border-white/30 border-t-theme-accent rounded-full bg-white/95 backdrop-blur text-slate-800 text-center shadow-2xl animate-[themePulse_2.5s_ease-in-out_infinite] shrink-0">
+                <div>
+                  <span className="block text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Daily Goal</span>
+                  <strong className="block text-2xl sm:text-3xl font-black text-slate-900">{`${progressMinutes}:${progressSeconds}`}</strong>
+                  <small className="block text-[10px] font-bold text-slate-400">/15:00</small>
+                </div>
               </div>
             </div>
           </div>
@@ -94,8 +138,8 @@ export default function TestsPage({ onStartTest }) {
           <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-6 mt-6">
             <section className="p-6 rounded-xl bg-white/90 backdrop-blur-md border border-theme-main/30 shadow-md hover:translate-y-[-2px] hover:shadow-lg transition-all duration-300">
               <div className="grid gap-1.5 p-[18px] mb-[18px] rounded-xl text-white bg-gradient-to-br from-[#ff9b3d] to-[#ff741f] shadow-sm">
-                <strong className="font-mooli text-xl font-normal">Don't lose your progress!</strong>
-                <span className="font-bold text-sm">Create a free account and track every score.</span>
+                <strong className="font-mooli text-xl font-normal">Track your daily progress!</strong>
+                <span className="font-bold text-sm">Your scores are automatically saved to your local score room.</span>
               </div>
               <div className="mb-4.5">
                 <p className="m-0 mb-1 text-xs font-extrabold tracking-wider uppercase text-theme-dark/70">Timed Tests</p>
@@ -103,12 +147,12 @@ export default function TestsPage({ onStartTest }) {
               </div>
               <div className="grid gap-3">
                 <button 
-                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-lg bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full"
+                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-xl bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full cursor-pointer group"
                   type="button" 
                   onClick={() => onStartTest(60, "easy")}
                 >
                   <div>
-                    <span className="block font-mooli text-[1.35rem] text-slate-800">1:00 Test</span>
+                    <span className="block font-mooli text-[1.35rem] text-slate-800 group-hover:text-theme-dark transition-colors">1:00 Test</span>
                     <strong className="font-normal text-xs text-muted block">Quick warmup</strong>
                   </div>
                   <b className="min-h-[34px] px-3.5 border-2 border-[#9f6a26] bg-[#ffe08a] hover:bg-[#ffd166] text-[#644400] font-bold rounded-lg transition-all flex items-center shadow-sm">
@@ -116,12 +160,12 @@ export default function TestsPage({ onStartTest }) {
                   </b>
                 </button>
                 <button 
-                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-lg bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full"
+                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-xl bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full cursor-pointer group"
                   type="button" 
                   onClick={() => onStartTest(180, "medium")}
                 >
                   <div>
-                    <span className="block font-mooli text-[1.35rem] text-slate-800">3:00 Test</span>
+                    <span className="block font-mooli text-[1.35rem] text-slate-800 group-hover:text-theme-dark transition-colors">3:00 Test</span>
                     <strong className="font-normal text-xs text-muted block">Steady practice</strong>
                   </div>
                   <b className="min-h-[34px] px-3.5 border-2 border-[#9f6a26] bg-[#ffe08a] hover:bg-[#ffd166] text-[#644400] font-bold rounded-lg transition-all flex items-center shadow-sm">
@@ -129,12 +173,12 @@ export default function TestsPage({ onStartTest }) {
                   </b>
                 </button>
                 <button 
-                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-lg bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full"
+                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-xl bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full cursor-pointer group"
                   type="button" 
                   onClick={() => onStartTest(300, "hard")}
                 >
                   <div>
-                    <span className="block font-mooli text-[1.35rem] text-slate-800">5:00 Test</span>
+                    <span className="block font-mooli text-[1.35rem] text-slate-800 group-hover:text-theme-dark transition-colors">5:00 Test</span>
                     <strong className="font-normal text-xs text-muted block">Full challenge</strong>
                   </div>
                   <b className="min-h-[34px] px-3.5 border-2 border-[#9f6a26] bg-[#ffe08a] hover:bg-[#ffd166] text-[#644400] font-bold rounded-lg transition-all flex items-center shadow-sm">
@@ -142,12 +186,12 @@ export default function TestsPage({ onStartTest }) {
                   </b>
                 </button>
                 <button 
-                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-lg bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full"
+                  className="grid grid-cols-[1fr_auto] gap-3 items-center min-h-[72px] p-[18px] border border-theme-main/20 hover:border-theme-accent rounded-xl bg-theme-soft/30 hover:bg-theme-soft/60 active:scale-95 transition-all text-left w-full cursor-pointer group"
                   type="button" 
                   onClick={() => onStartTest(600, "hard")}
                 >
                   <div>
-                    <span className="block font-mooli text-[1.35rem] text-slate-800">10:00 Test</span>
+                    <span className="block font-mooli text-[1.35rem] text-slate-800 group-hover:text-theme-dark transition-colors">10:00 Test</span>
                     <strong className="font-normal text-xs text-muted block">Endurance run</strong>
                   </div>
                   <b className="min-h-[34px] px-3.5 border-2 border-[#9f6a26] bg-[#ffe08a] hover:bg-[#ffd166] text-[#644400] font-bold rounded-lg transition-all flex items-center shadow-sm">

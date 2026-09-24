@@ -63,20 +63,20 @@ export default function LessonsPage({ onStartTest }) {
 
         <section className="min-w-0">
           <div 
-            className="relative grid grid-cols-1 sm:grid-cols-[1fr_150px] gap-6 items-center min-h-[190px] p-[34px] rounded-xl text-white shadow-lg bg-gradient-to-br from-theme-main to-theme-dark border border-white/10 overflow-hidden mb-6"
+            className="relative grid grid-cols-1 sm:grid-cols-[1fr_150px] gap-6 items-center min-h-[190px] p-6 sm:p-8 rounded-2xl text-white shadow-xl border border-white/20 overflow-hidden mb-6"
             style={{
-              backgroundImage: "linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 50%, rgba(15, 23, 42, 0.75) 100%), url('/lesson_thumbnail.png')",
+              backgroundImage: "linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.35) 100%), url('/lesson_thumbnail.png')",
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}
           >
             <div className="z-10">
-              <p className="m-0 mb-1 text-xs font-extrabold tracking-wider uppercase text-slate-600" style={{ color: "rgba(255, 255, 255, 0.9)" }}>Lessons</p>
-              <h1 className="font-mooli font-normal text-3xl sm:text-4xl leading-none text-slate-800" style={{ color: "white", textShadow: "0 2px 0 rgba(0,0,0,0.15)" }}>
+              <p className="m-0 mb-1.5 text-xs font-black tracking-widest uppercase text-[var(--theme-accent)] drop-shadow-sm">Lessons</p>
+              <h1 className="font-mooli font-black text-3xl sm:text-4xl leading-tight text-white drop-shadow-md">
                 Watch, learn, then type.
               </h1>
-              <p className="max-w-[550px] mt-3 text-sm leading-relaxed text-slate-600" style={{ color: "rgba(255, 255, 255, 0.9)" }}>
-                Short video lessons explain the idea first. Typing missions help kids practice right away.
+              <p className="max-w-[550px] mt-2 text-sm sm:text-base leading-relaxed text-slate-100 font-medium drop-shadow-sm">
+                Short video lessons explain the concept first. Typing missions help you practice immediately.
               </p>
             </div>
             <div className="w-[120px] h-[120px] bg-[var(--mascot-image)] bg-center bg-no-repeat bg-contain self-end z-10" aria-hidden="true"></div>

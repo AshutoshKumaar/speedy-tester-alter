@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useTheme } from "../ThemeContext";
 
 export default function TypingPage({ duration, mode, onFinishTest, onBackToTests }) {
@@ -85,15 +85,49 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     roundFinishedRef.current = roundFinished;
   }, [roundFinished]);
 
-  // Initialize/Reset test when duration or mode changes
-  useEffect(() => {
-    resetTest(true);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [duration, mode]);
+  const finishTest = useCallback(() => {
+    setRoundFinished(true);
+    roundFinishedRef.current = true;
+    if (timerRef.current) clearInterval(timerRef.current);
 
-  const resetTest = (newSentence = true) => {
+    const elapsed = duration - timeLeftRef.current || duration;
+    const minutes = Math.max(elapsed / 60, 1 / 60);
+    
+    const wpm = Math.round((totalCorrectRef.current / 5) / minutes);
+    const attempted = totalTypedRef.current + totalErrorsRef.current;
+    const accuracy = attempted === 0 ? 100 : Math.round((totalCorrectRef.current / attempted) * 100);
+    const score = Math.max(0, Math.round(wpm * 12 + accuracy * 5 + completedLinesRef.current.length * 95 + totalCorrectRef.current));
+
+    const finalResult = {
+      duration: `${duration / 60} Minute Typing Test`,
+      mode: mode,
+      wpm,
+      accuracy,
+      score,
+      lines: completedLinesRef.current.length,
+      theme: themeName,
+      date: new Date().toLocaleDateString([], { month: "short", day: "numeric" })
+    };
+
+    onFinishTest(finalResult);
+  }, [duration, mode, themeName, onFinishTest]);
+
+  const startTimer = useCallback(() => {
+    setHasStarted(true);
+    hasStartedRef.current = true;
+    timeLeftRef.current = duration;
+    timerRef.current = setInterval(() => {
+      timeLeftRef.current -= 1;
+      const currentVal = timeLeftRef.current;
+      setTimeLeft(currentVal);
+      if (currentVal <= 0) {
+        if (timerRef.current) clearInterval(timerRef.current);
+        finishTest();
+      }
+    }, 1000);
+  }, [duration, finishTest]);
+
+  const resetTest = useCallback((newSentence = true) => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
     }
@@ -124,65 +158,17 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
       setCurrentSentence(sentenceList[initialIndex]);
       currentSentenceRef.current = sentenceList[initialIndex];
     }
-  };
+  }, [duration, sentenceList]);
 
-  const startTimer = () => {
-    setHasStarted(true);
-    hasStartedRef.current = true;
-    startTimeRef.current = Date.now();
-    timeLeftRef.current = duration;
-    timerRef.current = setInterval(() => {
-      timeLeftRef.current -= 1;
-      const currentVal = timeLeftRef.current;
-      setTimeLeft(currentVal);
-      if (currentVal <= 0) {
-        if (timerRef.current) clearInterval(timerRef.current);
-        finishTest();
-      }
-    }, 1000);
-  };
-
-  const calculateStats = () => {
-    const elapsed = startTimeRef.current ? (Date.now() - startTimeRef.current) / 1000 : 0;
-    const minutes = Math.max(elapsed / 60, 1 / 60);
-    const wpm = Math.round((totalCorrect / 5) / minutes);
-    const attempted = totalTyped + totalErrors;
-    const accuracy = attempted === 0 ? 100 : Math.round((totalCorrect / attempted) * 100);
-    const score = Math.max(0, Math.round(wpm * 12 + accuracy * 5 + completedLines.length * 95 + totalCorrect));
-    const progress = hasStarted ? Math.min(((duration - timeLeft) / duration) * 100, 100) : 0;
-
-    return { wpm, accuracy, score, progress };
-  };
-
-  const finishTest = () => {
-    setRoundFinished(true);
-    roundFinishedRef.current = true;
-    if (timerRef.current) clearInterval(timerRef.current);
-
-    const elapsed = startTimeRef.current ? (Date.now() - startTimeRef.current) / 1000 : duration;
-    const minutes = Math.max(elapsed / 60, 1 / 60);
-    
-    // Read from refs to avoid stale callback closures from setInterval
-    const wpm = Math.round((totalCorrectRef.current / 5) / minutes);
-    const attempted = totalTypedRef.current + totalErrorsRef.current;
-    const accuracy = attempted === 0 ? 100 : Math.round((totalCorrectRef.current / attempted) * 100);
-    const score = Math.max(0, Math.round(wpm * 12 + accuracy * 5 + completedLinesRef.current.length * 95 + totalCorrectRef.current));
-
-    const finalResult = {
-      duration: `${duration / 60} Minute Typing Test`,
-      mode: mode,
-      wpm,
-      accuracy,
-      score,
-      lines: completedLinesRef.current.length,
-      theme: themeName,
-      date: new Date().toLocaleDateString([], { month: "short", day: "numeric" })
+  // Initialize/Reset test when duration or mode changes
+  useEffect(() => {
+    resetTest(true);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
     };
+  }, [duration, mode, resetTest]);
 
-    onFinishTest(finalResult);
-  };
-
-  const selectNextSentence = (completed) => {
+  const selectNextSentence = useCallback((completed) => {
     const nextIdx = (sentenceIndex + 1) % sentenceList.length;
     setSentenceIndex(nextIdx);
     
@@ -204,9 +190,9 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     currentIndexRef.current = 0;
     setHasCurrentError(false);
     hasCurrentErrorRef.current = false;
-  };
+  }, [sentenceIndex, sentenceList]);
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback((e) => {
     if (roundFinishedRef.current) return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
 
@@ -275,12 +261,12 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
 
       playTone("wrong");
     }
-  };
+  }, [playTone, selectNextSentence, startTimer]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [sentenceIndex]);
+  }, [handleKeyDown]);
 
   useEffect(() => {
     if (displayRef.current) {
@@ -288,7 +274,14 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     }
   }, [completedLines, currentIndex]);
 
-  const statsData = calculateStats();
+  // Derived metrics without impure Date.now() in render
+  const elapsedSeconds = hasStarted ? Math.max(1, duration - timeLeft) : 0;
+  const minutes = Math.max(elapsedSeconds / 60, 1 / 60);
+  const currentWpm = hasStarted ? Math.round((totalCorrect / 5) / minutes) : 0;
+  const attempted = totalTyped + totalErrors;
+  const currentAccuracy = attempted === 0 ? 100 : Math.round((totalCorrect / attempted) * 100);
+  const currentScore = Math.max(0, Math.round(currentWpm * 12 + currentAccuracy * 5 + completedLines.length * 95 + totalCorrect));
+  const currentProgress = hasStarted ? Math.min(((duration - timeLeft) / duration) * 100, 100) : 0;
 
   const handleSoundToggle = () => {
     selectSound(selectedSound === "off" ? "soft" : "off");
@@ -313,7 +306,7 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
         </div>
 
         <div className="flex items-center gap-3 w-full md:w-auto justify-end">
-          <span className="bg-slate-100 text-slate-600 font-mooli text-xs font-bold px-3 py-1.5 rounded-xl border border-slate-200 shrink-0">
+          <span className="bg-slate-100 text-slate-600 font-mooli text-xs font-bold px-3 py-1.5 rounded-xl border border-slate-200 shrink-0 capitalize">
             {mode} Mode
           </span>
           <span id="timer" className="text-lg font-bold font-mooli text-theme-dark bg-theme-soft/50 px-4 py-1.5 rounded-xl border border-theme-main/15 shadow-inner shrink-0">
@@ -344,7 +337,7 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
         <div 
           id="progressBar" 
           className="h-full bg-theme-main transition-all duration-300 shadow-sm"
-          style={{ width: `${statsData.progress}%` }}
+          style={{ width: `${currentProgress}%` }}
         />
       </div>
 
@@ -436,15 +429,15 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
       <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto">
         <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 py-4 px-5 rounded-2xl shadow-sm text-center flex flex-col justify-center items-center group hover:shadow">
           <span className="text-xxs font-extrabold font-mooli uppercase tracking-wider text-slate-500 mb-0.5">WPM</span>
-          <strong className="text-xl sm:text-2xl font-black font-mooli text-slate-800">{statsData.wpm}</strong>
+          <strong className="text-xl sm:text-2xl font-black font-mooli text-slate-800">{currentWpm}</strong>
         </div>
         <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 py-4 px-5 rounded-2xl shadow-sm text-center flex flex-col justify-center items-center group hover:shadow">
           <span className="text-xxs font-extrabold font-mooli uppercase tracking-wider text-slate-500 mb-0.5">Accuracy</span>
-          <strong className="text-xl sm:text-2xl font-black font-mooli text-slate-800">{statsData.accuracy}%</strong>
+          <strong className="text-xl sm:text-2xl font-black font-mooli text-slate-800">{currentAccuracy}%</strong>
         </div>
         <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 py-4 px-5 rounded-2xl shadow-sm text-center flex flex-col justify-center items-center group hover:shadow">
           <span className="text-xxs font-extrabold font-mooli uppercase tracking-wider text-slate-500 mb-0.5">Score</span>
-          <strong className="text-xl sm:text-2xl font-black font-mooli text-slate-800">{statsData.score}</strong>
+          <strong className="text-xl sm:text-2xl font-black font-mooli text-slate-800">{currentScore}</strong>
         </div>
       </div>
     </section>

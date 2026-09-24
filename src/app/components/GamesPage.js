@@ -84,6 +84,8 @@ function KeyboardJumpGame({ gameData, onBack }) {
   const stats = useRef({ score: 0, lives: 3 });
   const stateRef = useRef(gameState);
   const wordSet = WORD_BANK[gameData.mode] || WORD_BANK.easy;
+  const gameDataRef = useRef(gameData);
+  gameDataRef.current = gameData;
 
   // Three.js references
   const rendererRef = useRef(null);
@@ -101,6 +103,8 @@ function KeyboardJumpGame({ gameData, onBack }) {
   const timeLimit = useRef(100);
   const targetPlatformRef = useRef(null);
   const inputWordRef = useRef("");
+  const initGameRef = useRef(null);
+  const jumpToNextPlatformRef = useRef(null);
 
   useEffect(() => {
     stateRef.current = gameState;
@@ -367,6 +371,9 @@ function KeyboardJumpGame({ gameData, onBack }) {
     targetPlatformRef.current = platforms.current[nextIndex + 1];
   };
 
+  initGameRef.current = initGame;
+  jumpToNextPlatformRef.current = jumpToNextPlatform;
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -494,7 +501,7 @@ function KeyboardJumpGame({ gameData, onBack }) {
 
       // Update timer depletion
       if (stateRef.current === "playing") {
-        const diffMultiplier = gameData.mode === "easy" ? 0.7 : gameData.mode === "medium" ? 1.0 : 1.35;
+        const diffMultiplier = gameDataRef.current.mode === "easy" ? 0.7 : gameDataRef.current.mode === "medium" ? 1.0 : 1.35;
         timeLimit.current -= 0.058 * diffMultiplier;
         if (timeLimit.current <= 0) {
           timeLimit.current = 100;
@@ -504,9 +511,9 @@ function KeyboardJumpGame({ gameData, onBack }) {
 
           if (stats.current.lives <= 0) {
             setGameState("gameover");
-            const savedHS = Number(localStorage.getItem(`ninja_hs_jump_${gameData.id}`)) || 0;
+            const savedHS = Number(localStorage.getItem(`ninja_hs_jump_${gameDataRef.current.id}`)) || 0;
             if (stats.current.score > savedHS) {
-              localStorage.setItem(`ninja_hs_jump_${gameData.id}`, stats.current.score);
+              localStorage.setItem(`ninja_hs_jump_${gameDataRef.current.id}`, stats.current.score);
               setHighScore(stats.current.score);
             }
           }
@@ -545,7 +552,7 @@ function KeyboardJumpGame({ gameData, onBack }) {
       if (e.key === " " || e.key === "Spacebar") {
         if (stateRef.current === "start" || stateRef.current === "gameover") {
           e.preventDefault();
-          initGame();
+          initGameRef.current();
         }
         return;
       }
@@ -582,7 +589,7 @@ function KeyboardJumpGame({ gameData, onBack }) {
             }, 80);
           }
           if (newVal === target) {
-            jumpToNextPlatform(nextPlat);
+            jumpToNextPlatformRef.current(nextPlat);
             inputWordRef.current = "";
             setInputWord("");
           } else {
@@ -692,6 +699,8 @@ function DinoRunnerGame({ gameData, onBack }) {
   const stats = useRef({ score: 0, lives: 3 });
   const stateRef = useRef(gameState);
   const wordSet = WORD_BANK[gameData.mode] || WORD_BANK.medium;
+  const gameDataRef = useRef(gameData);
+  gameDataRef.current = gameData;
 
   // Three.js references
   const rendererRef = useRef(null);
@@ -701,6 +710,7 @@ function DinoRunnerGame({ gameData, onBack }) {
   const nextSpawnTime = useRef(0);
   const lockedTargetRef = useRef(null); // Track target lock
   const inputWordRef = useRef(""); // Track typed word prefix synchronously
+  const spawnHurdleRef = useRef(null);
   
   // Dino physics
   const dino = useRef({
@@ -885,6 +895,8 @@ function DinoRunnerGame({ gameData, onBack }) {
     });
   };
 
+  spawnHurdleRef.current = spawnHurdle;
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -1025,8 +1037,8 @@ function DinoRunnerGame({ gameData, onBack }) {
         d.mesh.position.y = d.y;
 
         let speed = 0.085;
-        if (gameData.mode === "easy") speed = 0.055;
-        else if (gameData.mode === "hard") speed = 0.125;
+        if (gameDataRef.current.mode === "easy") speed = 0.055;
+        else if (gameDataRef.current.mode === "hard") speed = 0.125;
 
         stones.forEach(s => {
           s.position.x -= speed;
@@ -1045,15 +1057,15 @@ function DinoRunnerGame({ gameData, onBack }) {
 
         const now = Date.now();
         if (now > nextSpawnTime.current) {
-          spawnHurdle();
+          spawnHurdleRef.current();
           let baseDelay = 1800;
           let randDelay = 1200;
           let scoreFactor = 12;
-          if (gameData.mode === "easy") {
+          if (gameDataRef.current.mode === "easy") {
             baseDelay = 2500;
             randDelay = 1500;
             scoreFactor = 8;
-          } else if (gameData.mode === "hard") {
+          } else if (gameDataRef.current.mode === "hard") {
             baseDelay = 1100;
             randDelay = 700;
             scoreFactor = 16;
@@ -1083,9 +1095,9 @@ function DinoRunnerGame({ gameData, onBack }) {
 
             if (stats.current.lives <= 0) {
               setGameState("gameover");
-              const savedHS = Number(localStorage.getItem(`ninja_hs_run_${gameData.id}`)) || 0;
+              const savedHS = Number(localStorage.getItem(`ninja_hs_run_${gameDataRef.current.id}`)) || 0;
               if (stats.current.score > savedHS) {
-                localStorage.setItem(`ninja_hs_run_${gameData.id}`, stats.current.score);
+                localStorage.setItem(`ninja_hs_run_${gameDataRef.current.id}`, stats.current.score);
                 setHighScore(stats.current.score);
               }
             }
@@ -1301,6 +1313,8 @@ function SpaceNinjaGame({ gameData, onBack }) {
 
   const stats = useRef({ score: 0, lives: 3 });
   const stateRef = useRef(gameState);
+  const gameDataRef = useRef(gameData);
+  gameDataRef.current = gameData;
 
   // Three.js references
   const rendererRef = useRef(null);
@@ -1311,6 +1325,7 @@ function SpaceNinjaGame({ gameData, onBack }) {
   const laserBeam = useRef(null);
   const laserTime = useRef(0);
   const lastSpawnTime = useRef(0);
+  const spawnMeteorRef = useRef(null);
 
   useEffect(() => {
     stateRef.current = gameState;
@@ -1417,6 +1432,8 @@ function SpaceNinjaGame({ gameData, onBack }) {
       halfR: null
     });
   };
+
+  spawnMeteorRef.current = spawnMeteor;
 
   const sliceMeteor = (met) => {
     met.sliced = true;
@@ -1541,8 +1558,8 @@ function SpaceNinjaGame({ gameData, onBack }) {
     // Loop
     let animId;
     let gravity = 0.0035;
-    if (gameData.mode === "easy") gravity = 0.0022;
-    else if (gameData.mode === "hard") gravity = 0.0055;
+    if (gameDataRef.current.mode === "easy") gravity = 0.0022;
+    else if (gameDataRef.current.mode === "hard") gravity = 0.0055;
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -1566,13 +1583,13 @@ function SpaceNinjaGame({ gameData, onBack }) {
       if (stateRef.current === "playing") {
         const now = Date.now();
         let spawnDelay = Math.max(800, 1600 - stats.current.score * 12);
-        if (gameData.mode === "easy") {
+        if (gameDataRef.current.mode === "easy") {
           spawnDelay = Math.max(1300, 2400 - stats.current.score * 10);
-        } else if (gameData.mode === "hard") {
+        } else if (gameDataRef.current.mode === "hard") {
           spawnDelay = Math.max(500, 1000 - stats.current.score * 16);
         }
         if (now - lastSpawnTime.current > spawnDelay) {
-          spawnMeteor();
+          spawnMeteorRef.current();
           lastSpawnTime.current = now;
         }
       }
@@ -1601,9 +1618,9 @@ function SpaceNinjaGame({ gameData, onBack }) {
 
               if (stats.current.lives <= 0) {
                 setGameState("gameover");
-                const savedHS = Number(localStorage.getItem(`ninja_hs_space_${gameData.id}`)) || 0;
+                const savedHS = Number(localStorage.getItem(`ninja_hs_space_${gameDataRef.current.id}`)) || 0;
                 if (stats.current.score > savedHS) {
-                  localStorage.setItem(`ninja_hs_space_${gameData.id}`, stats.current.score);
+                  localStorage.setItem(`ninja_hs_space_${gameDataRef.current.id}`, stats.current.score);
                   setHighScore(stats.current.score);
                 }
               }
@@ -1811,6 +1828,8 @@ function BubblePopperGame({ gameData, onBack }) {
   const stats = useRef({ score: 0, lives: 3 });
   const stateRef = useRef(gameState);
   const wordSet = WORD_BANK[gameData.mode] || WORD_BANK.easy;
+  const gameDataRef = useRef(gameData);
+  gameDataRef.current = gameData;
 
   // Three.js references
   const rendererRef = useRef(null);
@@ -1821,6 +1840,7 @@ function BubblePopperGame({ gameData, onBack }) {
   const lastSpawnTime = useRef(0);
   const lockedTargetRef = useRef(null); // Track active bubble lock
   const inputWordRef = useRef(""); // Track typed word prefix synchronously
+  const spawnBubbleRef = useRef(null);
 
   useEffect(() => {
     stateRef.current = gameState;
@@ -1997,6 +2017,8 @@ function BubblePopperGame({ gameData, onBack }) {
     });
   };
 
+  spawnBubbleRef.current = spawnBubble;
+
   const popBubble = (bubble) => {
     sceneRef.current.remove(bubble.mesh);
 
@@ -2084,13 +2106,13 @@ function BubblePopperGame({ gameData, onBack }) {
       if (stateRef.current === "playing") {
         const now = Date.now();
         let spawnDelay = Math.max(900, 1900 - stats.current.score * 12);
-        if (gameData.mode === "easy") {
+        if (gameDataRef.current.mode === "easy") {
           spawnDelay = Math.max(1400, 2600 - stats.current.score * 10);
-        } else if (gameData.mode === "hard") {
+        } else if (gameDataRef.current.mode === "hard") {
           spawnDelay = Math.max(600, 1300 - stats.current.score * 16);
         }
         if (now - lastSpawnTime.current > spawnDelay) {
-          spawnBubble();
+          spawnBubbleRef.current();
           lastSpawnTime.current = now;
         }
       }
@@ -2119,9 +2141,9 @@ function BubblePopperGame({ gameData, onBack }) {
 
             if (stats.current.lives <= 0) {
               setGameState("gameover");
-              const savedHS = Number(localStorage.getItem(`ninja_hs_bubble_${gameData.id}`)) || 0;
+              const savedHS = Number(localStorage.getItem(`ninja_hs_bubble_${gameDataRef.current.id}`)) || 0;
               if (stats.current.score > savedHS) {
-                localStorage.setItem(`ninja_hs_bubble_${gameData.id}`, stats.current.score);
+                localStorage.setItem(`ninja_hs_bubble_${gameDataRef.current.id}`, stats.current.score);
                 setHighScore(stats.current.score);
               }
             }
@@ -2336,20 +2358,32 @@ export default function GamesPage() {
     "ocean-bubble": "easy"
   });
 
-  const [highScores, setHighScores] = useState({
-    "princess-letter": 0,
-    "dino-dash": 0,
-    "rocket-racer": 0,
-    "ocean-bubble": 0
-  });
-
-  useEffect(() => {
-    setHighScores({
+  const [highScores, setHighScores] = useState(() => {
+    if (typeof window === "undefined") {
+      return {
+        "princess-letter": 0,
+        "dino-dash": 0,
+        "rocket-racer": 0,
+        "ocean-bubble": 0
+      };
+    }
+    return {
       "princess-letter": Number(localStorage.getItem("ninja_hs_jump_princess-letter")) || 0,
       "dino-dash": Number(localStorage.getItem("ninja_hs_run_dino-dash")) || 0,
       "rocket-racer": Number(localStorage.getItem("ninja_hs_space_rocket-racer")) || 0,
       "ocean-bubble": Number(localStorage.getItem("ninja_hs_bubble_ocean-bubble")) || 0
-    });
+    };
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && !playingGame) {
+      setHighScores({
+        "princess-letter": Number(localStorage.getItem("ninja_hs_jump_princess-letter")) || 0,
+        "dino-dash": Number(localStorage.getItem("ninja_hs_run_dino-dash")) || 0,
+        "rocket-racer": Number(localStorage.getItem("ninja_hs_space_rocket-racer")) || 0,
+        "ocean-bubble": Number(localStorage.getItem("ninja_hs_bubble_ocean-bubble")) || 0
+      });
+    }
   }, [playingGame]);
 
   const handlePlayGame = (game) => {
