@@ -123,7 +123,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: article.title,
       description: article.description,
-      url: `https://speedytypeapp.com/blog/${article.slug}`,
+      url: `https://www.speedytypeapp.com/blog/${article.slug}`,
       type: "article",
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
@@ -155,7 +155,7 @@ export default async function BlogPostPage({ params }) {
     "@graph": [
       {
         "@type": "Article",
-        "@id": `https://speedytypeapp.com/blog/${article.slug}#article`,
+        "@id": `https://www.speedytypeapp.com/blog/${article.slug}#article`,
         "headline": article.title,
         "description": article.description,
         "datePublished": article.publishedAt,
@@ -169,32 +169,32 @@ export default async function BlogPostPage({ params }) {
           "name": "Speedy Type",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://speedytypeapp.com/favicon.ico"
+            "url": "https://www.speedytypeapp.com/favicon.ico"
           }
         },
-        "mainEntityOfPage": `https://speedytypeapp.com/blog/${article.slug}`
+        "mainEntityOfPage": `https://www.speedytypeapp.com/blog/${article.slug}`
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://speedytypeapp.com/blog/${article.slug}#breadcrumb`,
+        "@id": `https://www.speedytypeapp.com/blog/${article.slug}#breadcrumb`,
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://speedytypeapp.com"
+            "item": "https://www.speedytypeapp.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Blog",
-            "item": "https://speedytypeapp.com/blog"
+            "item": "https://www.speedytypeapp.com/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": article.title,
-            "item": `https://speedytypeapp.com/blog/${article.slug}`
+            "item": `https://www.speedytypeapp.com/blog/${article.slug}`
           }
         ]
       },
@@ -202,7 +202,7 @@ export default async function BlogPostPage({ params }) {
         ? [
             {
               "@type": "FAQPage",
-              "@id": `https://speedytypeapp.com/blog/${article.slug}#faq`,
+              "@id": `https://www.speedytypeapp.com/blog/${article.slug}#faq`,
               "mainEntity": article.faqs.map((faq) => ({
                 "@type": "Question",
                 "name": faq.question,

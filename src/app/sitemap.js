@@ -1,7 +1,7 @@
 import { getAllArticles } from "./data/articles";
 
 export default function sitemap() {
-  const baseUrl = "https://speedytypeapp.com";
+  const baseUrl = "https://www.speedytypeapp.com";
   const now = new Date().toISOString();
 
   // Core static pages

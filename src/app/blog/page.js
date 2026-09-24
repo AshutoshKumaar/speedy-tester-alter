@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Typing Blog & Touch Typing Guides — Speedy Type",
     description: "In-depth articles, tutorials, WPM benchmarks, ergonomics advice, and speed improvement techniques.",
-    url: "https://speedytypeapp.com/blog",
+    url: "https://www.speedytypeapp.com/blog",
     type: "website",
   },
 };
@@ -24,14 +24,14 @@ export default function BlogIndexPage() {
     "@type": "Blog",
     "name": "Speedy Type Typing Blog",
     "description": "Educational articles and practical guides on touch typing, keyboard ergonomics, and WPM speed improvement.",
-    "url": "https://speedytypeapp.com/blog",
+    "url": "https://www.speedytypeapp.com/blog",
     "blogPost": articles.map(art => ({
       "@type": "BlogPosting",
       "headline": art.title,
       "description": art.description,
       "datePublished": art.publishedAt,
       "dateModified": art.updatedAt,
-      "url": `https://speedytypeapp.com/blog/${art.slug}`
+      "url": `https://www.speedytypeapp.com/blog/${art.slug}`
     }))
   };
 

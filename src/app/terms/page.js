@@ -32,7 +32,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">1. Acceptance of Terms</h2>
           <p>
-            By accessing and using <strong>Speedy Type</strong> (&quot;the Website,&quot; accessible at <Link href="/" className="text-theme-dark font-bold hover:underline">https://speedytypeapp.com</Link>), you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions. If you do not agree to these terms, please do not use the service.
+            By accessing and using <strong>Speedy Type</strong> (&quot;the Website,&quot; accessible at <Link href="/" className="text-theme-dark font-bold hover:underline">https://www.speedytypeapp.com</Link>), you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions. If you do not agree to these terms, please do not use the service.
           </p>
         </div>
 

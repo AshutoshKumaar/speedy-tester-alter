@@ -2,7 +2,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata = {
-  metadataBase: new URL("https://speedytypeapp.com"),
+  metadataBase: new URL("https://www.speedytypeapp.com"),
   title: {
     default: "Speedy Type — Free Online Typing Test & Touch Typing Practice",
     template: "%s | Speedy Type",
@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     title: "Speedy Type — Free Online Typing Test & Practice",
     description: "Test your typing speed and accuracy with free timed typing tests, interactive lessons, and 12 colorful animated worlds.",
-    url: "https://speedytypeapp.com",
+    url: "https://www.speedytypeapp.com",
     siteName: "Speedy Type",
     locale: "en_US",
     type: "website",

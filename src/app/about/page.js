@@ -15,7 +15,7 @@ export default function AboutPage() {
     "@type": "AboutPage",
     "name": "About Speedy Type",
     "description": "About Speedy Type's mission, features, and commitment to free touch typing education.",
-    "url": "https://speedytypeapp.com/about"
+    "url": "https://www.speedytypeapp.com/about"
   };
 
   return (
