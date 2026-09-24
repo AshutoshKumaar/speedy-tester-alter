@@ -7,12 +7,12 @@ export const metadata = {
   title: "Free Typing Test & Practice Online | Speedy Type",
   description: "Test your typing speed and accuracy with free 1, 3, 5 and 10-minute typing tests. Practice touch typing, track your progress and improve your WPM with Speedy Type.",
   alternates: {
-    canonical: "https://speedytype.com",
+    canonical: "https://speedytypeapp.com",
   },
   openGraph: {
     title: "Free Typing Test & Practice Online | Speedy Type",
     description: "Test your typing speed and accuracy with free 1, 3, 5 and 10-minute typing tests. Practice touch typing, track your progress and improve your WPM with Speedy Type.",
-    url: "https://speedytype.com",
+    url: "https://speedytypeapp.com",
     siteName: "Speedy Type",
     type: "website",
   },
@@ -47,16 +47,16 @@ export default function HomePage() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://speedytype.com/#website",
-        "url": "https://speedytype.com",
+        "@id": "https://speedytypeapp.com/#website",
+        "url": "https://speedytypeapp.com",
         "name": "Speedy Type",
         "description": "Free online typing test and touch typing practice platform.",
         "inLanguage": "en-US"
       },
       {
         "@type": "WebApplication",
-        "@id": "https://speedytype.com/#webapp",
-        "url": "https://speedytype.com",
+        "@id": "https://speedytypeapp.com/#webapp",
+        "url": "https://speedytypeapp.com",
         "name": "Speedy Type Typing Test",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "All",
@@ -69,7 +69,7 @@ export default function HomePage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://speedytype.com/#faq",
+        "@id": "https://speedytypeapp.com/#faq",
         "mainEntity": homepageFaqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

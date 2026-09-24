@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">1. Introduction &amp; Overview</h2>
           <p>
-            Welcome to <strong>Speedy Type</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). Speedy Type is a free online typing practice and test platform accessible at <Link href="/" className="text-theme-dark font-bold hover:underline">https://speedytype.com</Link>. We respect your privacy and are committed to maintaining transparent, responsible data practices.
+            Welcome to <strong>Speedy Type</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). Speedy Type is a free online typing practice and test platform accessible at <Link href="/" className="text-theme-dark font-bold hover:underline">https://speedytypeapp.com</Link>. We respect your privacy and are committed to maintaining transparent, responsible data practices.
           </p>
           <p className="mt-2">
             This Privacy Policy explains how information is handled when you visit and interact with our website, use our typing tools, practice lessons, and play educational games.

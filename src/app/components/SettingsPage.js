@@ -33,14 +33,14 @@ export default function SettingsPage() {
 
   return (
     <section id="settingsPage" className="max-w-4xl mx-auto px-6 py-12 animate-page-settle" aria-label="Settings">
-      <div className="mb-10 text-center md:text-left">
+      <div className="mb-10 rounded-3xl border border-slate-200/80 bg-white/95 p-6 text-center shadow-md backdrop-blur-md md:p-8 md:text-left">
         <p className="text-xs uppercase tracking-widest text-theme-dark font-extrabold font-mooli opacity-85">
           Settings
         </p>
-        <h1 className="text-4xl md:text-5xl font-black text-slate-800 mt-2 mb-4 font-mooli leading-tight">
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mt-2 mb-4 font-mooli leading-tight">
           Make the Game Feel Right
         </h1>
-        <p className="text-slate-600 font-mooli text-lg max-w-xl">
+        <p className="text-slate-700 font-mooli text-lg max-w-xl">
           Customize your experience by picking unique sound voices and typing response behaviors.
         </p>
       </div>

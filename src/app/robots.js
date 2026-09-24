@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://speedytype.com/sitemap.xml",
+    sitemap: "https://speedytypeapp.com/sitemap.xml",
   };
 }
