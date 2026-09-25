@@ -63,6 +63,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3201639516497362"
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         <Providers>
