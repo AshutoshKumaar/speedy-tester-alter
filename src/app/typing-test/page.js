@@ -2,12 +2,24 @@ import React from "react";
 import Link from "next/link";
 import TypingApp from "../components/TypingApp";
 import FaqAccordion from "../components/FaqAccordion";
+import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
   title: "Timed Typing Test — 1, 3, 5 & 10 Minute WPM Tests | Speedy Type",
   description: "Take free timed typing tests on Speedy Type. Choose 1-minute, 3-minute, 5-minute, or 10-minute tests with live WPM calculation, accuracy tracking, and score history.",
   alternates: {
     canonical: "/typing-test",
+  },
+  openGraph: {
+    title: "Timed Typing Test — 1, 3, 5 & 10 Minute WPM Tests | Speedy Type",
+    description: "Take free 1, 3, 5, or 10-minute typing tests with live WPM calculation and accuracy tracking.",
+    url: "https://www.speedytypeapp.com/typing-test",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Timed Typing Test — 1, 3, 5 & 10 Minute WPM Tests | Speedy Type",
+    description: "Take free timed typing tests with live WPM calculation and accuracy tracking.",
   },
 };
 
@@ -89,6 +101,15 @@ export default function TypingTestPage() {
             </div>
           </div>
         </section>
+
+        <RelatedTypingTools
+          description="After benchmarking your current speed, use a focused drill or review the skills that affect your next result."
+          links={[
+            { href: "/typing-practice", label: "Practice key rows" },
+            { href: "/typing-speed", label: "Compare WPM benchmarks" },
+            { href: "/typing-accuracy", label: "Improve typing accuracy" },
+          ]}
+        />
 
         {/* FAQs */}
         <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-12 shadow-lg">

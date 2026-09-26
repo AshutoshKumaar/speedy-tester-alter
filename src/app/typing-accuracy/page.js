@@ -2,12 +2,24 @@ import React from "react";
 import Link from "next/link";
 import TypingApp from "../components/TypingApp";
 import FaqAccordion from "../components/FaqAccordion";
+import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
   title: "Typing Accuracy Test & Precision Drills — Speedy Type",
   description: "Improve your typing accuracy with precision-focused drills on Speedy Type. Learn how error reduction and 98%+ accuracy unlocks effortless typing speed.",
   alternates: {
     canonical: "/typing-accuracy",
+  },
+  openGraph: {
+    title: "Typing Accuracy Test & Precision Drills — Speedy Type",
+    description: "Improve typing accuracy with precision-focused drills and learn how fewer errors support faster, smoother typing.",
+    url: "https://www.speedytypeapp.com/typing-accuracy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Typing Accuracy Test & Precision Drills — Speedy Type",
+    description: "Improve typing accuracy with precision-focused drills for smoother typing.",
   },
 };
 
@@ -86,6 +98,15 @@ export default function TypingAccuracyPage() {
             </div>
           </div>
         </section>
+
+        <RelatedTypingTools
+          description="Once your keystrokes are consistently clean, use timed tests and speed practice to apply that accuracy under pressure."
+          links={[
+            { href: "/typing-practice", label: "Practice key drills" },
+            { href: "/typing-test", label: "Take a timed typing test" },
+            { href: "/typing-speed", label: "Build typing speed" },
+          ]}
+        />
 
         {/* FAQs */}
         <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-12 shadow-lg">

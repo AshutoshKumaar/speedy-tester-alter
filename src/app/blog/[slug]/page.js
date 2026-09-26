@@ -149,6 +149,11 @@ export default async function BlogPostPage({ params }) {
   const relatedArticles = allArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
+  const recommendedTool = article.category === "Accuracy Drills"
+    ? { href: "/typing-accuracy", label: "Practice typing accuracy" }
+    : article.category === "Speed Optimization" || article.category === "Benchmarks & Standards"
+      ? { href: "/typing-speed", label: "Measure typing speed" }
+      : { href: "/typing-practice", label: "Practice keyboard drills" };
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -297,6 +302,16 @@ export default async function BlogPostPage({ params }) {
             Start 1-Min Test &rarr;
           </Link>
         </div>
+
+        <section className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6">
+          <h2 className="text-xl font-black text-slate-900 mb-2">Choose Your Next Practice Step</h2>
+          <p className="text-sm text-slate-600 mb-4">Match this guide with a relevant Speedy Type tool to put the technique into practice.</p>
+          <div className="flex flex-wrap gap-3 text-sm font-bold">
+            <Link href={recommendedTool.href} className="text-theme-dark hover:underline">{recommendedTool.label} &rarr;</Link>
+            <Link href="/lessons" className="text-theme-dark hover:underline">Follow a typing lesson &rarr;</Link>
+            <Link href="/games" className="text-theme-dark hover:underline">Try a typing game &rarr;</Link>
+          </div>
+        </section>
 
         {/* Article FAQs */}
         {article.faqs && article.faqs.length > 0 && (

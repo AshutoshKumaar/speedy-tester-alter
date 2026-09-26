@@ -5,7 +5,7 @@ export const metadata = {
   metadataBase: new URL("https://www.speedytypeapp.com"),
   title: {
     default: "Speedy Type — Free Online Typing Test & Touch Typing Practice",
-    template: "%s | Speedy Type",
+    template: "%s",
   },
   description: "Test your typing speed and accuracy with free 1, 3, 5, and 10-minute typing tests. Practice touch typing, track your progress, and explore 12 colorful 3D worlds on Speedy Type.",
   keywords: [

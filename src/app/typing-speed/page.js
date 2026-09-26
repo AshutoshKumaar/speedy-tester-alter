@@ -2,12 +2,24 @@ import React from "react";
 import Link from "next/link";
 import TypingApp from "../components/TypingApp";
 import FaqAccordion from "../components/FaqAccordion";
+import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
   title: "Typing Speed Test & WPM Benchmarks — Speedy Type",
   description: "Calculate your typing speed in WPM and CPM. Compare your score with global benchmarks and discover strategies to break through typing speed plateaus.",
   alternates: {
     canonical: "/typing-speed",
+  },
+  openGraph: {
+    title: "Typing Speed Test & WPM Benchmarks — Speedy Type",
+    description: "Calculate typing speed in WPM, compare practical benchmarks, and learn how to improve without sacrificing accuracy.",
+    url: "https://www.speedytypeapp.com/typing-speed",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Typing Speed Test & WPM Benchmarks — Speedy Type",
+    description: "Calculate typing speed in WPM and build speed without sacrificing accuracy.",
   },
 };
 
@@ -82,6 +94,15 @@ export default function TypingSpeedPage() {
             </div>
           </div>
         </section>
+
+        <RelatedTypingTools
+          description="Use a timed test to establish a baseline, then train the keyboard zones and error patterns that hold your WPM back."
+          links={[
+            { href: "/typing-test", label: "Take a timed typing test" },
+            { href: "/typing-practice", label: "Practice key rows" },
+            { href: "/typing-accuracy", label: "Train for fewer errors" },
+          ]}
+        />
 
         {/* FAQs */}
         <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-12 shadow-lg">
