@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useTheme } from "../ThemeContext";
 
-export default function TypingPage({ duration, mode, onFinishTest, onBackToTests }) {
+export default function TypingPage({ duration, mode, sentenceOverrides, onFinishTest, onBackToTests }) {
   const { 
     sentences, 
     selectedTheme, 
@@ -16,7 +16,7 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
   const themeName = themeData[selectedTheme]?.name || "Princess Castle";
 
   // Active sentence configurations
-  const sentenceList = sentences[mode] || sentences.easy;
+  const sentenceList = sentenceOverrides?.length ? sentenceOverrides : (sentences[mode] || sentences.easy);
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [currentSentence, setCurrentSentence] = useState(sentenceList[0]);
   const [completedLines, setCompletedLines] = useState([]);
@@ -29,9 +29,12 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
   const [roundFinished, setRoundFinished] = useState(false);
 
   // Score statistics
-  const [totalTyped, setTotalTyped] = useState(0);
+  // Accuracy uses historical printable-key attempts; WPM uses net correct
+  // characters currently advanced, so Backspace can undo text progress without
+  // erasing the fact that a key was pressed.
+  const [totalAttemptedKeystrokes, setTotalAttemptedKeystrokes] = useState(0);
   const [totalCorrect, setTotalCorrect] = useState(0);
-  const [totalErrors, setTotalErrors] = useState(0);
+  const [totalCorrectKeystrokes, setTotalCorrectKeystrokes] = useState(0);
 
   const timerRef = useRef(null);
   const startTimeRef = useRef(null);
@@ -40,8 +43,8 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
 
   // Sync refs to prevent stale closures inside timers/intervals
   const totalCorrectRef = useRef(totalCorrect);
-  const totalTypedRef = useRef(totalTyped);
-  const totalErrorsRef = useRef(totalErrors);
+  const totalAttemptedKeystrokesRef = useRef(totalAttemptedKeystrokes);
+  const totalCorrectKeystrokesRef = useRef(totalCorrectKeystrokes);
   const completedLinesRef = useRef(completedLines);
   const currentSentenceRef = useRef(currentSentence);
   const hasCurrentErrorRef = useRef(hasCurrentError);
@@ -54,12 +57,12 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
   }, [totalCorrect]);
 
   useEffect(() => {
-    totalTypedRef.current = totalTyped;
-  }, [totalTyped]);
+    totalAttemptedKeystrokesRef.current = totalAttemptedKeystrokes;
+  }, [totalAttemptedKeystrokes]);
 
   useEffect(() => {
-    totalErrorsRef.current = totalErrors;
-  }, [totalErrors]);
+    totalCorrectKeystrokesRef.current = totalCorrectKeystrokes;
+  }, [totalCorrectKeystrokes]);
 
   useEffect(() => {
     completedLinesRef.current = completedLines;
@@ -94,8 +97,11 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     const minutes = Math.max(elapsed / 60, 1 / 60);
     
     const wpm = Math.round((totalCorrectRef.current / 5) / minutes);
-    const attempted = totalTypedRef.current + totalErrorsRef.current;
-    const accuracy = attempted === 0 ? 100 : Math.round((totalCorrectRef.current / attempted) * 100);
+    // Accuracy = correct printable keystrokes / all printable keystrokes.
+    // Backspace is not an attempt; incorrect keys remain in the denominator,
+    // while WPM uses correct characters still advanced in the text.
+    const attempted = totalAttemptedKeystrokesRef.current;
+    const accuracy = attempted === 0 ? 100 : Math.round((totalCorrectKeystrokesRef.current / attempted) * 100);
     const score = Math.max(0, Math.round(wpm * 12 + accuracy * 5 + completedLinesRef.current.length * 95 + totalCorrectRef.current));
 
     const finalResult = {
@@ -143,12 +149,12 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     currentIndexRef.current = 0;
     setHasCurrentError(false);
     hasCurrentErrorRef.current = false;
-    setTotalTyped(0);
-    totalTypedRef.current = 0;
+    setTotalAttemptedKeystrokes(0);
+    totalAttemptedKeystrokesRef.current = 0;
     setTotalCorrect(0);
     totalCorrectRef.current = 0;
-    setTotalErrors(0);
-    totalErrorsRef.current = 0;
+    setTotalCorrectKeystrokes(0);
+    totalCorrectKeystrokesRef.current = 0;
     setTimeLeft(duration);
     timeLeftRef.current = duration;
 
@@ -175,14 +181,6 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
     const newCompleted = [...completedLinesRef.current, currentSentenceRef.current];
     setCompletedLines(newCompleted);
     completedLinesRef.current = newCompleted;
-
-    const newCorrect = totalCorrectRef.current + currentSentenceRef.current.length;
-    setTotalCorrect(newCorrect);
-    totalCorrectRef.current = newCorrect;
-
-    const newTyped = totalTypedRef.current + currentSentenceRef.current.length;
-    setTotalTyped(newTyped);
-    totalTypedRef.current = newTyped;
 
     setCurrentSentence(sentenceList[nextIdx]);
     currentSentenceRef.current = sentenceList[nextIdx];
@@ -233,9 +231,13 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
       setTotalCorrect(newCorrect);
       totalCorrectRef.current = newCorrect;
 
-      const newTyped = totalTypedRef.current + 1;
-      setTotalTyped(newTyped);
-      totalTypedRef.current = newTyped;
+      const newCorrectKeystrokes = totalCorrectKeystrokesRef.current + 1;
+      setTotalCorrectKeystrokes(newCorrectKeystrokes);
+      totalCorrectKeystrokesRef.current = newCorrectKeystrokes;
+
+      const newAttempted = totalAttemptedKeystrokesRef.current + 1;
+      setTotalAttemptedKeystrokes(newAttempted);
+      totalAttemptedKeystrokesRef.current = newAttempted;
 
       setHasCurrentError(false);
       hasCurrentErrorRef.current = false;
@@ -251,13 +253,9 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
       setHasCurrentError(true);
       hasCurrentErrorRef.current = true;
 
-      const newErrors = totalErrorsRef.current + 1;
-      setTotalErrors(newErrors);
-      totalErrorsRef.current = newErrors;
-
-      const newTyped = totalTypedRef.current + 1;
-      setTotalTyped(newTyped);
-      totalTypedRef.current = newTyped;
+      const newAttempted = totalAttemptedKeystrokesRef.current + 1;
+      setTotalAttemptedKeystrokes(newAttempted);
+      totalAttemptedKeystrokesRef.current = newAttempted;
 
       playTone("wrong");
     }
@@ -278,8 +276,9 @@ export default function TypingPage({ duration, mode, onFinishTest, onBackToTests
   const elapsedSeconds = hasStarted ? Math.max(1, duration - timeLeft) : 0;
   const minutes = Math.max(elapsedSeconds / 60, 1 / 60);
   const currentWpm = hasStarted ? Math.round((totalCorrect / 5) / minutes) : 0;
-  const attempted = totalTyped + totalErrors;
-  const currentAccuracy = attempted === 0 ? 100 : Math.round((totalCorrect / attempted) * 100);
+  const currentAccuracy = totalAttemptedKeystrokes === 0
+    ? 100
+    : Math.round((totalCorrectKeystrokes / totalAttemptedKeystrokes) * 100);
   const currentScore = Math.max(0, Math.round(currentWpm * 12 + currentAccuracy * 5 + completedLines.length * 95 + totalCorrect));
   const currentProgress = hasStarted ? Math.min(((duration - timeLeft) / duration) * 100, 100) : 0;
 

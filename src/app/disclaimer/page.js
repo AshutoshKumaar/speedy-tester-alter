@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 export default function DisclaimerPage() {
-  const lastUpdated = "March 20, 2026";
+  const lastUpdated = "October 18, 2026";
 
   return (
     <div className="w-[min(960px,calc(100%-36px))] mx-auto py-12 font-mooli text-slate-800 space-y-10">
@@ -50,7 +50,7 @@ export default function DisclaimerPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">2. No Guarantee of Specific Improvement</h2>
           <p>
-            While regular, deliberate touch-typing practice with proper home row technique is widely proven to improve keyboard fluency, individual results vary. Speedy Type makes no guarantees, warranties, or representations regarding the exact speed gains, timeframe, or employment outcomes a specific user may achieve.
+            Deliberate practice may help a person become more familiar with keyboard patterns, but results vary. Speedy Type makes no guarantees, warranties, or representations regarding the exact speed gains, timeframe, or employment outcomes a specific user may achieve.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function DisclaimerPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">5. Contact</h2>
           <p>
-            If you have questions regarding this Disclaimer, please reach out via our <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link>.
+            The <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link> currently has no message-delivery service or support inbox, so questions cannot be sent through the site.
           </p>
         </div>
       </section>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "About Speedy Type — Free Touch Typing & Keyboard Practice",
-  description: "Learn about Speedy Type, our mission to provide free, accessible, and engaging touch typing education for students, professionals, and keyboard enthusiasts.",
+  description: "Explore Speedy Type's browser-based typing tests, practice drills, lessons, games, and locally saved score history.",
   alternates: {
     canonical: "/about",
   },
@@ -14,7 +14,7 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Speedy Type",
-    "description": "About Speedy Type's mission, features, and commitment to free touch typing education.",
+    "description": "Information about Speedy Type's typing tests, practice drills, lessons, games, and locally saved score history.",
     "url": "https://www.speedytypeapp.com/about"
   };
 
@@ -31,10 +31,10 @@ export default function AboutPage() {
           About Speedy Type
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 mt-2 mb-6 leading-tight">
-          Empowering Learners to Type with Speed, Accuracy, and Confidence
+          About Speedy Type
         </h1>
         <p className="text-slate-600 text-lg leading-relaxed max-w-3xl">
-          Speedy Type is a free, web-based typing platform designed to make keyboard skill acquisition practical, intuitive, and fun. We believe that fluent touch typing is a foundational 21st-century skill that saves time, enhances workplace productivity, and unlocks effortless digital expression.
+          Speedy Type is a browser-based typing practice site with timed tests, lessons, key-row drills, games, and locally stored score history. The tools are available without an account or purchase.
         </p>
       </section>
 
@@ -44,10 +44,10 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Speedy Type Exists</h2>
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-              Traditional typing tutors can feel dry, monotonous, or cluttered with intrusive pop-ups and restrictive paywalls. We created Speedy Type to offer a clean, refreshing alternative: a fast, modern typing platform that combines precise WPM measurement with immersive visual themes and synthesized audio feedback.
+              Speedy Type brings timed practice, optional video lessons, keyboard drills, games, visual themes, and synthesized key sounds together in one browser-based platform. Results are practice estimates and can vary with the passage, settings, and device.
             </p>
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              By removing barriers to practice and turning repetitive drills into engaging missions and 3D games, we help typists of all ages build durable muscle memory at their own pace.
+              Visitors can choose a focused exercise, a timed test, or a typing game and practise at their own pace.
             </p>
           </div>
         </div>
@@ -56,11 +56,11 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-black text-slate-900 mb-4">Our Core Mission</h2>
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-4">
-              Our mission is to deliver a reliable, high-performance touch typing platform accessible to anyone with a web browser.
+              Speedy Type provides browser-based tools for practising typing and reviewing personal results. This site does not currently identify an individual or organization as its operator.
             </p>
             <ul className="text-sm text-slate-600 space-y-2.5 list-disc pl-5">
-              <li><strong>Always 100% Free:</strong> No paid subscriptions, hidden fees, or gated lesson modules.</li>
-              <li><strong>Privacy-First Architecture:</strong> Scores and settings stay safely stored on your device via Local Storage.</li>
+              <li><strong>Free to use:</strong> The typing tests, lessons, drills, games, and settings do not require a purchase.</li>
+              <li><strong>Local score history:</strong> The app stores scores and preferences in this browser; it does not provide a score-upload or account feature.</li>
               <li><strong>Zero Installation Required:</strong> Runs directly in any modern desktop, laptop, or tablet browser.</li>
             </ul>
           </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
           <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
             <strong className="text-lg font-bold text-slate-900">Structured Lessons</strong>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Follow animated video demonstrations and progressive typing missions covering the home row, capitalization, and punctuation.
+              Choose optional video lessons and typing missions covering the home row, capitalization, and punctuation.
             </p>
             <Link href="/lessons" className="text-xs font-bold text-theme-dark mt-auto hover:underline">
               View Lessons &rarr;
@@ -114,9 +114,9 @@ export default function AboutPage() {
           </div>
 
           <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
-            <strong className="text-lg font-bold text-slate-900">Score Room &amp; Analytics</strong>
+            <strong className="text-lg font-bold text-slate-900">Score History</strong>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Track your performance trendline, best speed records, accuracy history, and daily training streaks over time.
+              Review saved WPM results, accuracy, and test history stored in your browser.
             </p>
             <Link href="/scores" className="text-xs font-bold text-theme-dark mt-auto hover:underline">
               Check Score Room &rarr;
@@ -144,21 +144,21 @@ export default function AboutPage() {
           <div className="p-6 rounded-2xl bg-theme-soft/20 border border-theme-main/20">
             <strong className="text-lg font-bold text-slate-900 block mb-2">Students &amp; Young Learners</strong>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Develop fundamental keyboard literacy early in a safe, colorful, and engaging environment with video demonstrations and reward milestones.
+              Explore beginner-friendly keyboard drills, lessons, and games.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl bg-theme-soft/20 border border-theme-main/20">
             <strong className="text-lg font-bold text-slate-900 block mb-2">Professionals &amp; Writers</strong>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Eliminate the cognitive bottleneck of typing. Draft emails, reports, and manuscripts at the speed of thought without stopping to fix typos.
+              Practise common keyboard patterns and compare timed results while working toward personal goals.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl bg-theme-soft/20 border border-theme-main/20">
             <strong className="text-lg font-bold text-slate-900 block mb-2">Developers &amp; Power Users</strong>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Sharpen finger dexterity for syntax symbols, punctuation, and continuous command-line rhythm with challenging endurance tests.
+              Practise numbers, punctuation, and keyboard patterns with focused drills and timed tests.
             </p>
           </div>
         </div>

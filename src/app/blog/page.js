@@ -4,13 +4,13 @@ import { getAllArticles } from "../data/articles";
 
 export const metadata = {
   title: "Typing Blog & Touch Typing Guides — Speedy Type",
-  description: "Explore in-depth articles, touch typing tutorials, WPM benchmarks, ergonomics advice, and speed improvement techniques from the Speedy Type editorial team.",
+  description: "Read practical guides to typing speed, accuracy, touch typing, keyboard practice, and WPM scoring, with exercises linked to Speedy Type tools.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
     title: "Typing Blog & Touch Typing Guides — Speedy Type",
-    description: "In-depth articles, tutorials, WPM benchmarks, ergonomics advice, and speed improvement techniques.",
+    description: "Practical guides to typing speed, accuracy, touch typing, keyboard practice, and WPM scoring.",
     url: "https://www.speedytypeapp.com/blog",
     type: "website",
   },
@@ -52,7 +52,7 @@ export default function BlogIndexPage() {
             Speedy Type Learning Center
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Discover actionable techniques, benchmark data, and expert touch typing tutorials designed to help you type faster, make fewer errors, and master the keyboard.
+            Find practical typing exercises and clear explanations of speed, accuracy, touch typing, and keyboard practice.
           </p>
         </div>
       </section>

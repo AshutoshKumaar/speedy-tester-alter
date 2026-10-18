@@ -1,769 +1,562 @@
 export const BLOG_ARTICLES = [
   {
     slug: "how-to-increase-typing-speed",
-    title: "How to Increase Your Typing Speed: 10 Proven Techniques",
-    description: "Learn actionable, scientifically backed techniques to boost your typing speed from 30 WPM to 80+ WPM without sacrificing accuracy.",
+    title: "How to Improve Typing Speed: A Practical, Accuracy-First Plan",
+    description: "Build typing speed with a repeatable practice plan: set a baseline, work on one difficult pattern, and raise your pace without guessing at benchmarks.",
     publishedAt: "2026-03-15",
-    updatedAt: "2026-03-20",
-    readTime: "7 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Speed Optimization",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Boosting your typing speed is not about furiously hammering keys—it is about establishing relaxed muscle memory, eliminating wasted finger movement, and reading ahead.",
+    excerpt: "Typing faster starts with finding where your own rhythm breaks. Use a baseline, one focused drill, and a retest under the same conditions.",
     sections: [
       {
-        heading: "1. Master the Home Row Finger Position",
-        content: `The foundation of rapid typing is the home row anchor position. Your left hand rests on A-S-D-F and your right hand rests on J-K-L-;. Most keyboards feature small tactile ridges or bumps on the **F** and **J** keys. Use these markers to orient your index fingers without looking down at the keyboard.
+        heading: "The short answer: practise the part that slows you down",
+        content: `There is no single speed routine that suits every typist. First take a [timed typing test](/typing-test) and note both WPM and accuracy. During the run, notice where you pause: reaching for a key, typing punctuation, correcting mistakes, or losing your place.
 
-When your fingers naturally return to the home row after every keystroke, your brain forms spatial coordinates for every other key on the keyboard. This spatial awareness drastically reduces hesitation and finger travel distance.`
+Choose one of those patterns for your next short practice session. Keep the passage and keyboard conditions similar when you retest so the comparison is useful.`
       },
       {
-        heading: "2. Build Accuracy Before Chasing Speed",
-        content: `A common mistake beginners make is trying to type fast before establishing clean muscle memory. When you type at 70 WPM with 85% accuracy, every mistake costs you at least 3 to 4 keystrokes: noticing the error, pressing backspace, retyping the character, and recovering your visual flow.
+        heading: "A focused practice loop",
+        content: `1. **Set a baseline.** Take one test and record the duration, WPM, and accuracy.
+2. **Choose one obstacle.** If you hesitate on a row, use the matching [typing practice drill](/typing-practice). If errors repeat, use the [accuracy practice page](/typing-accuracy).
+3. **Slow down enough to type deliberately.** Aim for a smooth sequence rather than a personal-best sprint on every attempt.
+4. **Retest under similar conditions.** Compare the result with your own baseline. A single short test can vary, so look for a pattern across sessions rather than treating one result as a trend.
 
-Research consistently shows that typists who practice at a steady 98%+ accuracy rate naturally develop faster baseline speeds over time than those who rush and make frequent errors.`
+For example, if you pause before capital letters, practise a sentence with several capitals and use the opposite hand for Shift when that feels comfortable. Keep the drill focused on that movement instead of changing posture, speed, and keyboard at once.`
       },
       {
-        heading: "3. Read Ahead by Two to Three Words",
-        content: `Experienced typists do not read character by character. Instead, their eyes scan two to three words ahead of their fingers. While your fingers are finishing the current word, your subconscious brain is already queuing up the motor commands for the next sequence.
+        heading: "Build rhythm without ignoring mistakes",
+        content: `A steady pace is easier to review than alternating fast bursts and long pauses. When a mistake happens, notice its cause: wrong finger, unfamiliar key, missed space, or rushing ahead. Then repeat a short passage that includes that pattern.
 
-Try softening your gaze and looking slightly forward in the text stream during your practice sessions. You will notice a smoother, continuous typing cadence without awkward pauses between words.`
+Looking ahead in the text can help you prepare for the next word, but it is a skill to practise gradually. Start by reading the next word while finishing the current one; do not force a fixed number of words ahead.`
       },
       {
-        heading: "4. Maintain a Steady Typing Rhythm",
-        content: `Think of typing like playing a musical instrument or running with a steady cadence. Burst typing (typing easy words very fast and pausing abruptly at difficult words) creates physical tension and leads to frequent stumbling.
-
-Practice maintaining an even, rhythmic tempo. A steady pace of 60 keystrokes per minute will outperform erratic bursts every single time.`
-      },
-      {
-        heading: "5. Optimize Your Posture and Ergonomics",
-        content: `Your physical setup directly influences your typing stamina and nerve responsiveness:
-- **Elbow Angle**: Keep elbows at a 90-degree to 100-degree open angle.
-- **Wrist Position**: Keep wrists straight and slightly hovering—avoid resting the palms heavily on the desk while typing.
-- **Feet Flat**: Keep both feet flat on the ground to stabilize your core.
-- **Screen Distance**: Keep the monitor 20 to 28 inches from your eyes, level with your natural horizontal line of sight.`
-      },
-      {
-        heading: "6. Eliminate the 'Look-Down' Habit",
-        content: `Every time you glance down at your hands, your visual cortex disconnects from the text on screen, causing a micro-pause of 200 to 500 milliseconds. If you are unsure which finger reaches a key, pause, visualize the keyboard in your mind, and reach with the proper finger instead of looking down.`
-      },
-      {
-        heading: "7. Target Weak Letter Combinations and N-Grams",
-        content: `Certain letter pairings (such as 'th', 'he', 'in', 'er', 'ion') occur constantly in the English language. Other combinations (such as 'qu', 'pl', 'br', 'zx') feel awkward for certain fingers. Identify the specific letter transitions where you hesitate, and do dedicated repetition drills to smooth them out.`
-      },
-      {
-        heading: "8. Utilize Dedicated 1-Minute and 3-Minute Drills",
-        content: `Short, intense practice bursts (1 to 3 minutes) prevent mental fatigue and allow you to maintain maximum focus. A daily routine of five 1-minute sprints produces better neuroplastic adaptation than one exhausting 30-minute marathon session.`
-      },
-      {
-        heading: "9. Use Proper Mechanical or Responsive Keyboards",
-        content: `While you can touch type on any keyboard, keyboards with distinct tactile feedback (such as low-travel mechanical switches or well-designed scissor switches) help your fingertips register key actuations instantly without bottoming out heavily.`
-      },
-      {
-        heading: "10. Track Your Metrics Consistently",
-        content: `Review your WPM and Accuracy metrics after every session. Tracking your progress on Speedy Type helps you identify plateaus, celebrate speed milestones, and stay motivated on your path toward 80+ WPM.`
+        heading: "Make the setup comfortable",
+        content: `Keep the keyboard in front of you, shoulders relaxed, and wrists in a neutral line with your forearms. Adjust the chair or keyboard height if you have to bend your wrists to reach the keys. OSHA's [computer workstation keyboard guidance](https://www.osha.gov/etools/computer-workstations/components/keyboards/) describes these positioning considerations. Stop and reassess if typing causes persistent discomfort.`
       }
     ],
     faqs: [
       {
-        question: "How long does it take to increase typing speed from 40 to 80 WPM?",
-        answer: "With 15 to 20 minutes of daily deliberate practice using proper touch-typing technique, most learners progress from 40 WPM to 70-80 WPM within 6 to 12 weeks."
+        question: "How often should I retake a typing test?",
+        answer: "Retest after a few focused practice sessions or at a consistent weekly interval. Use the same duration and similar text conditions so you can compare results fairly."
       },
       {
-        question: "Is 60 WPM considered fast?",
-        answer: "Yes, 60 WPM is well above the global average of 40-45 WPM and is considered professional-level speed for most office, administrative, and technical careers."
+        question: "Should I focus on speed or accuracy first?",
+        answer: "If errors interrupt your rhythm, work on accurate keystrokes first. If your typing is already controlled, practise a small pace increase and check whether accuracy stays steady."
       }
-    ]
+    ],
+    relatedSlugs: ["wpm-vs-accuracy-what-matters-more", "daily-typing-exercises-for-beginners", "how-to-improve-typing-accuracy"]
   },
   {
     slug: "what-is-a-good-typing-speed",
-    title: "What Is a Good Typing Speed? (Averages by Age, Profession & Skill Level)",
-    description: "Discover what qualifies as a good typing speed in 2026. Explore detailed WPM benchmarks for students, professionals, programmers, and competitive typists.",
+    title: "What Is a Good Typing Speed? Set a Goal That Fits Your Work",
+    description: "A good typing speed depends on the task, test, and accuracy. Learn how to interpret a WPM result and choose a useful personal or job-related goal.",
     publishedAt: "2026-03-12",
-    updatedAt: "2026-03-18",
-    readTime: "6 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Benchmarks & Standards",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Whether you are applying for a job or assessing your everyday productivity, understanding what constitutes an average, good, and elite typing speed helps you set realistic goals.",
+    excerpt: "A WPM number is useful only in context. Compare like-for-like tests, consider accuracy, and check any job requirement with the employer.",
     sections: [
       {
-        heading: "Global Typing Speed Overview",
-        content: `Across hundreds of thousands of online typing tests, the global average typing speed is approximately **40 to 45 words per minute (WPM)** with an average accuracy of 92%. However, what qualifies as a 'good' typing speed depends significantly on your profession, age, and typing requirements.`
+        heading: "The short answer: a good speed depends on the task",
+        content: `There is no universal WPM cutoff that makes a typist “good.” A useful result depends on what you need to type, how long you need to sustain it, the test passage, and how errors are counted. For everyday use, compare your current score with your own earlier score under similar conditions before comparing it with an online tier chart.
+
+Take a [typing test](/typing-test) and note duration, WPM, and accuracy. The [WPM guide](/blog/wpm-explained) explains what this site's score represents.`
       },
       {
-        heading: "Typing Speed Tier Breakdown",
-        content: `Here is how typing speeds are categorized in academic and workplace settings:
-- **Beginner (10 – 25 WPM)**: Hunt-and-peck typists who look at the keyboard constantly and use 2 to 4 fingers.
-- **Average (30 – 45 WPM)**: Casual typists who can handle everyday emails, basic schoolwork, and web browsing comfortably.
-- **Good / Professional (50 – 70 WPM)**: Proficient touch typists who use all 10 fingers. Meets the hiring standards for administrative, customer support, and content writing roles.
-- **High Performance (70 – 90 WPM)**: Fast typists who rarely look at their hands and maintain 96%+ accuracy. Ideal for programmers, executive assistants, and journalists.
-- **Elite / Competitive (90 – 120+ WPM)**: Top 1% of typists globally, capable of real-time transcription, court reporting, and speed-typing championships.`
+        heading: "How to interpret a WPM result",
+        content: `Use three questions:
+- **Was the test comparable?** A short familiar passage and a longer passage with numbers or punctuation are different tasks.
+- **Did accuracy hold up?** A faster result with more mistakes may not reflect usable text output.
+- **Does the number match your purpose?** A data-entry test, a school assignment, and composing prose place different demands on a typist.
+
+If a job listing specifies a minimum speed, treat that as the employer's requirement and ask how its test handles accuracy, duration, and corrections. This page does not claim that a particular WPM tier qualifies someone for a profession.`
       },
       {
-        heading: "Typing Speeds by Profession",
-        content: `Different career paths have distinct typing performance expectations:
-1. **Medical Transcriptionists & Court Reporters**: 80 – 100+ WPM with near 99% accuracy requirement.
-2. **Software Engineers & Coders**: 50 – 75 WPM. While coding involves extensive thought and syntax symbols, fast typing reduces friction when editing files and writing documentation.
-3. **Data Entry Specialists**: 60 – 80 WPM with high numerical keypad proficiency.
-4. **Customer Service & Live Chat Representatives**: 45 – 60 WPM to handle multi-customer chats concurrently.
-5. **Writers, Journalists, and Editors**: 60 – 80 WPM for seamless stream-of-consciousness drafting.`
-      },
-      {
-        heading: "Why Accuracy Multiplies Your Effective Speed",
-        content: `A typist clocking 75 WPM with 88% accuracy frequently produces less finished work per hour than a steady typist at 60 WPM with 99% accuracy. Fixing backspaced characters, correcting misspelled words in email drafts, and repairing broken code syntax destroys workflow momentum. Always evaluate your WPM alongside your accuracy percentage.`
+        heading: "Choose a goal you can measure",
+        content: `Set a goal around a repeatable test rather than an unsupported population average. For example: “On the same three-minute test, improve my WPM while keeping accuracy at or above my current result.” If accuracy drops, reduce the pace and practise the keys that caused the errors using [typing practice](/typing-practice).
+
+Keep a small log with date, duration, WPM, accuracy, and any unusual test conditions. A few comparable sessions give more context than a single score.`
       }
     ],
     faqs: [
       {
         question: "Is 50 WPM fast enough for a job?",
-        answer: "Yes, 50 WPM meets or exceeds the minimum requirements for over 85% of office, administrative, and corporate positions."
+        answer: "It depends on the role and the employer's test. Check the stated requirement and whether the test includes a minimum accuracy level or a specific duration."
       },
       {
-        question: "What is the highest typing speed ever recorded?",
-        answer: "The highest recorded peak typing speed on an English QWERTY keyboard in a verified short test exceeds 210 WPM, with sustained typing records around 150-170 WPM."
+        question: "Can I compare scores from different typing sites?",
+        answer: "Only cautiously. Sites may use different passages, test lengths, correction rules, and score formulas. Compare results from the same test when tracking personal progress."
       }
-    ]
+    ],
+    relatedSlugs: ["average-typing-speed-by-age", "wpm-explained", "wpm-vs-accuracy-what-matters-more"]
   },
   {
     slug: "wpm-explained",
-    title: "WPM Explained: What Words Per Minute Really Means & How It Is Calculated",
-    description: "Understand the exact mathematical formulas behind Words Per Minute (WPM), Gross WPM, Net WPM, and CPM (Characters Per Minute).",
+    title: "How WPM Is Calculated in a Typing Test",
+    description: "See the five-character WPM calculation used by Speedy Type, how accuracy differs from speed, and what Backspace corrections mean for your result.",
     publishedAt: "2026-03-10",
-    updatedAt: "2026-03-16",
-    readTime: "5 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Typing Fundamentals",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Ever wondered how typing tests measure a 'word' when English words range from 1 letter to over 15 letters? Here is the exact science behind WPM calculation.",
+    excerpt: "Speedy Type estimates WPM from correct characters still advanced in the passage, divided by five and by elapsed minutes. Accuracy is a separate measure.",
     sections: [
       {
-        heading: "The Standard 5-Character Rule",
-        content: `In standardized typing measurement, a **word** is defined as exactly **5 keystrokes** (including letters, numbers, punctuation marks, and spaces).
+        heading: "The WPM formula used on Speedy Type",
+        content: `This site uses a five-character unit as one test “word”:
 
-If a typing test used raw dictionary words, typing the sentence 'I saw a cat run in a fog' (8 short words, 23 characters) would unfairly register a much higher score than 'Phenomenological electroencephalography investigates neurobiological complexities' (4 long words, 82 characters).
+**WPM = correct characters advanced ÷ 5 ÷ elapsed minutes**
 
-By standardizing 1 word = 5 characters, typing metrics remain consistent and comparable regardless of the specific passage being typed.`
+The count includes characters such as spaces and punctuation when they are part of the target text. For example, if 250 target characters are correctly advanced in one minute, the result is (250 ÷ 5) ÷ 1 = **50 WPM**.
+
+The timer starts when you press a printable key or select Ready to Start. Correct progress is counted as you advance through the passage. Backspace can undo the most recent correct character's progress; time spent correcting still elapses.`
       },
       {
-        heading: "Gross WPM vs. Net WPM Formulas",
-        content: `There are two key formulas used in typing evaluations:
+        heading: "WPM and accuracy answer different questions",
+        content: `WPM estimates the pace of correct text progress. Accuracy on this site is **correct printable keystrokes ÷ all printable keystrokes × 100**. A wrong key counts once as an attempt. Backspace is not a printable attempt, and a corrected mistake remains part of the attempt history.
 
-**1. Gross WPM (Raw Speed):**
-\`\`\`
-Gross WPM = (Total Keystrokes Typed / 5) / Time in Minutes
-\`\`\`
-*Example*: If you type 300 characters in 1 minute, your Gross WPM is \`300 / 5 / 1 = 60 WPM\`.
-
-**2. Net WPM (Accuracy-Adjusted Speed):**
-\`\`\`
-Net WPM = Gross WPM - (Uncorrected Errors / Time in Minutes)
-\`\`\`
-*Example*: If you typed 60 Gross WPM in 1 minute but left 4 uncorrected errors, your Net WPM is \`60 - 4 = 56 WPM\`.`
+For example, if 98 printable keystrokes matched and 2 did not, accuracy is 98 ÷ 100 = **98%**. The speed and accuracy figures should be read together; see [WPM versus accuracy](/blog/wpm-vs-accuracy-what-matters-more).`
       },
       {
-        heading: "CPM vs. WPM: What is the Difference?",
-        content: `CPM stands for **Characters Per Minute** (or Keystrokes Per Minute). It simply measures the raw number of keys pressed per minute without dividing by 5.
-- To convert **CPM to WPM**: Divide CPM by 5 (e.g., 300 CPM = 60 WPM).
-- To convert **WPM to CPM**: Multiply WPM by 5 (e.g., 70 WPM = 350 CPM).`
-      },
-      {
-        heading: "How Speedy Type Computes Your Score",
-        content: `On Speedy Type, we measure your real-time keypresses, track correct characters against target sentences, and calculate:
-- **WPM**: \`(Total Correct Keystrokes / 5) / Elapsed Time\`
-- **Accuracy**: \`(Total Correct Keystrokes / Total Attempted Keystrokes) * 100%\`
-- **Composite Score**: A weighted points metric combining speed, accuracy percentage, and completed sentence streaks.`
+        heading: "What the score does not tell you",
+        content: `A WPM score is not a direct measure of writing quality, reading speed, or performance on every keyboard. Text difficulty, duration, layout, and familiarity can affect a test. For a fair personal comparison, use a similar duration and test mode each time.
+
+Speedy Type also shows a points score. It combines WPM, accuracy, completed lines, and correct progress; it is a site-specific game score, not another WPM measure. Try a [timed typing test](/typing-test) to see the metrics together.`
       }
     ],
     faqs: [
       {
-        question: "Do spaces count as keystrokes in WPM calculations?",
-        answer: "Yes, every spacebar tap counts as one valid keystroke in standard 5-character WPM formulas."
+        question: "Do spaces count in Speedy Type's WPM?",
+        answer: "Yes. A space is a target character and contributes to correct progress when typed correctly."
       },
       {
-        question: "Why did my WPM drop when I made a mistake?",
-        answer: "Mistakes lower your correct character count while the timer continues to advance, temporarily reducing your calculated average speed."
+        question: "Does Backspace erase an earlier typing attempt?",
+        answer: "No. Backspace is not counted as a printable attempt. The accuracy metric retains the earlier key attempt, while WPM progress can decrease if Backspace removes a correctly advanced character."
       }
-    ]
+    ],
+    relatedSlugs: ["wpm-vs-accuracy-what-matters-more", "what-is-a-good-typing-speed", "how-to-increase-typing-speed"]
   },
   {
     slug: "how-to-improve-typing-accuracy",
-    title: "How to Improve Typing Accuracy: Why Precision Beats Pure Speed",
-    description: "Discover proven strategies to eliminate typing mistakes, reduce backspace usage, and achieve consistent 98%+ typing accuracy.",
+    title: "How to Improve Typing Accuracy with Focused Practice",
+    description: "Find recurring typing errors, practise one key pattern at a time, and use Speedy Type's accuracy result without relying on unsupported performance claims.",
     publishedAt: "2026-03-08",
-    updatedAt: "2026-03-14",
-    readTime: "6 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Accuracy Drills",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Typing fast is useless if you have to spend half your time fixing typos. Learn why training for 100% accuracy is the secret shortcut to effortless typing speed.",
+    excerpt: "To improve accuracy, identify the errors that repeat, slow down enough to make deliberate keystrokes, and practise the relevant keys before retesting.",
     sections: [
       {
-        heading: "The Hidden Cost of the Backspace Key",
-        content: `Every single typo requires a minimum sequence of corrective actions:
-1. Your brain perceives the visual or auditory error signal (150ms).
-2. Your finger shifts from the home row to reach the Backspace key (200ms).
-3. You press Backspace once or multiple times (100ms per press).
-4. Your hand repositions back to the home row (150ms).
-5. You retype the intended character (100ms).
+        heading: "Start by finding the error pattern",
+        content: `Take a short [typing test](/typing-test) and notice what goes wrong. Do you miss the same letters, press a neighboring key, omit spaces, or lose accuracy when capitals and punctuation appear? A test score alone does not explain the cause, so use the passage and your own observation together.
 
-A single mistake costs nearly 1 second of productive typing time. If you make 6 mistakes in a 1-minute test, you lose 6 full seconds—enough to drag an 80 WPM typist down below 65 WPM.`
+On Speedy Type, accuracy is based on correct printable keystrokes divided by all printable keystrokes. Backspace does not remove a previous attempt from that measure. For the full definition, see [how WPM and accuracy are calculated](/blog/wpm-explained).`
       },
       {
-        heading: "1. The 'Slow Down to Speed Up' Protocol",
-        content: `To rewire faulty muscle memory, temporarily drop your typing speed by 20% to 30%. If your top speed is 60 WPM, deliberately practice at 40 to 45 WPM with the absolute goal of achieving **100% accuracy**. Once your hands form flawless motor patterns at a calm pace, gradually increase your tempo without allowing your accuracy to slip below 97%.`
+        heading: "Practise one cause at a time",
+        content: `Choose a focused drill rather than repeating the whole test immediately:
+- If you are unsure where a key sits, work on its row in [typing practice](/typing-practice).
+- If a letter pair causes hesitation, type a short set such as **th, he, in** slowly, then place those pairs in words you actually use.
+- If errors happen around capitals, practise a few names or sentence openings and coordinate Shift with the opposite hand.
+- If punctuation is the problem, use a short sentence that includes one comma or period at a time.
+
+Pause when your hands feel tense. The aim of the drill is controlled movement, not a high score.`
       },
       {
-        heading: "2. Focus on Finger Independence",
-        content: `Most typing inaccuracies originate in the weaker fingers: the ring finger and pinky finger. Practice targeted drills that emphasize letters like **Q, Z, P, X, and C**, ensuring each finger moves independently without pulling neighboring fingers off their resting positions.`
-      },
-      {
-        heading: "3. Listen to Audio Feedback",
-        content: `Speedy Type includes interactive sound synthesizer voices (such as Mechanical Click, Soft Cloud, Arcade Pop, and Tiny Piano). Audible feedback enables your brain to register mistakes instantly before you type additional erroneous characters.`
-      },
-      {
-        heading: "4. Release Muscle Tension in Hands and Shoulders",
-        content: `When striving for high accuracy, many typists tense their forearms and clench their jaw. Physical tension stiffens tendons and slows motor reflexes. Before starting a typing session, shake out your hands, relax your shoulders, and breathe deeply.`
+        heading: "Retest and compare like with like",
+        content: `After practice, retake the same duration and mode. Look at WPM and accuracy together. If accuracy improves while WPM changes, that can still be useful progress; the immediate goal is to make the movement repeatable before adding pace.
+
+For desk setup, keep wrists in a neutral position and shoulders relaxed. OSHA explains keyboard placement and posture in its [computer workstation guidance](https://www.osha.gov/etools/computer-workstations/components/keyboards/). This is general workstation information, not medical advice.`
       }
     ],
     faqs: [
       {
-        question: "What is a good typing accuracy percentage?",
-        answer: "A good typing accuracy rate is 95% or higher. Professional typists and transcriptionists typically maintain 98% to 99.5% accuracy."
+        question: "Should I correct every mistake during practice?",
+        answer: "Use the correction behavior of the test you are taking. On Speedy Type, Backspace clears the current error or moves back one correct character. Remember that an earlier wrong printable key remains in the accuracy attempt count."
       },
       {
-        question: "Should I look at the screen or keyboard when fixing typos?",
-        answer: "Always keep your eyes on the screen. Looking down at the keyboard slows down your visual feedback loop and delays typo correction."
+        question: "What should I practise first: speed or accuracy?",
+        answer: "Practise the skill that is disrupting your current run. If errors are frequent, slow down and target their cause. If your keystrokes are controlled, try a modest pace increase and monitor accuracy."
       }
-    ]
+    ],
+    relatedSlugs: ["wpm-vs-accuracy-what-matters-more", "common-typing-mistakes-to-avoid", "daily-typing-exercises-for-beginners"]
   },
   {
     slug: "touch-typing-for-beginners",
-    title: "Touch Typing for Beginners: A Step-by-Step Practical Guide",
-    description: "Start touch typing from scratch. Learn proper finger placement, home row rules, and how to type without looking at your keyboard.",
+    title: "Touch Typing for Beginners: A Step-by-Step First Practice",
+    description: "Learn a practical touch-typing starting position, how to use the home row, and a short sequence for practising without looking down.",
     publishedAt: "2026-03-05",
-    updatedAt: "2026-03-12",
-    readTime: "8 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Beginner Guides",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Touch typing is the ability to type using all 10 fingers without ever looking down at the keyboard keys. Here is the complete beginner roadmap to master it.",
+    excerpt: "Begin with the home row, use the F and J bumps to reorient your hands, and practise short passages slowly before adding more keys.",
     sections: [
       {
-        heading: "What is Touch Typing and Why Does It Matter?",
-        content: `Touch typing relies on motor memory rather than visual search. When you master touch typing, your fingers navigate the keyboard instinctively, allowing your conscious mind to focus entirely on ideas, creativity, and coding syntax rather than hunting for individual letters.`
+        heading: "What touch typing means",
+        content: `Touch typing means entering text while relying on a consistent finger map instead of visually searching for each key. It does not require using exactly the same technique as every other typist. The practical aim for a beginner is to find keys reliably while keeping attention on the text.`
       },
       {
-        heading: "Step 1: Locate the Home Row Tactile Bumps",
-        content: `Place your index fingers on the **F** key (left hand) and **J** key (right hand). Feel the small raised bumps on both keys. These tactile indicators let you re-center your hands in pitch darkness without ever glancing at the keyboard.`
+        heading: "Step 1: Find the home row",
+        content: `Rest the left fingers around A, S, D, and F and the right fingers around J, K, L, and semicolon. The F and J keys commonly have small raised markers that help you reorient by touch. Place your thumbs near the space bar.
+
+Try this: close your eyes briefly, find the two raised markers, then place the remaining fingers beside the index fingers. Open your eyes and check your position. Repeat until you can return to the same place comfortably.`
       },
       {
-        heading: "Step 2: Assign Every Finger to Its Key Zone",
-        content: `Each finger is responsible for a specific vertical column of keys:
-- **Left Pinky**: \`Q, A, Z\`, Left Shift, Tab, Caps Lock
-- **Left Ring**: \`W, S, X\`
-- **Left Middle**: \`E, D, C\`
-- **Left Index**: \`R, T, F, G, V, B\`
-- **Right Index**: \`Y, U, H, J, N, M\`
-- **Right Middle**: \`I, K, ,\` (comma)
-- **Right Ring**: \`O, L, .\` (period)
-- **Right Pinky**: \`P, ;, /\`, Right Shift, Enter, Backspace
-- **Thumbs**: Spacebar (use whichever thumb feels most natural)`
+        heading: "Step 2: Add one row at a time",
+        content: `Practise a few home-row combinations first, such as **asdf jkl;**, then use a [home-row drill](/typing-practice). Once the movement feels familiar, add nearby top-row and bottom-row keys. The practice page has separate row sequences; select a drill and type the text shown on its card.
+
+Do not rush to cover every key in one sitting. Short practice with a clear target makes it easier to notice which finger or reach needs attention.`
       },
       {
-        heading: "Step 3: The Golden Rule — Never Look at the Keys",
-        content: `During your first few days of practice, you will type much slower than your old hunt-and-peck method. This is completely normal! Resist the urge to look down. When you feel lost, slide your index fingers until you feel the F and J bumps, then re-anchor your hands.`
-      },
-      {
-        heading: "Step 4: Practice Home Row Words First",
-        content: `Begin by practicing words formed exclusively from home row keys: \`ask, dad, fall, glad, half, salad, flash\`. Once the home row is effortless, expand upward to the top row (QWERTY) and downward to the bottom row (ZXCVB).`
+        heading: "Step 3: Keep your eyes on the passage when ready",
+        content: `It is normal to look down while learning. Try a few characters without looking, then pause and re-find the F and J markers if you lose your place. Increase the length only when that feels manageable. Your speed may vary while you are learning a new movement; use accuracy and comfort as useful checks rather than expecting a fixed timeline.`
       }
     ],
     faqs: [
       {
-        question: "How long does it take for a beginner to learn touch typing?",
-        answer: "Most beginners learn the complete keyboard layout within 10 to 14 days of practicing 15 minutes per day, reaching 40-50 WPM within 4 to 6 weeks."
+        question: "How long does it take to learn touch typing?",
+        answer: "There is no reliable timeline that applies to every learner. Prior keyboard use, practice frequency, test text, and comfort all affect progress. Track your own results under similar conditions."
       },
       {
-        question: "Is it harder to learn touch typing if I have been hunt-and-pecking for years?",
-        answer: "It requires breaking old habits during the first week, but once the correct home row muscle memory forms, experienced computer users adapt very quickly."
+        question: "Do I need a special keyboard?",
+        answer: "No special keyboard is required for these exercises. Use a keyboard that is comfortable and lets you reach the keys without awkward wrist positions."
       }
-    ]
+    ],
+    relatedSlugs: ["qwerty-keyboard-guide", "daily-typing-exercises-for-beginners", "touch-typing-vs-hunt-and-peck"]
   },
   {
     slug: "type-faster-without-looking",
-    title: "How to Type Faster Without Looking at the Keyboard (Muscle Memory Guide)",
-    description: "Train your brain and fingers to type blind with complete confidence. Master spatial keyboard awareness and eliminate sight-typing.",
+    title: "How to Practise Typing Without Looking at the Keyboard",
+    description: "Reduce keyboard glances gradually with home-row resets, short targeted drills, and a pace that lets you learn key locations accurately.",
     publishedAt: "2026-03-01",
-    updatedAt: "2026-03-08",
-    readTime: "6 min read",
+    updatedAt: "2026-10-18",
+    readTime: "3 min read",
     category: "Muscle Memory",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Looking at your keyboard while typing caps your speed at 35 to 45 WPM. Discover the neurobiology of finger muscle memory and how to break the visual habit for good.",
+    excerpt: "There is no fixed speed ceiling for typists who look down. If you want to reduce glances, practise short passages and use the home-row markers to reset.",
     sections: [
       {
-        heading: "Why Looking Down Creates a Hard Speed Ceiling",
-        content: `When you look at the keyboard:
-1. Your neck tilts downward, causing spinal strain over time.
-2. Your eyes constantly refocus between screen distance (24 inches) and keyboard distance (14 inches), causing ocular fatigue.
-3. You cannot detect spelling mistakes until seconds later when you look back up at the screen.
+        heading: "Looking down does not set a universal speed limit",
+        content: `Typing speed varies with the person, task, keyboard, and practice history. Looking down may interrupt your view of the text, but there is no fixed WPM ceiling that applies to everyone. Practise without looking only if it supports your goal and remains comfortable.`
+      },
+      {
+        heading: "A gradual way to practise",
+        content: `1. Place your index fingers on the F and J markers and settle the other fingers on the home row.
+2. Type a short home-row sequence from [typing practice](/typing-practice) at a calm pace.
+3. Keep your gaze on the passage for a few words. If you lose your place, stop and reset your hands by touch.
+4. Repeat with a top-row or bottom-row drill when the home row feels familiar.
+5. Retake a timed test only after the movements feel more controlled.
 
-Blind typing removes these bottlenecks, allowing your fingers to move at the speed of thought.`
+If you are learning, looking down to check a new key is not failure. Reduce glances progressively rather than covering your hands or typing in low light if that makes practice uncomfortable.`
       },
       {
-        heading: "Technique 1: The Blanket or Cover Trick",
-        content: `If you struggle with the reflexive urge to glance down, place a lightweight towel, sheet of paper, or keyboard cover over your hands for 10 minutes of daily practice. When glancing down yields no visual information, your brain is forced to rely on tactile feedback and spatial memory.`
-      },
-      {
-        heading: "Technique 2: Mental Keyboard Mapping",
-        content: `Close your eyes and visualize the physical keyboard layout. Trace the path from \`F\` to \`R\`, from \`J\` to \`U\`, from \`D\` to \`C\`. Mentally rehearsing finger movements activates the exact same motor cortex pathways used during physical typing.`
-      },
-      {
-        heading: "Technique 3: Practice in Low-Light Conditions",
-        content: `Practicing in a dimly lit room where the key legends are barely visible trains your tactile sense to take complete control. Trust the physical distance and trajectory of your finger joints.`
+        heading: "Notice what is actually slowing you down",
+        content: `During a test, note whether pauses come from searching for keys, reading ahead, unfamiliar punctuation, or correcting mistakes. Each cause calls for a different drill. The [beginner touch-typing guide](/blog/touch-typing-for-beginners) covers the finger map; [accuracy practice](/typing-accuracy) helps when repeated errors are the main obstacle.`
       }
     ],
     faqs: [
       {
-        question: "Why do my fingers keep hitting adjacent keys?",
-        answer: "This is usually caused by wrists resting too low on the desk, restricting finger arch. Hover your wrists slightly so your fingers strike downward at a 90-degree curve."
+        question: "Will I type more slowly when I stop looking down?",
+        answer: "You may feel slower while learning unfamiliar finger movements. Keep sessions short and compare progress over time instead of judging the technique from one run."
       },
       {
-        question: "How do I find my place if I lose finger position?",
-        answer: "Slide both index fingers inward until you feel the raised tactile bumps on F and J. Re-center without looking."
+        question: "What if I forget where my hands are?",
+        answer: "Pause and use the raised markers on F and J to return your index fingers to the home row. Then continue at a pace where you can follow the passage."
       }
-    ]
+    ],
+    relatedSlugs: ["touch-typing-for-beginners", "qwerty-keyboard-guide", "how-to-increase-typing-speed"]
   },
   {
     slug: "daily-typing-exercises-for-beginners",
-    title: "15-Minute Daily Typing Practice Routine for Maximum Improvement",
-    description: "A structured, science-backed 15-minute daily typing routine designed to rapidly improve speed, accuracy, and keyboard stamina.",
+    title: "A 15-Minute Typing Practice Routine for Beginners",
+    description: "Follow a flexible 15-minute routine with a key-row drill, a timed test, and a short review. Adjust the steps to your pace and accuracy.",
     publishedAt: "2026-02-25",
-    updatedAt: "2026-03-04",
-    readTime: "5 min read",
+    updatedAt: "2026-10-18",
+    readTime: "3 min read",
     category: "Practice Routines",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Consistency beats marathon sessions. Just 15 minutes of structured daily practice will transform your typing speed faster than hours of haphazard typing.",
+    excerpt: "Use a short routine to practise one keyboard area, apply it in a timed run, and review the errors that deserve attention next time.",
     sections: [
       {
-        heading: "The 15-Minute Daily Training Blueprint",
-        content: `Divide your daily practice into four targeted blocks:
+        heading: "A flexible 15-minute routine",
+        content: `This is a suggested structure, not a scientifically established ideal duration. Shorten or split it if your hands feel tired.
 
-**Minutes 0 – 3: Finger Warm-Up (Calm Mode)**
-- Start with a 1-minute easy test on Speedy Type.
-- Focus exclusively on smooth finger articulation and relaxed posture. Do not rush.
-
-**Minutes 3 – 7: Precision & Accuracy Focus (100% Target)**
-- Run two 2-minute medium difficulty tests.
-- Set a strict rule: maintain 98%+ accuracy. If you make more than 2 errors, slow down immediately.
-
-**Minutes 7 – 12: Speed Sprints (Boost Mode)**
-- Take three 1-minute sprint tests at maximum comfortable cadence.
-- Push your visual scanning 2 to 3 words ahead to build rapid reading reflexes.
-
-**Minutes 12 – 15: Gamified Review & Challenge**
-- Play a round of 'Princess Letter Rescue 3D' or 'Dinosaur Dash' on Speedy Type.
-- Gamified drills test your typing reflexes under real-time simulated pressure.`
+1. **Minutes 0–2: Settle in.** Find the home row and type a few familiar words without chasing speed.
+2. **Minutes 2–7: Target a row.** Choose one [typing practice drill](/typing-practice). Type the displayed sequence and focus on the keys that feel uncertain.
+3. **Minutes 7–12: Use a timed test.** Choose a duration that fits the time available. Aim for controlled typing, not a personal best.
+4. **Minutes 12–15: Review.** Note your WPM, accuracy, and one pattern to revisit. If you still feel comfortable, repeat the short drill rather than adding more speed attempts.`
       },
       {
-        heading: "Why 15 Minutes is the Sweet Spot",
-        content: `Neuroscientific studies on motor skill acquisition demonstrate that the human brain experiences diminishing returns after 20 minutes of repetitive fine-motor training. Short daily sessions optimize synaptic consolidation during sleep, ensuring skills stick permanently.`
+        heading: "Make the routine fit your current skill",
+        content: `A beginner who is learning key locations may spend the whole session on one row. Someone comfortable with the keyboard may spend more time on punctuation or sustained typing. You do not need to complete every step daily; consistency in a manageable routine matters more than following a rigid schedule.`
+      },
+      {
+        heading: "Keep a simple practice log",
+        content: `Record the date, drill, test duration, WPM, and accuracy. Add a short note such as “missed semicolon” or “lost rhythm after capitals.” After several sessions, use repeated notes to choose the next drill. Scores in Speedy Type are stored in your browser; clearing site data removes that history.`
       }
     ],
     faqs: [
       {
-        question: "Should I practice every day or every other day?",
-        answer: "Daily practice of 10 to 15 minutes produces significantly faster results than practicing for an hour once or twice a week."
-      },
-      {
-        question: "When is the best time of day to practice typing?",
-        answer: "Morning or early afternoon when mental focus is sharpest yields the best accuracy and muscle memory reinforcement."
+        question: "Do I need to practise every day?",
+        answer: "Choose a schedule you can maintain. If daily practice is not practical, use shorter sessions when available and return to the same skill rather than trying to make up time with one long session."
       }
-    ]
+    ],
+    relatedSlugs: ["touch-typing-for-beginners", "how-to-increase-typing-speed", "common-typing-mistakes-to-avoid"]
   },
   {
     slug: "qwerty-keyboard-guide",
-    title: "QWERTY Keyboard Layout Guide: Home Row, Finger Placement & Ergonomics",
-    description: "Everything you need to know about the QWERTY keyboard layout, history, finger mapping zones, and ergonomic best practices.",
+    title: "QWERTY Keyboard Guide: Rows, Finger Zones, and a Practice Exercise",
+    description: "Learn the QWERTY key rows, a common finger-zone map, and practical exercises for reaching keys while returning to the home row.",
     publishedAt: "2026-02-20",
-    updatedAt: "2026-02-28",
-    readTime: "7 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Keyboard Architecture",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Designed in the 1870s for mechanical typewriters, QWERTY remains the global standard for digital input. Learn how to navigate its architecture with maximum efficiency.",
+    excerpt: "Use the home row as a reference, learn the key zones gradually, and practise a row before combining it with the rest of the keyboard.",
     sections: [
       {
-        heading: "The Origin and Logic of the QWERTY Layout",
-        content: `Invented by Christopher Latham Sholes in 1873, the QWERTY layout separated frequently paired English letters (such as 's' and 't', 't' and 'h') to prevent mechanical typebar jams. While alternate layouts like Dvorak and Colemak exist, QWERTY remains the universal standard on virtually all computers, laptops, and mobile devices worldwide.`
+        heading: "The main QWERTY rows",
+        content: `On a common English QWERTY layout, the letter rows are:
+- **Top row:** Q W E R T Y U I O P
+- **Home row:** A S D F G H J K L ;
+- **Bottom row:** Z X C V B N M , . /
+
+Number and symbol keys sit above the letter rows. Keyboard layouts vary by language and device, so punctuation and symbol positions may differ.`
       },
       {
-        heading: "Keyboard Row Hierarchy",
-        content: `A standard QWERTY keyboard is arranged in five primary horizontal rows:
-1. **Number & Symbol Row** (\`1 2 3 4 5 6 7 8 9 0 - =\`): Requires upward reaches; use home row fingers extended upward.
-2. **Top / Upper Row** (\`Q W E R T Y U I O P\`): Houses common vowels (E, U, I, O) and frequent consonants (T, R).
-3. **Home Row** (\`A S D F G H J K L ;\`): The primary resting place and baseline for all touch typing.
-4. **Bottom Row** (\`Z X C V B N M , . /\`): Requires downward curling finger motion.
-5. **Space & Modifier Row** (Ctrl, Alt, Space, Command): Handled by thumbs and pinkies.`
+        heading: "A common finger-zone map",
+        content: `A typical touch-typing map assigns each finger a vertical zone: the left little finger reaches Q/A/Z, ring finger W/S/X, middle finger E/D/C, and index finger R/T/F/G/V/B. The right index finger covers Y/U/H/J/N/M, followed by the middle finger I/K/comma, ring finger O/L/period, and little finger P/semicolon/slash. Thumbs operate the space bar.
+
+This is a starting map, not a rule that fits every hand or keyboard. Use a movement that feels comfortable and does not force your wrist sideways. The [beginner guide](/blog/touch-typing-for-beginners) explains how to find the home row.`
       },
       {
-        heading: "Key Ergonomic Habits to Protect Your Hands",
-        content: `Repetitive typing without proper ergonomics can lead to wrist fatigue or carpal tunnel strain:
-- Avoid excessive wrist extension (bending wrists upward).
-- Keep keyboards at elbow height or slightly below.
-- Take 60-second micro-breaks every 30 minutes of continuous typing.`
+        heading: "Exercise: reach and return",
+        content: `1. Place your fingers on the home row.
+2. Choose one top-row key, type it, and return your finger to its home-row position.
+3. Repeat with one bottom-row key.
+4. Type a short word that combines the practiced rows.
+
+Try the row-specific sequences in [typing practice](/typing-practice). Work on one reach at a time before combining several unfamiliar keys.`
+      },
+      {
+        heading: "Set up the keyboard comfortably",
+        content: `Place the keyboard directly in front of you. Keep your shoulders relaxed, elbows near your body, and wrists in line with your forearms. Adjust chair or keyboard height if your wrists bend sharply to reach the keys. OSHA's [keyboard workstation guidance](https://www.osha.gov/etools/computer-workstations/components/keyboards/) discusses positioning and neutral wrist posture.`
       }
     ],
     faqs: [
       {
-        question: "Should I switch to Dvorak or Colemak?",
-        answer: "For 99% of people, mastering QWERTY touch typing is more practical because QWERTY is universally standard on public, workplace, and shared computers."
+        question: "Do all QWERTY keyboards have the same punctuation positions?",
+        answer: "No. Physical keyboards and language layouts can place punctuation and symbols differently. Practise on the layout you use most often."
       },
       {
-        question: "Why do keyboards have bumps on F and J?",
-        answer: "They provide tactile reference points allowing typists to orient their hands on the home row without looking down."
+        question: "Should I switch to another keyboard layout?",
+        answer: "That depends on your needs and the computers you use. If you share devices or use workplace computers, consider the cost of switching layouts before changing."
       }
-    ]
+    ],
+    relatedSlugs: ["touch-typing-for-beginners", "touch-typing-vs-hunt-and-peck", "type-faster-without-looking"]
   },
   {
     slug: "how-long-to-learn-touch-typing",
-    title: "How Long Does It Take to Learn Touch Typing? Realistic Timelines & Milestones",
-    description: "Realistic timelines, practice hours, and milestone benchmarks for mastering touch typing from complete beginner to 80+ WPM.",
+    title: "How Long Does It Take to Learn Touch Typing?",
+    description: "There is no fixed touch-typing timeline. Use practical milestones for key location, accuracy, and sustained practice to track your own progress.",
     publishedAt: "2026-02-15",
-    updatedAt: "2026-02-22",
-    readTime: "5 min read",
+    updatedAt: "2026-10-18",
+    readTime: "3 min read",
     category: "Learning Roadmaps",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Want to know exactly how many days and practice hours it takes to learn touch typing? Here is the realistic, milestone-by-milestone breakdown.",
+    excerpt: "Learning time varies with prior habits, practice, and the task. Track milestones instead of relying on a promised number of days or WPM.",
     sections: [
       {
-        heading: "The 4 Phases of Touch Typing Mastery",
-        content: `Learning touch typing follows a predictable neurological progression:
+        heading: "The short answer: timelines vary",
+        content: `There is no dependable number of days or practice hours that predicts when every learner will type by touch. Progress depends on starting habits, practice opportunities, keyboard familiarity, the text being typed, and what “learned” means to you.
 
-**Phase 1: Keyboard Mapping (Days 1 – 7 | ~2 hours total)**
-- Memorizing which finger strikes which key.
-- Typing speed: 10 – 20 WPM. Feels slow and awkward, but establishes neural pathways.
-
-**Phase 2: Muscle Memory Formation (Days 8 – 21 | ~5 hours total)**
-- Finger transitions become automatic for common words.
-- Typing speed: 25 – 40 WPM. You no longer need to consciously think about key positions.
-
-**Phase 3: Fluency & Rhythm (Weeks 4 – 8 | ~12 hours total)**
-- Full touch typing with 96%+ accuracy.
-- Typing speed: 45 – 65 WPM. Matches or exceeds your old hunt-and-peck speed.
-
-**Phase 4: Speed Mastery (Months 2 – 4 | ~25 hours total)**
-- Advanced visual chunking, effortless stream-of-consciousness typing.
-- Typing speed: 70 – 90+ WPM.`
+Instead of promising a date or WPM target, use milestones you can observe.`
       },
       {
-        heading: "Factors That Accelerate Your Progress",
-        content: `Your learning speed depends on:
-1. **Consistency**: 15 minutes every single day is 3x more effective than one 2-hour session on Sunday.
-2. **Strict Accuracy Discipline**: Never letting your accuracy dip below 95%.
-3. **No Cheating**: Absolutely refusing to look down at your fingers.`
+        heading: "Milestones that show progress",
+        content: `- **Finding keys:** Can you return to the home row and locate the next key without searching for every letter?
+- **Controlled passages:** Can you type a short familiar passage with fewer pauses and corrections?
+- **More of the layout:** Can you use top-row, bottom-row, capitals, and punctuation while maintaining a comfortable hand position?
+- **Sustained typing:** Does your result remain reasonably consistent on a longer test than a quick sprint?
+
+Use the same test length and similar difficulty when comparing WPM and accuracy. The [beginner guide](/blog/touch-typing-for-beginners) and [practice drills](/typing-practice) provide starting exercises.`
+      },
+      {
+        heading: "Make practice sustainable",
+        content: `Choose a short session you can repeat. If you feel strained or start rushing, pause or switch to a simpler drill. Record what you practised and what caused errors; those notes help you decide what to work on next.
+
+For children and teens, age alone does not determine a useful target. Classroom instruction, prior keyboard use, language, test passage, and test method matter. See [typing speed by age](/blog/average-typing-speed-by-age) for why this page avoids a universal age chart.`
       }
     ],
     faqs: [
       {
-        question: "Can adults learn touch typing as quickly as kids?",
-        answer: "Yes, adults often learn the conceptual layout faster due to structured focus, while kids benefit from quick motor adaptation through gamified lessons."
-      },
-      {
-        question: "Will I type slower before I type faster?",
-        answer: "Yes, during the first week your speed will temporarily drop by 30-50% while breaking old habits. By week three, you will surpass your previous peak."
+        question: "Will my typing speed drop when I learn touch typing?",
+        answer: "It may feel slower while you practise unfamiliar finger movements. Track the skill you are learning as well as WPM, and compare results only under similar test conditions."
       }
-    ]
+    ],
+    relatedSlugs: ["touch-typing-for-beginners", "daily-typing-exercises-for-beginners", "average-typing-speed-by-age"]
   },
   {
     slug: "common-typing-mistakes-to-avoid",
-    title: "7 Common Typing Mistakes That Slow You Down (And How to Fix Them)",
-    description: "Identify and eliminate the 7 most common typing errors holding you back from reaching your peak typing speed and accuracy.",
+    title: "Common Typing Mistakes: How to Spot and Practise Them",
+    description: "Identify common typing habits that interrupt practice, from rushing and repeated key errors to awkward reaches, and choose a focused correction.",
     publishedAt: "2026-02-10",
-    updatedAt: "2026-02-18",
-    readTime: "6 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Error Correction",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Are you stuck on a typing speed plateau? You might be committing one of these 7 subtle technique mistakes that sabotage your speed and accuracy.",
+    excerpt: "A useful fix starts by identifying the repeated error. Slow the drill, practise the specific movement, and check whether the same mistake returns.",
     sections: [
       {
-        heading: "Mistake 1: Using Only One Shift Key",
-        content: `Many typists only use the Left Shift key, even when typing capital letters on the left side of the keyboard (like 'A', 'S', 'Q'). This forces awkward hand contortions.
-**The Fix**: Use the **opposite hand Shift key**. If typing a capital letter with the left hand, hold Shift with the right pinky, and vice versa.`
+        heading: "Mistake 1: rushing after an error",
+        content: `A wrong key can lead to more mistakes if you try to recover by speeding up. Pause briefly, use the test's correction method, and return to a controlled pace. The [accuracy guide](/blog/how-to-improve-typing-accuracy) explains how to review repeat errors.`
       },
       {
-        heading: "Mistake 2: Resting Wrists on the Desk While Typing",
-        content: `Planting your wrists flat on the desk or palm rest restricts finger reach and puts pressure on the median nerve.
-**The Fix**: Keep wrists elevated in a neutral, straight line with your forearms while typing. Rest your palms only when pausing.`
+        heading: "Mistake 2: practising only familiar letters",
+        content: `If a test contains only comfortable words, it may not expose the keys you avoid. Add one unfamiliar row or punctuation pattern at a time with [targeted practice drills](/typing-practice). Do not mix every difficult key into a single beginner exercise.`
       },
       {
-        heading: "Mistake 3: Overusing the Strong Index Fingers",
-        content: `Letting your index fingers drift to press keys assigned to the middle or ring fingers creates chaos on the keyboard.
-**The Fix**: Stick strictly to dedicated finger zones until finger independence is fully established.`
+        heading: "Mistake 3: reaching with a tense or awkward hand",
+        content: `Notice whether you twist your wrist, lift your shoulder, or stretch repeatedly to reach a key. Reposition the keyboard or slow the exercise so you can make a comfortable reach. OSHA's [keyboard guidance](https://www.osha.gov/etools/computer-workstations/components/keyboards/) recommends considering keyboard placement and neutral wrist alignment. This is general workstation guidance, not a diagnosis.`
       },
       {
-        heading: "Mistake 4: Hitting Keys with Excessive Force",
-        content: `Hammering keys wastes physical energy and increases mechanical resistance. Modern membrane and mechanical keyboards actuate with very light pressure (40g to 60g).
-**The Fix**: Type with a light, gliding touch like playing a piano.`
+        heading: "Mistake 4: changing too many things at once",
+        content: `Changing keyboard, posture, test difficulty, and speed target together makes it hard to tell what helped. Keep most conditions the same and choose one practice focus for a session.`
       },
       {
-        heading: "Mistake 5: Rushing and Panic Typing After an Error",
-        content: `When people make a mistake during a timed test, they often panic and type the next three words too quickly, resulting in a cascade of consecutive errors.
-**The Fix**: When an error occurs, pause for a split second, calmly hit Backspace, retype the character cleanly, and resume your steady tempo.`
-      },
-      {
-        heading: "Mistake 6: Neglecting Punctuation and Numbers",
-        content: `Practicing only lowercase words leaves you unprepared for real-world writing, emails, and code.
-**The Fix**: Regularly practice medium and hard test modes with commas, periods, apostrophes, and numbers on Speedy Type.`
-      },
-      {
-        heading: "Mistake 7: Inconsistent Practice Habits",
-        content: `Practicing once a week does not build durable neuro-muscular memory.
-**The Fix**: Commit to a simple 10-minute daily routine before starting your workday or study session.`
+        heading: "Mistake 5: treating every score as a verdict",
+        content: `A single WPM result can vary with the text and test length. Keep a simple log and look for repeated patterns across comparable runs. See [how to choose a useful WPM goal](/blog/what-is-a-good-typing-speed).`
       }
     ],
     faqs: [
       {
-        question: "Why does my hand hurt after typing?",
-        answer: "Hand or wrist pain is usually caused by excessive wrist bending, typing too hard, or failing to take breaks. Adjust your chair height and keep wrists neutral."
-      },
-      {
-        question: "How do I break the habit of hitting keys with the wrong finger?",
-        answer: "Slow down your practice speed by half and consciously verify that the correct finger is making each keystroke for 3 to 4 days."
+        question: "What should I do when I keep hitting a neighboring key?",
+        answer: "Slow down and practise the key's reach in a short row drill. Check where your hand starts and whether the movement feels comfortable before returning to a timed test."
       }
-    ]
+    ],
+    relatedSlugs: ["how-to-improve-typing-accuracy", "qwerty-keyboard-guide", "daily-typing-exercises-for-beginners"]
   },
   {
     slug: "average-typing-speed-by-age",
-    title: "Average Typing Speed by Age: Useful WPM Ranges and Goals",
-    description: "Explore practical typing-speed ranges for children, teens, and adults, and learn how to set a useful WPM goal without comparing yourself unfairly.",
+    title: "Average Typing Speed by Age: What the Evidence Can and Cannot Tell You",
+    description: "Age-based WPM charts can hide differences in practice and testing. Review what limited studies measured and how to set a more useful personal goal.",
     publishedAt: "2026-09-30",
-    updatedAt: "2026-09-30",
-    readTime: "6 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Benchmarks & Standards",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Age can add context to a typing result, but consistent practice, accuracy, and the test setup usually matter more. Use these ranges as a starting point—not a scorecard.",
+    excerpt: "There is no age-based WPM table in this guide because the available studies use specific groups and methods that do not support a universal benchmark.",
     sections: [
       {
-        heading: "The Short Answer: Age Is Only One Part of a Typing Result",
-        content: `There is no single official average typing speed for every age. Keyboard access, school or work demands, familiarity with touch typing, and the length of a test all affect a result. A fair comparison uses the same keyboard, test duration, and accuracy standard.
+        heading: "The short answer: age alone cannot set your WPM target",
+        content: `A single “normal” typing speed for a particular age is not a sound personal target without knowing the test, keyboard, language, practice history, and accuracy rule. This article does not publish age-by-age averages because the studies reviewed here do not establish a universal chart for all learners.
 
-For a useful starting point, take a [typing test](/typing-test), note both WPM and accuracy, then compare your next result with your own baseline. That is more actionable than trying to match a number from someone with a very different typing background.`
+For a practical comparison, take the same [typing test](/typing-test) more than once and record duration, WPM, and accuracy. Compare your result with your own earlier result, not a number with unknown test conditions.`
       },
       {
-        heading: "Practical WPM Ranges by Age and Experience",
-        content: `These broad ranges are planning guides rather than standards. Individual results can sit above or below them for perfectly normal reasons:
-- **Children who are learning the keyboard:** often begin around 10–25 WPM while locating keys and learning finger positions.
-- **Teens building fluency:** may work toward roughly 25–45 WPM as schoolwork creates more keyboard time.
-- **Adults who type for everyday tasks:** commonly aim for a comfortable, accurate pace around 35–50 WPM.
-- **Practised touch typists:** often work in the 50–70 WPM range or higher when the text and test conditions suit them.
+        heading: "What published studies measured",
+        content: `A 1989 field study followed 197 students aged 11–18 through a particular ten-lesson keyboard training program. It reported speed improvements across its age groups and associations between age and speed or improvement in that setting. Those participants, lessons, and test methods do not establish current age norms for all children. See the study abstract indexed by [PubMed](https://pubmed.ncbi.nlm.nih.gov/15676725/).
 
-If you are below a range, it does not mean you are behind. Start with a manageable [typing practice session](/typing-practice) and use the result to choose one small improvement target.`
+An earlier study of adult typists aged 19–72 examined typing-like tasks and reported that age-related differences in tapping and reaction tasks did not translate into slower typing speed in that sample. It is not a study of children or a modern population benchmark. See [Salthouse's study record on PubMed](https://pubmed.ncbi.nlm.nih.gov/6237168/).
+
+These examples show why a study result should be reported with its sample and method, not turned into a universal age table.`
       },
       {
-        heading: "Set a Goal That Helps You Improve",
-        content: `A good goal has a time frame and includes accuracy. Rather than jumping from 25 to 60 WPM, try a goal such as “raise my three-minute result by 3 WPM while keeping accuracy steady.”
+        heading: "Set a goal that fits the learner",
+        content: `For a child or teen, ask what keyboard skills the class or task requires: locating keys, composing a sentence, using capitals, or typing a longer assignment. A teacher's curriculum target may be useful for that classroom, but it is not automatically a population average.
 
-1. Record a baseline with the [typing speed test](/typing-speed).
-2. Practise the keys or words that cause errors in [typing lessons](/lessons).
-3. Retest once or twice a week under similar conditions.
-4. Increase the target only after the current pace feels controlled.
-
-For more context on benchmark ranges, read [what is a good typing speed?](/blog/what-is-a-good-typing-speed).`
-      },
-      {
-        heading: "Accuracy Can Change the Right WPM Goal",
-        content: `A fast score with frequent corrections is not always useful for writing, schoolwork, or coding. If errors are interrupting your rhythm, prioritise clean repetitions with the [typing accuracy tool](/typing-accuracy) before pushing the clock.
-
-The balance matters because WPM and accuracy measure different parts of the same skill. Our guide to [WPM versus accuracy](/blog/wpm-vs-accuracy-what-matters-more) explains how to decide which one to focus on in a session.`
-      },
-      {
-        heading: "A Simple Weekly Check-In",
-        content: `Keep the check-in light enough to repeat:
-- Take one familiar typing test and write down WPM and accuracy.
-- Spend a few short sessions practising one weak area.
-- Use a [typing game](/games) when you need a lower-pressure way to build repetition.
-- Compare this week with your own previous result, not with a stranger's result.
-
-Steady, accurate practice is the most reliable way to make an age-based range less important over time.`
+For adults, consider the type of work and any stated employer test requirement. In either case, track WPM and accuracy using the same duration and similar text. Use [typing practice](/typing-practice) to work on one row, then review [how WPM and accuracy are calculated](/blog/wpm-explained).`
       }
     ],
     faqs: [
       {
         question: "How fast should a 10-year-old type?",
-        answer: "There is no single required WPM for a 10-year-old. A useful goal is to learn comfortable finger placement, type accurately, and improve gradually from a personal baseline."
+        answer: "This guide cannot give a defensible universal number for every 10-year-old. Consider the learner's instruction and task, then compare their results using the same test and accuracy method over time."
       },
       {
-        question: "Is 140 WPM good?",
-        answer: "Yes. A sustained 140 WPM result with strong accuracy is exceptionally fast for ordinary typing tests. Compare results only when the test duration, text, corrections, and keyboard setup are similar."
-      },
-      {
-        question: "Should I focus on speed or accuracy first?",
-        answer: "Start by making accuracy dependable, then raise speed in small steps. A clean rhythm is easier to build on than a fast pace that requires constant corrections."
+        question: "Is a low score evidence that a learner is behind?",
+        answer: "A single score does not establish that. Check test duration, familiarity with the keyboard, instruction, language, and accuracy, and discuss classroom expectations with the learner's teacher when relevant."
       }
-    ]
+    ],
+    relatedSlugs: ["what-is-a-good-typing-speed", "how-long-to-learn-touch-typing", "wpm-explained"]
   },
   {
     slug: "wpm-vs-accuracy-what-matters-more",
-    title: "WPM vs Accuracy: What Matters More When You Type?",
-    description: "Understand the difference between typing speed and accuracy, when each metric matters most, and how to practise both without chasing misleading WPM scores.",
+    title: "WPM vs. Accuracy: Which Typing Measure Should You Focus On?",
+    description: "Learn what WPM and typing accuracy measure, when to focus on each, and how to compare the two without relying on misleading score examples.",
     publishedAt: "2026-09-30",
-    updatedAt: "2026-09-30",
-    readTime: "6 min read",
+    updatedAt: "2026-10-18",
+    readTime: "3 min read",
     category: "Accuracy Drills",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "WPM tells you how quickly you type; accuracy shows how cleanly you do it. The best target depends on what is limiting your work right now.",
+    excerpt: "WPM measures the pace of correct text progress; accuracy measures correct printable keystrokes against all printable attempts. Choose a focus based on your current errors.",
     sections: [
       {
-        heading: "The Short Answer: Build Accuracy, Then Add Speed",
-        content: `Neither metric wins all the time. WPM is useful for measuring pace, while accuracy shows whether that pace is controllable. If you regularly stop to fix mistakes, prioritise accuracy first. Once your keystrokes feel dependable, speed work becomes much more productive.
+        heading: "Neither measure is useful alone",
+        content: `WPM describes how quickly correct text is advanced. Accuracy describes the share of printable keystrokes that match the target. Speedy Type's formulas are explained in [the WPM guide](/blog/wpm-explained).
 
-Start by recording both numbers in a [free typing test](/typing-test). The pair tells a more complete story than either result alone.`
+On this site, the accuracy denominator includes wrong printable keys even if you correct the mistake later. Backspace itself is not a printable attempt. A test with a higher WPM and lower accuracy is not automatically better or worse; the passage and purpose matter.`
       },
       {
-        heading: "Why a High WPM Number Can Mislead",
-        content: `Imagine two short tests: one result is 70 WPM with 88% accuracy, and another is 60 WPM with 98% accuracy. The first score may look faster, but the second typist is likely spending less time correcting errors and can usually keep a steadier rhythm.
+        heading: "Choose a focus for today's session",
+        content: `- **Learning a new key row:** slow down enough to use the intended fingers. Use a [practice drill](/typing-practice).
+- **Repeating the same mistakes:** focus on accuracy and the key or transition causing the errors.
+- **Typing comfortably with few interruptions:** try a modest pace increase and compare both measures.
+- **Preparing for a specific test:** match its duration, text style, and correction rules when you practise.
 
-The comparison is not a rule that 60 WPM is always better. It shows why you should read the result in context: test length, text difficulty, corrections, and your purpose all matter. [How WPM is calculated](/blog/wpm-explained) is useful background when you want to interpret the speed number itself.`
+For example, if a 60-second run shows that you pause at commas, spend a few minutes practising short sentences with commas before trying another timed run. Do not infer a general rule from a hypothetical pair of scores.`
       },
       {
-        heading: "Choose the Metric That Matches Your Session",
-        content: `Use a different emphasis depending on the task:
-- **New touch typists:** make correct finger placement and clean words the priority.
-- **People returning after a break:** rebuild accuracy before testing a personal best.
-- **Students and professionals:** practise the pace and accuracy needed for real documents, not only a short sprint.
-- **Experienced typists:** use timed [typing speed practice](/typing-speed) to refine rhythm once errors stay manageable.
-
-If your accuracy falls when you increase pace, reduce the difficulty slightly and work back up.`
-      },
-      {
-        heading: "A Two-Part Practice Plan",
-        content: `A simple split keeps the two skills connected:
-1. Begin with five focused minutes in [typing practice](/typing-practice) at a pace where you can stay deliberate.
-2. Review the mistakes that repeat and practise them with the [typing accuracy tool](/typing-accuracy).
-3. Finish with one timed run to see whether the cleaner technique transfers to speed.
-
-Do not treat every practice run as a competition. Some sessions should be slow enough to make the right movement automatic.`
-      },
-      {
-        heading: "When to Push for a Faster Result",
-        content: `Push for speed when your recent tests feel controlled and a small increase does not make errors spike. Short, measured attempts are more useful than forcing an uncomfortable pace for a long session.
-
-If you need a fresh benchmark, compare your result with the guidance in [average typing speed by age](/blog/average-typing-speed-by-age), then choose a modest next target instead of chasing an arbitrary score.`
+        heading: "Track progress fairly",
+        content: `Keep the duration and difficulty similar between attempts. Compare several runs over time, and record what you practised. A short run can be affected by the particular text or a brief interruption, so avoid treating one score as a complete measure of skill.`
       }
     ],
     faqs: [
       {
-        question: "Is 95% typing accuracy good?",
-        answer: "A 95% result can be a useful baseline, especially while learning. If corrections are still breaking your rhythm, spend time on the error patterns before trying to type faster."
+        question: "Should I reach 98% accuracy before increasing speed?",
+        answer: "There is no universal cutoff in this guide. If errors are disrupting your typing, practise them first. If your current pace is controlled, try a small increase and observe whether accuracy remains acceptable for your task."
       },
       {
-        question: "Can I improve WPM without losing accuracy?",
-        answer: "Yes. Increase pace in small steps, practise repeated error patterns, and return to a controlled speed whenever mistakes start to cascade."
-      },
-      {
-        question: "Should I retake a test after mistakes?",
-        answer: "Use an occasional retest to measure progress, but do not immediately repeat every result. Short practice focused on the cause of the mistakes usually teaches more."
+        question: "Does Backspace improve my accuracy score?",
+        answer: "Backspace clears the active error or moves back one character, but it is not counted as a printable keystroke. A previous wrong printable key remains in the accuracy calculation."
       }
-    ]
+    ],
+    relatedSlugs: ["wpm-explained", "how-to-improve-typing-accuracy", "how-to-increase-typing-speed"]
   },
   {
     slug: "touch-typing-vs-hunt-and-peck",
-    title: "Touch Typing vs Hunt and Peck: Which Method Should You Use?",
-    description: "Compare touch typing with hunt-and-peck typing, learn when switching methods is worthwhile, and follow a practical plan for building keyboard confidence.",
+    title: "Touch Typing vs. Hunt and Peck: Choosing a Practice Method",
+    description: "Compare touch typing with hunt-and-peck typing by task, comfort, and learning goals, then try a gradual transition if you want a repeatable finger map.",
     publishedAt: "2026-09-30",
-    updatedAt: "2026-09-30",
-    readTime: "7 min read",
+    updatedAt: "2026-10-18",
+    readTime: "4 min read",
     category: "Learning Roadmaps",
-    author: {
-      name: "Speedy Type Editorial Team",
-      role: "Typing Education Specialist"
-    },
-    excerpt: "Hunt and peck can handle everyday messages, but touch typing gives you a repeatable finger map that can make longer typing sessions feel more controlled.",
+    excerpt: "Hunt and peck can suit occasional short typing. Touch typing offers a consistent finger map to practise; choose based on your tasks and preferences.",
     sections: [
       {
-        heading: "The Short Answer: Touch Typing Is the Better Long-Term Skill",
-        content: `Touch typing uses assigned fingers and tactile reference points so you can keep your eyes on the screen. Hunt and peck relies more on looking down to find each key, often with a smaller set of fingers.
-
-Hunt and peck is not a failure; it can be enough for occasional short messages. But if you write often, learn, code, study, or work at a keyboard, touch typing gives you a clearer system for improving consistency.`
+        heading: "The practical difference",
+        content: `Hunt and peck usually means looking for keys as you type, often with a smaller set of fingers. Touch typing uses a repeatable finger map and relies more on touch and familiarity with key locations. People use variations of both methods, and speed alone does not tell you which method will suit a particular task.`
       },
       {
-        heading: "How the Two Methods Feel in Real Use",
-        content: `The main difference is where your attention goes:
-- **Touch typing:** your fingers return to familiar positions, so your eyes can stay on the words you are reading or composing.
-- **Hunt and peck:** you frequently switch attention between the screen and keyboard while searching for keys.
-- **Touch typing practice:** progress comes from repeating correct finger movements, even when it feels slower at first.
-- **Hunt and peck habits:** can become quick for familiar words, but may be harder to apply consistently to unfamiliar keys, punctuation, or longer text.
+        heading: "Which method fits your needs?",
+        content: `Hunt and peck may be sufficient for occasional short messages if it feels comfortable. A repeatable finger map may be useful if you type for longer periods, want to keep your eyes on source text, or want structured drills for unfamiliar keys. Consider your devices and work: phone typing, a laptop keyboard, and a shared workstation are different contexts.
 
-The [QWERTY keyboard guide](/blog/qwerty-keyboard-guide) explains the home row and tactile F and J markers that support the transition.`
+Take a [typing test](/typing-test) using your usual method and note where you pause. That observation is more useful than assuming a method guarantees a particular WPM.`
       },
       {
-        heading: "Should You Switch If You Already Type Quickly?",
-        content: `Switching is usually worthwhile if you look down often, feel limited by certain keys, or want a steadier method for longer writing. You may not need to change immediately if you type only occasionally and your current method is comfortable.
+        heading: "Try a gradual transition",
+        content: `1. Find the F and J markers and practise returning to the home row.
+2. Use a short [home-row drill](/typing-practice) at a comfortable pace.
+3. Add one row at a time; pause to reset your hands if needed.
+4. Compare a familiar passage with your normal approach after several practice sessions.
 
-Before deciding, take a [typing test](/typing-test) without changing your normal style. Notice not just the WPM result, but whether your eyes, hands, and attention feel interrupted. That observation helps you choose a practice goal that fits your needs.`
-      },
-      {
-        heading: "How to Transition Without Frustration",
-        content: `Expect a temporary slowdown while your fingers learn new roles. Make the change manageable:
-1. Learn the home row and use the correct fingers in short [typing lessons](/lessons).
-2. Practise a few minutes at a controlled pace instead of reverting whenever a word feels awkward.
-3. Keep your eyes on the screen; use the F and J bumps to reset your hands.
-4. Repeat on several days before judging whether the method is working.
-
-Our [beginner touch typing guide](/blog/touch-typing-for-beginners) and [daily typing exercises](/blog/daily-typing-exercises-for-beginners) offer a simple routine for those first sessions.`
-      },
-      {
-        heading: "Make Repetition Easier to Stick With",
-        content: `A short routine is more useful than an occasional marathon. Alternate focused drills in [typing practice](/typing-practice) with a [typing game](/games) when you want variety, then check progress once a week with a familiar test.
-
-The goal is not to avoid every mistake immediately. It is to give each finger the same reliable job often enough that looking down becomes less necessary.`
+You do not need to change your entire technique at once. If a new method causes discomfort, stop and reassess the keyboard position and movement.`
       }
     ],
     faqs: [
       {
-        question: "Can hunt-and-peck typists still type fast?",
-        answer: "Some people become quick with hunt and peck, especially on familiar text. Touch typing is still usually easier to practise systematically because it gives each finger a repeatable role."
+        question: "Can hunt-and-peck typists type quickly?",
+        answer: "Some can. Typing method alone does not determine a person's speed; task familiarity, practice, keyboard, and accuracy also matter."
       },
       {
         question: "Will touch typing make me slower at first?",
-        answer: "It often feels slower at the start because you are replacing a familiar habit. Short, accurate sessions give the new finger movements time to become more automatic."
-      },
-      {
-        question: "Do I need a special keyboard to learn touch typing?",
-        answer: "No. A standard QWERTY keyboard is enough. The raised markers on F and J can help you find the home row without looking down."
+        answer: "A new finger map can feel unfamiliar at the beginning. Practise slowly enough to learn the movements, and compare results over time rather than expecting an immediate speed increase."
       }
-    ]
+    ],
+    relatedSlugs: ["touch-typing-for-beginners", "type-faster-without-looking", "qwerty-keyboard-guide"]
   }
 ];
 

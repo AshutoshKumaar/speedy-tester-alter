@@ -25,7 +25,7 @@ export default function Footer() {
               <strong className="text-2xl font-black tracking-tight text-white font-mooli">Speedy Type</strong>
             </div>
             <p className="text-sm text-white/80 leading-relaxed max-w-sm font-medium">
-              Speedy Type is a free online typing test and practice platform that helps users improve typing speed, accuracy, and keyboard skills through interactive drills, structured lessons, and gamified 3D worlds.
+              Speedy Type offers browser-based typing tests, practice drills, lessons, games, and saved results.
             </p>
             <div className="flex items-center gap-2 mt-2">
               <span className="bg-black/30 border border-white/15 rounded-full px-3 py-1 font-bold text-xs text-[var(--theme-accent)] shadow-inner">
@@ -84,7 +84,7 @@ export default function Footer() {
               About Speedy Type
             </Link>
             <Link href="/contact" className="text-sm text-white/75 hover:text-white transition-colors">
-              Contact Support
+              Contact page
             </Link>
             <Link href="/settings" className="text-sm text-white/75 hover:text-white transition-colors">
               Sound & Settings
@@ -113,7 +113,7 @@ export default function Footer() {
             <span>&bull;</span>
             <Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
             <span>&bull;</span>
-            <Link href="/contact" className="hover:text-white transition-colors">Support</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
           </div>
         </div>
       </div>

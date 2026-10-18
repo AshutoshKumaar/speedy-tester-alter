@@ -12,7 +12,7 @@ import SettingsPage from "./SettingsPage";
 import TypingPage from "./TypingPage";
 import ResultsPage from "./ResultsPage";
 
-export default function TypingApp({ defaultView, defaultDuration = 60, defaultMode = "easy" }) {
+export default function TypingApp({ defaultView, defaultDuration = 60, defaultMode = "easy", practiceSentences }) {
   const { selectTheme, saveScore } = useTheme();
   const pathname = usePathname();
 
@@ -93,6 +93,7 @@ export default function TypingApp({ defaultView, defaultDuration = 60, defaultMo
           key={`typing-${testDuration}-${testMode}-${testSessionKey}`}
           duration={testDuration}
           mode={testMode}
+          sentenceOverrides={practiceSentences}
           onFinishTest={handleFinishTest}
           onBackToTests={handleBackToTests}
         />

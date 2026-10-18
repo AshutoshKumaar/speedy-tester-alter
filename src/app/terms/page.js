@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 export default function TermsPage() {
-  const lastUpdated = "March 20, 2026";
+  const lastUpdated = "October 18, 2026";
 
   return (
     <div className="w-[min(960px,calc(100%-36px))] mx-auto py-12 font-mooli text-slate-800 space-y-10">
@@ -69,7 +69,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">5. Disclaimer of Warranties</h2>
           <p>
-            Speedy Type is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis without warranties of any kind, whether express or implied. While we strive for 100% uptime, accurate WPM algorithms, and glitch-free 3D rendering, we do not warrant that:
+            Speedy Type is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis without warranties of any kind, whether express or implied. The site may experience downtime, errors, or defects. We do not warrant that:
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-1.5 text-slate-600">
             <li>The service will be uninterrupted, error-free, or entirely secure.</li>
@@ -102,7 +102,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">9. Contact Information</h2>
           <p>
-            If you have questions regarding these Terms &amp; Conditions, please contact us via our <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link>.
+            The <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link> currently has no message-delivery service or support inbox, so questions cannot be sent through the site.
           </p>
         </div>
       </section>

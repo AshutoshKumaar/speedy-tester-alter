@@ -209,19 +209,11 @@ export default function TestsPage({ onStartTest }) {
                   <button type="button" className="px-3 py-1 text-xs font-bold rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200">Accuracy (%)</button>
                 </div>
               </div>
-              <div className="h-[120px] flex items-end justify-around gap-4 bg-slate-50/60 p-4 rounded-xl border border-slate-200/50 mb-6 font-mooli" aria-label="Speed progress bar chart">
+              <div className={`h-[120px] ${scores.length ? "flex items-end justify-around gap-4" : "grid place-items-center"} bg-slate-50/60 p-4 rounded-xl border border-slate-200/50 mb-6 font-mooli`} aria-label="Speed progress bar chart">
                 {scores.length === 0 ? (
-                  // Demo visual bars
-                  [35, 55, 72, 88].map((val, idx) => (
-                    <div key={idx} className="flex-1 flex flex-col items-center gap-1.5 group/bar">
-                      <div className="w-full relative bg-slate-200 rounded-t-lg transition-all duration-300 group-hover/bar:bg-theme-main shadow-sm" style={{ height: `${val * 0.7}px` }}>
-                        <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] font-black text-slate-500 opacity-0 group-hover/bar:opacity-100 transition-opacity font-mono">
-                          {[15, 22, 29, 43][idx]} WPM
-                        </span>
-                      </div>
-                      <span className="text-[9px] font-bold text-slate-400 font-mono">Run {idx + 1}</span>
-                    </div>
-                  ))
+                  <p className="max-w-sm text-center text-sm font-medium text-slate-500">
+                    No typing results yet. Complete a test and your real WPM history will appear here.
+                  </p>
                 ) : (
                   // Real progress bars
                   Array.from({ length: 4 }).map((_, idx) => {

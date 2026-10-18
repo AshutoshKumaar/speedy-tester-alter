@@ -21,7 +21,6 @@ export const metadata = {
     "typing lessons",
     "typing games"
   ],
-  authors: [{ name: "Speedy Type Team" }],
   creator: "Speedy Type",
   publisher: "Speedy Type",
   formatDetection: {

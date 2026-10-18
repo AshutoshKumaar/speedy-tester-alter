@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Privacy Policy — Speedy Type",
-  description: "Read the Speedy Type Privacy Policy to understand how we handle local storage, cookies, analytics, and user privacy on our free online typing platform.",
+  description: "Read how Speedy Type uses browser storage, advertising scripts, and optional embedded media.",
   alternates: {
     canonical: "/privacy-policy",
   },
 };
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "March 20, 2026";
+  const lastUpdated = "October 18, 2026";
 
   return (
     <div className="w-[min(960px,calc(100%-36px))] mx-auto py-12 font-mooli text-slate-800 space-y-10">
@@ -41,29 +41,26 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">2. Information We Do NOT Collect</h2>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">2. Accounts and Information Handled by the App</h2>
           <p>
-            Unlike many commercial platforms, Speedy Type does not require user accounts or personal profiles to access our full suite of typing tests, video lessons, and games.
+            The site does not provide user accounts or personal profiles to access its typing tests, lessons, and games. The contact page also has no message-delivery service.
           </p>
-          <ul className="list-disc pl-5 mt-2 space-y-1.5 text-slate-600">
-            <li>We do <strong>not</strong> collect passwords, credit cards, or financial details.</li>
-            <li>We do <strong>not</strong> require user registration, email sign-ups, or social logins to practice typing.</li>
-            <li>We do <strong>not</strong> sell, rent, or trade personal data to third-party data brokers.</li>
-          </ul>
+          <p className="mt-2">The app interface has no registration, email sign-up, payment, or message-submission feature. This does not describe information that may be processed by the hosting provider, Google advertising, or other third-party services.</p>
         </div>
 
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">3. Browser Local Storage &amp; User Preferences</h2>
           <p>
-            Speedy Type uses your web browser&apos;s standard <strong>Local Storage</strong> (an HTML5 storage mechanism stored solely on your device) to persist your personal preferences across visits:
+            Source code uses your browser&apos;s standard <strong>Local Storage</strong> to retain preferences and results on that browser:
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-1.5 text-slate-600">
-            <li><strong>Typing Scores &amp; History:</strong> Your recent WPM scores, accuracy rates, and test timestamps are saved in your local browser so you can view your personal score history.</li>
-            <li><strong>Visual Theme &amp; Avatar Selection:</strong> Your selected theme world (e.g., Princess Castle, Space Quest, Dino Valley) and avatar choice are saved so the app reloads your chosen visual style.</li>
-            <li><strong>Sound Studio Preferences:</strong> Your selected key sound voice (e.g., Soft Cloud, Mechanical Click, Arcade Pop) and audio volume preferences are remembered.</li>
+            <li><strong>Typing Scores &amp; History:</strong> Recent WPM scores, accuracy rates, and test timestamps are saved in browser storage so you can view your score history.</li>
+            <li><strong>Visual Theme &amp; Avatar Selection:</strong> Your selected theme and avatar choice are saved so the app can restore your selected style.</li>
+            <li><strong>Sound Studio Preferences:</strong> Your selected key sound voice and typing-speed feel are saved. The sound volume is defined by the selected voice; the app does not save a separate volume preference.</li>
+            <li><strong>Game High Scores:</strong> Best scores for supported games are saved in this browser so the games can display them later.</li>
           </ul>
           <p className="mt-2">
-            <em>Note:</em> Local Storage data remains entirely within your browser and is not transmitted to our servers. You can clear this data at any time by clearing your browser cache or site data.
+            This information is stored in your browser&apos;s local storage. The application source contains no account or feature that uploads typing results or game high scores to an app server. This describes app behavior and does not cover hosting or third-party provider logs.
           </p>
         </div>
 
@@ -77,59 +74,57 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">5. Cookies and Web Beacons</h2>
           <p>
-            Cookies are small text files placed on your device by web browsers. Speedy Type may use basic functional cookies to optimize page load speeds and ensure site security.
+            The application source does not configure a first-party analytics or cookie system. The site includes Google AdSense code, and advertising providers may use cookies or similar technologies. Actual cookie behavior depends on the live page, browser, and provider settings.
           </p>
           <p className="mt-2">
-            Third-party service providers (such as advertising networks and analytics tools) may place and read cookies on your browser or use web beacons to collect information as a result of ad serving on this website.
+            Google advertising may use cookies or similar technologies as described in Google&apos;s policies and subject to the provider&apos;s settings. No separate analytics integration was found in the application source. The live browser behavior and provider processing should be confirmed against the deployed configuration.
           </p>
         </div>
 
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">6. Advertising &amp; Google AdSense</h2>
           <p>
-            Speedy Type participates or intends to participate in the <strong>Google AdSense</strong> advertising program to support our free educational service.
+            The site source includes the <strong>Google AdSense</strong> script. Its presence does not confirm that an ad is served on every visit or page.
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-1.5 text-slate-600">
-            <li>Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to our website or other websites on the internet.</li>
-            <li>Google&apos;s use of advertising cookies enables it and its partners to serve ads to users based on their visit to Speedy Type and/or other sites on the Internet.</li>
+            <li>Google and its advertising partners may use cookies or similar technologies to serve or personalize ads, subject to user settings and applicable provider policies.</li>
             <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-theme-dark font-bold hover:underline">Google Ads Settings</a>.</li>
-            <li>Alternatively, you can opt out of third-party vendor use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" className="text-theme-dark font-bold hover:underline">AboutAds.info</a>.</li>
           </ul>
         </div>
 
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">7. Third-Party Services &amp; Embedded Media</h2>
           <p>
-            Our lessons page includes optional embedded instructional touch-typing videos hosted on YouTube. When you choose to play a video, YouTube (a Google subsidiary) may set cookies and process viewer metrics according to Google&apos;s Privacy Policy.
+            The lessons page loads an embedded YouTube video after a visitor selects a lesson video. That request may send information to YouTube; its handling is described in Google&apos;s policies. The site also loads Google Fonts from Google-hosted services.
           </p>
         </div>
 
         <div>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">8. Children&apos;s Privacy (COPPA Compliance)</h2>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">8. Children&apos;s Privacy</h2>
           <p>
-            Speedy Type provides educational touch-typing tools suitable for learners of all ages, including children. We strictly comply with the Children&apos;s Online Privacy Protection Act (COPPA). We do not knowingly collect personal identifiable information (PII) from children under the age of 13.
+            The site has no account or message-submission feature in its application interface. This source-code observation does not establish compliance with any particular children&apos;s privacy law. The operator should confirm applicable requirements and the practices of hosting and advertising providers.
           </p>
           <p className="mt-2">
-            All typing game scores and theme settings are maintained exclusively in local browser storage without requiring any personal child data.
+            Typing results and selected settings are stored in browser local storage by the application.
           </p>
         </div>
 
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">9. Data Security &amp; Retention</h2>
           <p>
-            We implement industry-standard HTTPS encryption across all pages on Speedy Type to ensure secure connections. Because we do not maintain central databases of user profiles or typed text passages, your typing practice text is processed solely in memory during your active browser session and discarded upon test completion.
+            The application stores typing results and settings in browser local storage and contains no account or score-upload feature. Typing text is handled by the browser during a test. Hosting and third-party services may process request data under their own practices; the application source alone does not establish their retention or security controls.
           </p>
         </div>
 
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">10. Your Rights &amp; Choices</h2>
           <p>
-            You have complete control over your data:
+            Available controls in the app include:
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-1.5 text-slate-600">
-            <li><strong>Clearing Scores:</strong> You can clear all saved scores and settings at any time by clearing your browser&apos;s Local Storage or cache.</li>
-            <li><strong>Disabling Sound:</strong> You can disable all typing audio with one click in the header, active test toolbar, or Settings page.</li>
-            <li><strong>Ad Choices:</strong> You can control cookie preferences and opt out of interest-based ads via your browser settings or Google Ad Settings.</li>
+            <li><strong>Removing locally stored data:</strong> Use your browser&apos;s site data controls to remove this site&apos;s local storage. The app does not currently provide a control to delete an individual score or clear these stored preferences.</li>
+            <li><strong>Disabling Sound:</strong> Sound can be adjusted in the active test toolbar or Settings page.</li>
+            <li><strong>Ad choices:</strong> Review Google&apos;s settings and the controls offered by your browser or the ad, where available.</li>
           </ul>
         </div>
 
@@ -143,7 +138,7 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">12. Contact Information</h2>
           <p>
-            If you have questions or concerns regarding this Privacy Policy, you can reach out via our <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link>.
+            The <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link> currently has no message-delivery service or support inbox, so questions cannot be sent through the site.
           </p>
         </div>
 

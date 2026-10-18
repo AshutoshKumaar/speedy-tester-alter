@@ -27,7 +27,7 @@ export default function TypingTestPage() {
   const testFaqs = [
     {
       question: "Which test duration should I choose for benchmarking?",
-      answer: "A 1-minute test is ideal for quick daily warmups. For a reliable assessment of your sustained workplace typing speed, we recommend a 3-minute or 5-minute test, as longer tests measure true endurance and rhythm."
+      answer: "Choose a duration that fits your purpose. A shorter test gives you a quick snapshot; a longer one lets you observe your pace for more time. If a school, employer, or other test provider specifies a duration, follow its instructions."
     },
     {
       question: "What is the difference between Easy, Medium, and Hard test modes?",
@@ -56,7 +56,7 @@ export default function TypingTestPage() {
             How to Master Timed Typing Tests
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mb-8">
-            Timed typing tests measure your ability to sustain motor accuracy under clock pressure. Here is how to approach each duration for maximum skill development:
+            Use a duration that fits your goal. Keep the same duration, difficulty, and text style when comparing personal results:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -65,7 +65,7 @@ export default function TypingTestPage() {
                 <span className="text-xs font-bold font-mono uppercase text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-lg">1:00 Minute</span>
                 <strong className="block text-lg font-bold text-slate-900 mt-3 mb-1">Sprint Warmup</strong>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Best for morning finger warmups, testing peak burst velocity, and practicing fast visual scanning.
+                  Use for a quick snapshot of your current pace on the selected passage.
                 </p>
               </div>
             </div>
@@ -73,9 +73,9 @@ export default function TypingTestPage() {
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
               <div>
                 <span className="text-xs font-bold font-mono uppercase text-blue-700 bg-blue-100 px-2.5 py-1 rounded-lg">3:00 Minutes</span>
-                <strong className="block text-lg font-bold text-slate-900 mt-3 mb-1">Standard Benchmark</strong>
+                <strong className="block text-lg font-bold text-slate-900 mt-3 mb-1">3-Minute Typing Test</strong>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  The ideal balance between burst speed and cognitive stamina. Most job evaluations use 3-minute tests.
+                  Use when you want to observe your pace for longer than a one-minute run. This is not a standard for every job evaluation.
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function TypingTestPage() {
                 <span className="text-xs font-bold font-mono uppercase text-purple-700 bg-purple-100 px-2.5 py-1 rounded-lg">5:00 Minutes</span>
                 <strong className="block text-lg font-bold text-slate-900 mt-3 mb-1">Full Challenge</strong>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Tests consistency and error resistance. Reveals whether hand fatigue causes late-stage accuracy drops.
+                  Provides more time to observe changes in pace and accuracy. A change alone does not identify its cause.
                 </p>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function TypingTestPage() {
                 <span className="text-xs font-bold font-mono uppercase text-amber-700 bg-amber-100 px-2.5 py-1 rounded-lg">10:00 Minutes</span>
                 <strong className="block text-lg font-bold text-slate-900 mt-3 mb-1">Endurance Run</strong>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Designed for transcriptionists, developers, and writers training for long hours of typing flow.
+                  Use when you want a longer practice run. Match the duration and text requirements of a specific assessment when applicable.
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function TypingTestPage() {
           description="After benchmarking your current speed, use a focused drill or review the skills that affect your next result."
           links={[
             { href: "/typing-practice", label: "Practice key rows" },
-            { href: "/typing-speed", label: "Compare WPM benchmarks" },
+            { href: "/typing-speed", label: "Understand WPM results" },
             { href: "/typing-accuracy", label: "Improve typing accuracy" },
           ]}
         />

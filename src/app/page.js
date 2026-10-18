@@ -22,23 +22,23 @@ export default function HomePage() {
   const homepageFaqs = [
     {
       question: "What is Speedy Type?",
-      answer: "Speedy Type is a free online typing test and practice platform that helps users improve typing speed, accuracy, and keyboard skills through timed tests, interactive video lessons, customizable sound voices, and gamified 3D practice worlds."
+      answer: "Speedy Type is a browser-based site with timed typing tests, practice drills, optional video lessons, games, themes, and locally saved results."
     },
     {
       question: "How is typing speed (WPM) calculated on Speedy Type?",
-      answer: "Typing speed is measured in Words Per Minute (WPM). In standardized typing evaluations, one 'word' equals exactly 5 keystrokes (including letters, spaces, and punctuation). The formula is: (Total Correct Keystrokes / 5) divided by time in minutes."
+      answer: "Speedy Type calculates WPM from the number of correct text characters currently advanced: divide that count by five, then divide by elapsed minutes. Backspace can reduce that count. This is a practice score; other tests may use different scoring rules."
     },
     {
       question: "What is considered a good typing speed?",
-      answer: "The global average typing speed is around 40 to 45 WPM. A speed of 50 to 70 WPM is considered good and professional for office and administrative roles. Speeds between 70 and 90 WPM are high-performing, and 90+ WPM places you in the top 1% of typists."
+      answer: "There is no single target that applies to every typist or task. Compare results taken with the same duration, difficulty, text style, and scoring rules, and consider accuracy alongside WPM."
     },
     {
       question: "Why does typing accuracy matter more than raw speed?",
-      answer: "Every typo forces you to stop, locate the error, hit Backspace, retype, and regain your reading momentum. Typists who maintain 98%+ accuracy consistently finish tasks faster than erratic typists who rush and produce frequent errors."
+      answer: "Speed and accuracy describe different parts of a typing result. If mistakes interrupt your work, practise the keys or patterns that cause them; if your typing feels controlled, you can gradually try a faster pace. The right balance depends on the task."
     },
     {
       question: "Are there any fees or account requirements to use Speedy Type?",
-      answer: "No. Speedy Type is 100% free to use. All tests, lessons, 3D games, score tracking, themes, and sound settings work directly in your web browser with no required sign-up or subscription."
+      answer: "There is no account or purchase required to use the typing tests, lessons, practice drills, games, score history, themes, or sound settings. Scores and preferences are stored in this browser."
     }
   ];
 
@@ -104,10 +104,10 @@ export default function HomePage() {
               Free Online Typing Platform
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-2 mb-4 leading-tight">
-              Speedy Type: Master Touch Typing, Build Speed, and Enhance Precision
+              Typing Tests, Practice Drills, Lessons, and Games
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-              <strong>Speedy Type</strong> is a free online typing test and practice platform that helps users improve typing speed, accuracy, and keyboard skills. Whether you are a student learning the home row, a professional boosting workplace productivity, or a programmer optimizing keystrokes, our interactive timed tests and colorful 3D worlds make keyboard fluency engaging and accessible.
+              <strong>Speedy Type</strong> provides browser-based typing tests, practice drills, optional lessons, games, themes, and saved results. Choose a tool that fits the keys or task you want to practise.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -142,7 +142,7 @@ export default function HomePage() {
                 A <strong>typing test</strong> evaluates your keyboard typing performance across two fundamental metrics: <strong>Speed</strong> (measured in Words Per Minute, or WPM) and <strong>Accuracy</strong> (the percentage of keystrokes typed correctly).
               </p>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                By presenting standardized passages under timed intervals (such as 1-minute warmups, 3-minute steady runs, or 5-minute challenges), typing tests create an objective benchmark of your keyboard motor fluency.
+                A typing test presents text for a selected duration and records results according to that test&apos;s scoring rules. Use the same text style, duration, and settings when comparing your own runs.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-theme-dark">
@@ -156,30 +156,30 @@ export default function HomePage() {
               <span className="text-xs uppercase tracking-widest text-theme-dark font-extrabold">Measurement Science</span>
               <h2 className="text-2xl font-black text-slate-900 mt-2 mb-4">How Typing Speed is Measured</h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-                To ensure fair comparisons across words of differing lengths, the international typing standard defines <strong>1 Word = 5 Keystrokes</strong> (including letters, numbers, punctuation, and spaces).
+                Speedy Type uses five characters as one WPM word unit, including spaces and punctuation. Other tests may define or score a word differently, so compare results using the same tool and settings.
               </p>
               <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs font-mono text-slate-700 space-y-1 mb-4">
-                <p><strong>Gross WPM:</strong> (Total Keystrokes / 5) / Minutes</p>
-                <p><strong>Accuracy:</strong> (Correct Keystrokes / Attempted Keystrokes) &times; 100%</p>
-                <p><strong>Net WPM:</strong> Gross WPM - (Uncorrected Errors / Minutes)</p>
+                <p><strong>WPM:</strong> (Correct text characters currently advanced / 5) / elapsed minutes</p>
+                <p><strong>Accuracy:</strong> (Correct printable keystrokes / all printable keystrokes attempted) &times; 100%</p>
+                <p><strong>Backspace:</strong> Not counted as a printable attempt; it can undo text progress.</p>
               </div>
             </div>
             <div className="mt-2 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-theme-dark">
-              <span>Standard 5-character formula</span>
+              <span>Speedy Type scoring method</span>
               <Link href="/blog/wpm-explained" className="hover:underline">Read WPM Guide &rarr;</Link>
             </div>
           </section>
         </div>
 
-        {/* Section 3: What is a Good Typing Speed? Benchmark Table */}
+        {/* Section 3: Interpreting a Typing Result */}
         <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-10 shadow-lg">
           <div className="max-w-3xl mb-8">
-            <span className="text-xs uppercase tracking-widest text-theme-dark font-extrabold">Performance Benchmarks</span>
+            <span className="text-xs uppercase tracking-widest text-theme-dark font-extrabold">Practical Guidance</span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2 mb-3">
-              What is a Good Typing Speed? (WPM Tiers)
+              How to Interpret Your Typing Result
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              How does your typing speed compare to global benchmarks? Here is a breakdown of typing speed tiers across academic, general, and professional benchmarks:
+              WPM depends on the test text, duration, difficulty, and scoring method. Use the same setup to compare your own results, and read accuracy alongside speed.
             </p>
           </div>
 
@@ -187,42 +187,36 @@ export default function HomePage() {
             <table className="w-full text-left border-collapse text-sm">
               <thead>
                 <tr className="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
-                  <th className="p-4">Skill Level</th>
-                  <th className="p-4">Speed (WPM)</th>
-                  <th className="p-4">Accuracy Target</th>
-                  <th className="p-4">Profile &amp; Typical Use Case</th>
+                  <th className="p-4">Practice situation</th>
+                  <th className="p-4">What to notice</th>
+                  <th className="p-4">Useful next step</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 <tr className="hover:bg-slate-50/70 transition-colors">
-                  <td className="p-4 font-bold text-slate-800">Beginner</td>
-                  <td className="p-4 font-mono font-bold text-amber-600">10 – 25 WPM</td>
-                  <td className="p-4">85% – 90%</td>
-                  <td className="p-4 text-slate-600">Hunt-and-peck typists learning keyboard layout and basic finger positions.</td>
+                  <td className="p-4 font-bold text-slate-800">Learning a key row</td>
+                  <td className="p-4 text-slate-600">Pauses while reaching for unfamiliar keys.</td>
+                  <td className="p-4">Use the matching practice drill at a controlled pace.</td>
                 </tr>
                 <tr className="hover:bg-slate-50/70 transition-colors">
-                  <td className="p-4 font-bold text-slate-800">Average</td>
-                  <td className="p-4 font-mono font-bold text-blue-600">30 – 45 WPM</td>
-                  <td className="p-4">92% – 95%</td>
-                  <td className="p-4 text-slate-600">Global average for everyday computer users, basic email drafting, and casual schoolwork.</td>
+                  <td className="p-4 font-bold text-slate-800">Repeating errors</td>
+                  <td className="p-4 text-slate-600">Keys, punctuation, or transitions that trigger corrections.</td>
+                  <td className="p-4">Practise that pattern before increasing the pace.</td>
                 </tr>
                 <tr className="hover:bg-slate-50/70 transition-colors bg-theme-soft/20">
-                  <td className="p-4 font-bold text-theme-dark">Good / Professional</td>
-                  <td className="p-4 font-mono font-bold text-theme-dark">50 – 70 WPM</td>
-                  <td className="p-4">96% – 98%</td>
-                  <td className="p-4 text-slate-700 font-medium">Standard proficiency for office, customer support, marketing, and content writing roles.</td>
+                  <td className="p-4 font-bold text-theme-dark">Building rhythm</td>
+                  <td className="p-4 text-slate-700 font-medium">Whether your pace stays steady through the passage.</td>
+                  <td className="p-4">Retest with a similar duration and difficulty.</td>
                 </tr>
                 <tr className="hover:bg-slate-50/70 transition-colors">
-                  <td className="p-4 font-bold text-purple-800">High Performance</td>
-                  <td className="p-4 font-mono font-bold text-purple-700">70 – 90 WPM</td>
-                  <td className="p-4">97% – 99%</td>
-                  <td className="p-4 text-slate-600">Fast touch typists, programmers, technical writers, and executive assistants.</td>
+                  <td className="p-4 font-bold text-purple-800">Checking accuracy</td>
+                  <td className="p-4 text-slate-600">How often printable keys differ from the prompt.</td>
+                  <td className="p-4">Compare accuracy and WPM together.</td>
                 </tr>
                 <tr className="hover:bg-slate-50/70 transition-colors">
-                  <td className="p-4 font-bold text-emerald-800">Elite / Competitive</td>
-                  <td className="p-4 font-mono font-bold text-emerald-700">90 – 120+ WPM</td>
-                  <td className="p-4">98% – 99.5%</td>
-                  <td className="p-4 text-slate-600">Top 1% of typists worldwide, transcriptionists, court reporters, and speed-typing champions.</td>
+                  <td className="p-4 font-bold text-emerald-800">Preparing for a task</td>
+                  <td className="p-4 text-slate-600">The text type, punctuation, and duration you will use.</td>
+                  <td className="p-4">Practise with a similar task and follow its requirements.</td>
                 </tr>
               </tbody>
             </table>
@@ -238,12 +232,12 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 shadow-md">
             <span className="text-xs uppercase tracking-widest text-theme-dark font-extrabold">Precision First</span>
-            <h2 className="text-2xl font-black text-slate-900 mt-2 mb-4">Why Typing Accuracy Matters</h2>
+              <h2 className="text-2xl font-black text-slate-900 mt-2 mb-4">How Accuracy Affects a Typing Task</h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              When typing, making a mistake triggers an expensive penalty loop: noticing the error, lifting your hand to press Backspace, retyping the letter, and recalibrating your visual stream.
+              A typing mistake may require you to notice the mismatch, correct it, and continue from the passage. Speedy Type records printable attempts for accuracy while Backspace can undo correct text progress used in WPM.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              A typist at <strong>60 WPM with 99% accuracy</strong> finishes documents faster and with far less mental strain than a typist frantically rushing at 75 WPM with 88% accuracy.
+              A higher WPM result does not automatically mean a task was completed more effectively. Consider the accuracy result, how many corrections you made, and the needs of the work you are doing.
             </p>
             <Link href="/typing-accuracy" className="inline-block text-xs font-bold text-theme-dark hover:underline">
               Discover Accuracy Drills &rarr;
@@ -254,7 +248,7 @@ export default function HomePage() {
             <span className="text-xs uppercase tracking-widest text-theme-dark font-extrabold">Touch Typing</span>
             <h2 className="text-2xl font-black text-slate-900 mt-2 mb-4">Touch Typing Fundamentals</h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              Touch typing is the technique of typing without looking at the keys, relying entirely on muscle memory. The fingers rest on the <strong>Home Row</strong>:
+              Touch typing uses assigned fingers and familiar key positions to type with fewer glances at the keyboard. A common starting position is the <strong>Home Row</strong>:
             </p>
             <ul className="text-sm text-slate-600 space-y-1.5 list-disc pl-5 mb-4">
               <li><strong>Left Hand:</strong> A (pinky), S (ring), D (middle), F (index)</li>
@@ -275,32 +269,32 @@ export default function HomePage() {
               How to Improve Typing Speed &amp; Keyboard Skills
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Achieving rapid typing speed is a matter of deliberate, structured habits rather than raw physical exertion. Follow these core principles:
+              These practical habits can help you organize practice. Choose the ones that fit your current typing goals:
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
               <span className="w-8 h-8 rounded-xl bg-theme-main text-white font-bold flex items-center justify-center text-sm shadow-sm">1</span>
-              <strong className="text-slate-900 text-base font-bold">15-Minute Daily Habit</strong>
+              <strong className="text-slate-900 text-base font-bold">Choose a Practice Schedule</strong>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Short, consistent daily practice sessions of 10 to 15 minutes outperform irregular marathon typing sessions every time.
+                Choose a practice period that fits your schedule. Repeat a focused exercise when it is useful, and take breaks if your hands feel uncomfortable.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
               <span className="w-8 h-8 rounded-xl bg-theme-main text-white font-bold flex items-center justify-center text-sm shadow-sm">2</span>
-              <strong className="text-slate-900 text-base font-bold">Never Look Down</strong>
+              <strong className="text-slate-900 text-base font-bold">Practise Without Looking at the Keys</strong>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Looking at your hands resets your visual tracking and prevents durable muscle memory from taking root. Keep your gaze locked on the screen.
+                If you are learning touch typing, try looking at the prompt and using the F and J markers to reorient your hands when needed.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
               <span className="w-8 h-8 rounded-xl bg-theme-main text-white font-bold flex items-center justify-center text-sm shadow-sm">3</span>
-              <strong className="text-slate-900 text-base font-bold">Read Ahead by 2 Words</strong>
+              <strong className="text-slate-900 text-base font-bold">Notice What Comes Next</strong>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Train your eyes to scan two to three words ahead of your active keystrokes, allowing your brain to queue motor movements seamlessly.
+                If reading ahead feels comfortable, notice the next word while finishing the current one. Adjust this practice to the passage and your experience.
               </p>
             </div>
 
@@ -316,7 +310,7 @@ export default function HomePage() {
               <span className="w-8 h-8 rounded-xl bg-theme-main text-white font-bold flex items-center justify-center text-sm shadow-sm">5</span>
               <strong className="text-slate-900 text-base font-bold">Check Ergonomics</strong>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Keep wrists straight and floating slightly above the desk. Keep elbows at a 90-degree angle and shoulders relaxed.
+                Choose a comfortable position and take a break if your hands or wrists become uncomfortable. Setup preferences vary by person and workstation.
               </p>
             </div>
 
@@ -324,7 +318,7 @@ export default function HomePage() {
               <span className="w-8 h-8 rounded-xl bg-theme-main text-white font-bold flex items-center justify-center text-sm shadow-sm">6</span>
               <strong className="text-slate-900 text-base font-bold">Use Audio Feedback</strong>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Audible key clicks provide instant auditory validation, allowing you to catch errors before they cascade.
+                Optional synthesized sounds provide audio feedback when keys are pressed. Sound can be adjusted in Settings.
               </p>
             </div>
           </div>
@@ -334,9 +328,9 @@ export default function HomePage() {
         <section className="bg-gradient-to-br from-theme-dark to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-white/10">
           <div className="max-w-3xl mb-10">
             <span className="text-xs uppercase tracking-widest text-[var(--theme-accent)] font-extrabold">Platform Highlights</span>
-            <h2 className="text-3xl font-black text-white mt-2 mb-3">Why Learners Choose Speedy Type</h2>
+            <h2 className="text-3xl font-black text-white mt-2 mb-3">Speedy Type Features</h2>
             <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
-              Speedy Type combines standardized typing tests with engaging visual and auditory customizations:
+              Speedy Type combines timed typing tests with visual and audio settings:
             </p>
           </div>
 
@@ -360,9 +354,9 @@ export default function HomePage() {
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-white/10 backdrop-blur border border-white/10 flex flex-col gap-2">
-              <strong className="text-lg font-bold text-white">Privacy-First History</strong>
+              <strong className="text-lg font-bold text-white">Browser-Saved History</strong>
               <p className="text-xs text-slate-300 leading-relaxed">
-                All test history, high scores, and theme settings are safely stored locally in your browser. No passwords required.
+                Typing results and theme settings are saved in browser storage. The app has no account feature; third-party services are described in the Privacy Policy.
               </p>
             </div>
           </div>

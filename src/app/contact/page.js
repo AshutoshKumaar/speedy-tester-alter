@@ -22,10 +22,10 @@ export default function ContactPage() {
       <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-12 shadow-md space-y-4">
         <h2 className="text-2xl font-black text-slate-900">Contact submissions are unavailable</h2>
         <p className="text-slate-600 leading-relaxed">
-          Please do not submit personal information through this site: messages cannot currently be sent, stored, or reviewed. A contact form will be added only when a real delivery method is configured.
+          Please do not submit personal information through this site: no contact form or message-delivery method is currently available, so messages cannot be sent, stored, or reviewed.
         </p>
         <p className="text-sm text-slate-500 leading-relaxed">
-          The typing tests, lessons, games, and settings continue to work entirely in your browser without an account or external session.
+          The app has no account feature; typing responses and saved results are handled by the browser. The site also loads advertising and other third-party resources described in the Privacy Policy.
         </p>
       </section>
     </div>

@@ -127,7 +127,6 @@ export async function generateMetadata({ params }) {
       type: "article",
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
-      authors: [article.author.name],
     },
     twitter: {
       card: "summary_large_image",
@@ -146,9 +145,9 @@ export default async function BlogPostPage({ params }) {
   }
 
   const allArticles = getAllArticles();
-  const relatedArticles = allArticles
-    .filter((a) => a.slug !== article.slug)
-    .slice(0, 3);
+  const relatedArticles = (article.relatedSlugs || [])
+    .map((relatedSlug) => allArticles.find((candidate) => candidate.slug === relatedSlug))
+    .filter(Boolean);
   const recommendedTool = article.category === "Accuracy Drills"
     ? { href: "/typing-accuracy", label: "Practice typing accuracy" }
     : article.category === "Speed Optimization" || article.category === "Benchmarks & Standards"
@@ -165,10 +164,6 @@ export default async function BlogPostPage({ params }) {
         "description": article.description,
         "datePublished": article.publishedAt,
         "dateModified": article.updatedAt,
-        "author": {
-          "@type": "Organization",
-          "name": article.author.name,
-        },
         "publisher": {
           "@type": "Organization",
           "name": "Speedy Type",
@@ -258,11 +253,7 @@ export default async function BlogPostPage({ params }) {
           {article.excerpt}
         </p>
 
-        <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <div>
-            <strong className="block text-slate-800 font-bold text-sm">{article.author.name}</strong>
-            <span>{article.author.role}</span>
-          </div>
+        <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-end text-xs text-slate-500">
           <Link
             href="/typing-test"
             className="px-4 py-2 bg-theme-main hover:bg-theme-dark text-white rounded-xl font-bold shadow-sm transition-all"
@@ -292,7 +283,7 @@ export default async function BlogPostPage({ params }) {
               Ready to Test What You Learned?
             </strong>
             <p className="text-xs sm:text-sm text-slate-600">
-              Apply these techniques on Speedy Type&apos;s free timed tests and track your WPM growth.
+              Try a related Speedy Type tool and compare your results under similar test conditions.
             </p>
           </div>
           <Link
