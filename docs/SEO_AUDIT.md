@@ -209,3 +209,6 @@ These are recommendations only. No `noindex`, sitemap membership, title, descrip
 6. Inspect valid article and unknown slug HTTP status; verify page rendering without interaction.
 7. Use GSC URL Inspection/Page Indexing to distinguish discovered-but-not-indexed from technical exclusion or canonical selection.
 8. Measure field/lab CWV and performance before making performance tradeoffs.
+
+### Implementation update - 2026-11-19
+The /typing-practice recommendations on direct drill access, one H1, semantic drill and guidance headings, WPM and accuracy explanation, contextual links, and FAQ answer availability have been implemented. Shared components gained opt-in route props with existing defaults preserved. Generated production HTML confirmed one H1, all three FAQ answers, all four drill samples, the HTTPS WWW canonical, index/follow robots, and expected title and description. Lint and production build pass. Browser interaction testing could not be completed because the computer-use service timed out and no Playwright or Puppeteer package is installed locally. Manually verify drill switching, duration selection, typing, results, and /typing-test interaction before release.

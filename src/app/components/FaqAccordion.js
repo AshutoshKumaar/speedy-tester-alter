@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 
-export default function FaqAccordion({ items = [] }) {
+export default function FaqAccordion({ items = [], keepAnswersInDom = false }) {
   const [openIndex, setOpenIndex] = useState(0);
+  const accordionId = useId().replace(/:/g, "");
 
   const toggleItem = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
@@ -13,16 +14,20 @@ export default function FaqAccordion({ items = [] }) {
     <div className="space-y-4">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
+        const triggerId = `${accordionId}-trigger-${index}`;
+        const answerId = `${accordionId}-answer-${index}`;
         return (
           <div
             key={index}
             className="border border-slate-200/80 rounded-2xl overflow-hidden bg-white shadow-sm transition-all"
           >
             <button
+              id={triggerId}
               type="button"
               onClick={() => toggleItem(index)}
               className="w-full p-5 text-left flex justify-between items-center gap-4 hover:bg-slate-50/80 transition-colors"
               aria-expanded={isOpen}
+              aria-controls={answerId}
             >
               <strong className="text-base sm:text-lg font-bold text-slate-800 font-mooli">
                 {item.question}
@@ -33,8 +38,14 @@ export default function FaqAccordion({ items = [] }) {
                 </svg>
               </span>
             </button>
-            {isOpen && (
-              <div className="px-5 pb-5 pt-1 text-sm text-slate-600 leading-relaxed font-mooli border-t border-slate-100/60 bg-slate-50/30">
+            {(keepAnswersInDom || isOpen) && (
+              <div
+                id={answerId}
+                role="region"
+                aria-labelledby={triggerId}
+                hidden={!isOpen}
+                className="px-5 pb-5 pt-1 text-sm text-slate-600 leading-relaxed font-mooli border-t border-slate-100/60 bg-slate-50/30"
+              >
                 {item.answer}
               </div>
             )}

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Typing Practice Drills & Key Row Exercises | Speedy Type",
-  description: "Practice touch typing with focused home row, top row, bottom row, and number key drills. Build accurate muscle memory with free guided typing practice.",
+  title: "Free Online Typing Practice & Drills | Speedy Type",
+  description: "Practice typing with focused home-row, top-row, bottom-row, and number-key drills. Choose a drill, start a timed run, and review your WPM and accuracy.",
   alternates: {
     canonical: "/typing-practice",
   },

@@ -12,7 +12,16 @@ import SettingsPage from "./SettingsPage";
 import TypingPage from "./TypingPage";
 import ResultsPage from "./ResultsPage";
 
-export default function TypingApp({ defaultView, defaultDuration = 60, defaultMode = "easy", practiceSentences }) {
+export default function TypingApp({
+  defaultView,
+  defaultDuration = 60,
+  defaultMode = "easy",
+  practiceSentences,
+  returnView,
+  testsHeadingLevel = "h1",
+  resultsHeadingLevel = "h1",
+  activityLabel = "Typing Test",
+}) {
   const { selectTheme, saveScore } = useTheme();
   const pathname = usePathname();
 
@@ -63,7 +72,7 @@ export default function TypingApp({ defaultView, defaultDuration = 60, defaultMo
   };
 
   const handleBackToTests = () => {
-    const fallbackView = defaultView || "tests";
+    const fallbackView = returnView || defaultView || "tests";
     setCurrentView(fallbackView);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -71,7 +80,7 @@ export default function TypingApp({ defaultView, defaultDuration = 60, defaultMo
   return (
     <div className="w-full">
       {currentView === "tests" && (
-        <TestsPage onStartTest={handleStartTest} />
+        <TestsPage onStartTest={handleStartTest} headingLevel={testsHeadingLevel} />
       )}
       {currentView === "lessons" && (
         <LessonsPage onStartTest={handleStartTest} />
@@ -93,6 +102,7 @@ export default function TypingApp({ defaultView, defaultDuration = 60, defaultMo
           key={`typing-${testDuration}-${testMode}-${testSessionKey}`}
           duration={testDuration}
           mode={testMode}
+          activityLabel={activityLabel}
           sentenceOverrides={practiceSentences}
           onFinishTest={handleFinishTest}
           onBackToTests={handleBackToTests}
@@ -101,6 +111,8 @@ export default function TypingApp({ defaultView, defaultDuration = 60, defaultMo
       {currentView === "results" && (
         <ResultsPage
           result={lastResult}
+          activityLabel={activityLabel}
+          headingLevel={resultsHeadingLevel}
           onTakeAgain={handleTakeAgain}
           onBackToTests={handleBackToTests}
         />

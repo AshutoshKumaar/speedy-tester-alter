@@ -3,7 +3,7 @@
 import React from "react";
 import { useTheme } from "../ThemeContext";
 
-export default function TestsPage({ onStartTest }) {
+export default function TestsPage({ onStartTest, headingLevel = "h1" }) {
   const { themeData, selectedTheme, isThemeApplied, scores, setActivePage } = useTheme();
   
   const currentThemeData = themeData[selectedTheme] || themeData.princess;
@@ -25,6 +25,7 @@ export default function TestsPage({ onStartTest }) {
   // Get last 4 scores for the mini bar chart (chronological)
   const miniScores = [...scores].reverse().slice(-4);
   const maxMiniWpm = miniScores.length > 0 ? Math.max(...miniScores.map((s) => s.wpm), 45) : 50;
+  const HeroHeading = headingLevel === "h2" ? "h2" : "h1";
 
   return (
     <section id="testsPage" className="w-[min(1440px,calc(100%-36px))] mx-auto py-6 md:py-10 animate-page-settle" aria-label="Typing tests">
@@ -116,9 +117,9 @@ export default function TestsPage({ onStartTest }) {
               <p className="m-0 mb-1.5 text-xs font-black tracking-widest uppercase text-[var(--theme-accent)] drop-shadow-sm">
                 {themeName} typing practice
               </p>
-              <h1 className="font-mooli font-black text-3xl sm:text-5xl leading-tight text-white drop-shadow-md">
+              <HeroHeading className="font-mooli font-black text-3xl sm:text-5xl leading-tight text-white drop-shadow-md">
                 Typing Tests
-              </h1>
+              </HeroHeading>
               <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-slate-100 font-medium max-w-lg drop-shadow-sm">
                 {themeSubtitle}. Choose a timed test, follow your progress, and keep your typing streak alive.
               </p>

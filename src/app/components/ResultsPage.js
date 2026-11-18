@@ -3,8 +3,9 @@
 import React from "react";
 import { useTheme } from "../ThemeContext";
 
-export default function ResultsPage({ result, onTakeAgain, onBackToTests }) {
+export default function ResultsPage({ result, onTakeAgain, onBackToTests, activityLabel = "Typing Test", headingLevel = "h1" }) {
   if (!result) return null;
+  const ResultHeading = headingLevel === "h2" ? "h2" : "h1";
 
   return (
     <section id="resultsPage" className="max-w-4xl mx-auto px-6 py-12 animate-page-settle" aria-label="Typing results">
@@ -32,13 +33,13 @@ export default function ResultsPage({ result, onTakeAgain, onBackToTests }) {
           </div>
 
           <p className="text-xs uppercase tracking-widest text-theme-dark font-extrabold font-mooli opacity-85 mb-2">
-            Typing Test Complete
+            {activityLabel} Complete
           </p>
-          <h1 id="resultTitle" className="text-3xl md:text-4xl font-black text-slate-800 font-mooli leading-tight mb-2">
+          <ResultHeading id="resultTitle" className="text-3xl md:text-4xl font-black text-slate-800 font-mooli leading-tight mb-2">
             Great Typing!
-          </h1>
+          </ResultHeading>
           <p id="resultSummary" className="text-slate-600 font-mooli text-sm md:text-base mb-8 max-w-md mx-auto leading-relaxed">
-            You completed the {result.duration} typing run in <span className="font-bold text-theme-dark capitalize">{result.mode}</span> mode!
+            You completed a {result.duration} run in <span className="font-bold text-theme-dark capitalize">{result.mode}</span> mode!
           </p>
 
           <div className="grid grid-cols-3 gap-4 mb-8 bg-slate-50/50 border border-slate-200/50 p-5 rounded-2xl">

@@ -115,3 +115,6 @@ Build and lint were run after the sitemap change. Build completed successfully; 
 ## Ongoing maintenance
 
 When architecture or SEO changes are implemented, update this file and `docs/SEO_AUDIT.md`. Record dated GSC metrics only from verified exports/screenshots or a connected property; maintain `docs/SEO_PROGRESS.md` separately when available. Do not treat sitemap membership or a successful build as proof of Google indexation.
+
+### Typing practice experience (2026-11-18)
+/typing-practice now initializes the shared TypingApp directly in its typing view with the selected drill's sample sentence, mode, and duration. The page exposes four drill cards and selectable 1/3/5/10-minute durations. Route-specific TypingApp props label the activity as practice and use H2 for its dashboard/results headings; default props retain the H1 and Typing Test labels used by other routes. The route layout owns its title, description, and canonical. Its FAQ accordion can retain collapsed answers in the initial DOM when keepAnswersInDom is set; other instances keep the previous lazy mounting behavior. The page links to /typing-test and /typing-speed.

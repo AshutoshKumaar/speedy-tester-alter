@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useTheme } from "../ThemeContext";
 
-export default function TypingPage({ duration, mode, sentenceOverrides, onFinishTest, onBackToTests }) {
+export default function TypingPage({ duration, mode, sentenceOverrides, onFinishTest, onBackToTests, activityLabel = "Typing Test" }) {
   const { 
     sentences, 
     selectedTheme, 
@@ -105,7 +105,7 @@ export default function TypingPage({ duration, mode, sentenceOverrides, onFinish
     const score = Math.max(0, Math.round(wpm * 12 + accuracy * 5 + completedLinesRef.current.length * 95 + totalCorrectRef.current));
 
     const finalResult = {
-      duration: `${duration / 60} Minute Typing Test`,
+      duration: `${duration / 60} Minute ${activityLabel}`,
       mode: mode,
       wpm,
       accuracy,
@@ -116,7 +116,7 @@ export default function TypingPage({ duration, mode, sentenceOverrides, onFinish
     };
 
     onFinishTest(finalResult);
-  }, [duration, mode, themeName, onFinishTest]);
+  }, [activityLabel, duration, mode, themeName, onFinishTest]);
 
   const startTimer = useCallback(() => {
     setHasStarted(true);
@@ -287,7 +287,7 @@ export default function TypingPage({ duration, mode, sentenceOverrides, onFinish
   };
 
   return (
-    <section id="typingPage" className="max-w-5xl mx-auto px-4 py-8 animate-page-settle" aria-label="Active typing test">
+    <section id="typingPage" className="max-w-5xl mx-auto px-4 py-8 animate-page-settle" aria-label={`Active ${activityLabel.toLowerCase()}`}>
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 bg-white/95 backdrop-blur border border-slate-200/80 px-6 py-4 rounded-3xl shadow-md mb-6">
         <div className="flex items-center gap-4 w-full md:w-auto">
           <button 
@@ -300,7 +300,7 @@ export default function TypingPage({ duration, mode, sentenceOverrides, onFinish
             <span className="w-2 h-2 border-l-2 border-b-2 border-slate-650 -rotate-45 translate-x-[1px]"></span>
           </button>
           <strong id="testTitle" className="text-slate-800 font-black font-mooli text-lg truncate">
-            {`${duration / 60} Min Typing Test`}
+            {`${duration / 60} Min ${activityLabel}`}
           </strong>
         </div>
 
