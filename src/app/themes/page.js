@@ -7,6 +7,10 @@ export const metadata = {
   alternates: {
     canonical: "/themes",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function ThemesRoute() {

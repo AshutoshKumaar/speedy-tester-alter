@@ -7,6 +7,10 @@ export const metadata = {
   alternates: {
     canonical: "/scores",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function ScoresRoute() {

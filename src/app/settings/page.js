@@ -7,6 +7,10 @@ export const metadata = {
   alternates: {
     canonical: "/settings",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function SettingsRoute() {
