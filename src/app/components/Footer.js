@@ -81,10 +81,10 @@ export default function Footer() {
               Company & Legal
             </strong>
             <Link href="/about" className="text-sm text-white/75 hover:text-white transition-colors">
-              About Speedy Type
+              About Us
             </Link>
             <Link href="/contact" className="text-sm text-white/75 hover:text-white transition-colors">
-              Contact page
+              Contact Us
             </Link>
             <Link href="/settings" className="text-sm text-white/75 hover:text-white transition-colors">
               Sound & Settings
