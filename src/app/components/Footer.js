@@ -25,7 +25,7 @@ export default function Footer() {
               <strong className="text-2xl font-black tracking-tight text-white font-mooli">Speedy Type</strong>
             </div>
             <p className="text-sm text-white/80 leading-relaxed max-w-sm font-medium">
-              Speedy Type offers browser-based typing tests, practice drills, lessons, games, and saved results.
+              Speedy Type is independently operated and maintained by Ashutosh Sinha. It offers browser-based typing tests, practice drills, lessons, games, and locally saved results.
             </p>
             <div className="flex items-center gap-2 mt-2">
               <span className="bg-black/30 border border-white/15 rounded-full px-3 py-1 font-bold text-xs text-[var(--theme-accent)] shadow-inner">

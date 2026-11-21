@@ -32,7 +32,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">1. Acceptance of Terms</h2>
           <p>
-            By accessing and using <strong>Speedy Type</strong> (&quot;the Website,&quot; accessible at <Link href="/" className="text-theme-dark font-bold hover:underline">https://www.speedytypeapp.com</Link>), you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions. If you do not agree to these terms, please do not use the service.
+            By accessing and using <strong>Speedy Type</strong> (&quot;the Website,&quot; accessible at <Link href="/" className="text-theme-dark font-bold hover:underline">https://www.speedytypeapp.com</Link>), you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions. Speedy Type is independently operated and maintained by Ashutosh Sinha; it is not presented as a registered company or business entity. If you do not agree to these terms, please do not use the service.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">4. Intellectual Property Rights</h2>
           <p>
-            All content on Speedy Type—including website software, code, logos, visual graphics, theme artwork, text articles, synthesized audio sound banks, and UI design—is the property of Speedy Type or its respective content contributors and is protected by applicable copyright and intellectual property laws.
+            Website materials may be owned by their respective rights holders or contributors. Speedy Type is independently operated and maintained by Ashutosh Sinha; this statement does not claim that every third-party asset or contribution is owned by the operator. Third-party materials remain subject to their applicable terms and licenses.
           </p>
           <p className="mt-2">
             You may not copy, reproduce, distribute, or create derivative works from website assets without prior written consent, except for personal, non-commercial educational use.
@@ -102,7 +102,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">9. Contact Information</h2>
           <p>
-            The <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link> currently has no message-delivery service or support inbox, so questions cannot be sent through the site.
+            Speedy Type is operated by Ashutosh Sinha. A support email has not yet been configured, so questions cannot currently be sent through the <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link>.
           </p>
         </div>
       </section>

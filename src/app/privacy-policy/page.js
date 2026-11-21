@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">1. Introduction &amp; Overview</h2>
           <p>
-            Welcome to <strong>Speedy Type</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). Speedy Type is a free online typing practice and test platform accessible at <Link href="/" className="text-theme-dark font-bold hover:underline">https://www.speedytypeapp.com</Link>. We respect your privacy and are committed to maintaining transparent, responsible data practices.
+            Welcome to <strong>Speedy Type</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a free online typing practice and test platform at <Link href="/" className="text-theme-dark font-bold hover:underline">https://www.speedytypeapp.com</Link>. Speedy Type is independently operated and maintained by Ashutosh Sinha.
           </p>
           <p className="mt-2">
             This Privacy Policy explains how information is handled when you visit and interact with our website, use our typing tools, practice lessons, and play educational games.
@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">2. Accounts and Information Handled by the App</h2>
           <p>
-            The site does not provide user accounts or personal profiles to access its typing tests, lessons, and games. The contact page also has no message-delivery service.
+            The site does not provide user accounts or personal profiles to access its typing tests, lessons, and games. A support email has not been configured, and the contact page has no message-delivery service.
           </p>
           <p className="mt-2">The app interface has no registration, email sign-up, payment, or message-submission feature. This does not describe information that may be processed by the hosting provider, Google advertising, or other third-party services.</p>
         </div>
@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">12. Contact Information</h2>
           <p>
-            The <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link> currently has no message-delivery service or support inbox, so questions cannot be sent through the site.
+            Speedy Type is operated by Ashutosh Sinha. A support email has not yet been configured, so messages cannot currently be sent through the <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link>.
           </p>
         </div>
 

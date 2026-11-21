@@ -71,7 +71,7 @@ export default function DisclaimerPage() {
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">5. Contact</h2>
           <p>
-            The <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link> currently has no message-delivery service or support inbox, so questions cannot be sent through the site.
+            Speedy Type is independently operated and maintained by Ashutosh Sinha. A support email has not yet been configured, so messages cannot currently be sent through the <Link href="/contact" className="text-theme-dark font-bold hover:underline">Contact Page</Link>.
           </p>
         </div>
       </section>
