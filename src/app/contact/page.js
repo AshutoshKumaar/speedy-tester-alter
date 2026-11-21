@@ -29,7 +29,7 @@ const contactTopics = [
 export default function ContactPage() {
   return (
     <main className="mx-auto w-[min(1120px,calc(100%-36px))] py-10 font-mooli text-slate-800 sm:py-16">
-      <header className="mb-9 max-w-3xl sm:mb-12">
+      <header className="readability-backdrop mb-9 max-w-3xl sm:mb-12">
         <p className="text-sm font-bold uppercase tracking-[0.14em] text-sky-800">We’re listening</p>
         <h1 className="mt-2 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Contact Us</h1>
         <p className="mt-5 text-lg leading-relaxed text-slate-600">

@@ -39,16 +39,16 @@ export default function Footer() {
             <strong className="text-sm uppercase tracking-wider text-[var(--theme-accent)] font-bold mb-1">
               Typing Tools
             </strong>
-            <Link href="/typing-test" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/typing-test" className="text-sm text-white/90 hover:text-white transition-colors">
               Timed Typing Tests
             </Link>
-            <Link href="/typing-practice" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/typing-practice" className="text-sm text-white/90 hover:text-white transition-colors">
               Practice Drills
             </Link>
-            <Link href="/typing-speed" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/typing-speed" className="text-sm text-white/90 hover:text-white transition-colors">
               Speed Benchmarks
             </Link>
-            <Link href="/typing-accuracy" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/typing-accuracy" className="text-sm text-white/90 hover:text-white transition-colors">
               Accuracy Training
             </Link>
           </div>
@@ -58,19 +58,19 @@ export default function Footer() {
             <strong className="text-sm uppercase tracking-wider text-[var(--theme-accent)] font-bold mb-1">
               Learn & Play
             </strong>
-            <Link href="/lessons" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/lessons" className="text-sm text-white/90 hover:text-white transition-colors">
               Typing Lessons
             </Link>
-            <Link href="/games" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/games" className="text-sm text-white/90 hover:text-white transition-colors">
               3D Typing Games
             </Link>
-            <Link href="/themes" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/themes" className="text-sm text-white/90 hover:text-white transition-colors">
               12 Themed Worlds
             </Link>
-            <Link href="/scores" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/scores" className="text-sm text-white/90 hover:text-white transition-colors">
               Score Room
             </Link>
-            <Link href="/blog" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/blog" className="text-sm text-white/90 hover:text-white transition-colors">
               Typing Blog & Guides
             </Link>
           </div>
@@ -80,29 +80,29 @@ export default function Footer() {
             <strong className="text-sm uppercase tracking-wider text-[var(--theme-accent)] font-bold mb-1">
               Company & Legal
             </strong>
-            <Link href="/about" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/about" className="text-sm text-white/90 hover:text-white transition-colors">
               About Us
             </Link>
-            <Link href="/contact" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/contact" className="text-sm text-white/90 hover:text-white transition-colors">
               Contact Us
             </Link>
-            <Link href="/settings" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/settings" className="text-sm text-white/90 hover:text-white transition-colors">
               Sound & Settings
             </Link>
-            <Link href="/privacy-policy" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/privacy-policy" className="text-sm text-white/90 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/terms" className="text-sm text-white/90 hover:text-white transition-colors">
               Terms & Conditions
             </Link>
-            <Link href="/disclaimer" className="text-sm text-white/75 hover:text-white transition-colors">
+            <Link href="/disclaimer" className="text-sm text-white/90 hover:text-white transition-colors">
               Disclaimer
             </Link>
           </div>
         </div>
 
         {/* Bottom copyright row */}
-        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/60">
+        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/80">
           <p className="font-medium text-center sm:text-left">
             &copy; {new Date().getFullYear()} Speedy Type. All rights reserved. Free online touch typing education.
           </p>

@@ -379,7 +379,7 @@ export default function ThemesPage() {
       {!detailMode ? (
         <>
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-12">
-            <div className="lg:max-w-2xl text-center lg:text-left">
+            <div className="readability-backdrop lg:max-w-2xl text-center lg:text-left">
               <p className="text-xs uppercase tracking-widest text-theme-dark font-extrabold font-mooli opacity-85">
                 Themes &amp; Characters
               </p>
@@ -428,6 +428,7 @@ export default function ThemesPage() {
                     type="button"
                     style={{
                       "--card-main": data.main,
+                      "--card-dark": data.dark,
                       "--card-accent": data.accent,
                       backgroundImage: cardBackground,
                       backgroundSize: "cover",
@@ -443,7 +444,7 @@ export default function ThemesPage() {
                     </small>
                     
                     {isActive && (
-                      <span className="absolute top-4 right-4 bg-[var(--card-main)] text-white text-xxs font-bold font-mooli px-2.5 py-1 rounded-full shadow-sm">
+                      <span className="absolute top-4 right-4 bg-[var(--card-dark)] text-white text-xxs font-bold font-mooli px-2.5 py-1 rounded-full shadow-sm">
                         Active
                       </span>
                     )}
@@ -501,7 +502,7 @@ export default function ThemesPage() {
                 <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold font-mooli text-xs px-4 py-1.5 rounded-full inline-block mb-6 shadow-sm">
                   {currentThemeData.name} World
                 </span>
-                <div className="max-w-md text-white mt-4">
+                <div className="readability-backdrop-dark max-w-md text-white mt-4 rounded-2xl p-4 sm:p-5">
                   <h1 className="text-3xl md:text-4xl font-extrabold font-mooli text-white leading-tight">
                     {currentThemeData.name}
                   </h1>
@@ -555,7 +556,7 @@ export default function ThemesPage() {
                 
                 <div className="flex gap-4">
                   <button 
-                    className="px-6 py-3 rounded-2xl font-bold font-mooli text-sm text-slate-900 bg-white hover:bg-slate-100 disabled:opacity-60 disabled:pointer-events-none transition-all duration-200 shadow-md active:scale-95" 
+                    className="px-6 py-3 rounded-2xl font-bold font-mooli text-sm text-slate-900 bg-white hover:bg-slate-100 disabled:pointer-events-none transition-all duration-200 shadow-md active:scale-95"
                     type="button"
                     onClick={handleSelectTheme}
                     disabled={isThemeApplied && previewTheme === selectedTheme}
@@ -563,7 +564,7 @@ export default function ThemesPage() {
                     {isThemeApplied && previewTheme === selectedTheme ? "Theme Selected" : "Select Theme"}
                   </button>
                   <button 
-                    className="px-6 py-3 rounded-2xl font-bold font-mooli text-sm text-white/80 hover:text-white border border-white/20 hover:bg-white/10 disabled:opacity-40 disabled:pointer-events-none transition-all duration-200 active:scale-95" 
+                    className="px-6 py-3 rounded-2xl font-bold font-mooli text-sm text-white/90 hover:text-white border border-white/30 hover:bg-white/10 disabled:pointer-events-none transition-all duration-200 active:scale-95"
                     type="button"
                     onClick={handleUnselectTheme}
                     disabled={!isThemeApplied}

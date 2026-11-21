@@ -221,7 +221,7 @@ export default function TestsPage({ onStartTest, headingLevel = "h1" }) {
                     const score = miniScores[idx];
                     if (!score) {
                       return (
-                        <div key={idx} className="flex-1 flex flex-col items-center gap-1.5 opacity-40">
+                        <div key={idx} className="flex-1 flex flex-col items-center gap-1.5">
                           <div className="w-full bg-slate-100 rounded-t-lg border-2 border-dashed border-slate-200" style={{ height: "10px" }} />
                           <span className="text-[9px] font-bold text-slate-350 font-mono">--</span>
                         </div>

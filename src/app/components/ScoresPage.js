@@ -51,7 +51,7 @@ export default function ScoresPage() {
 
   return (
     <section id="scoresPage" className="max-w-4xl mx-auto px-6 py-12 animate-page-settle" aria-label="Scores and progress">
-      <div className="mb-10 text-center md:text-left">
+      <div className="readability-backdrop mb-10 text-center md:text-left">
         <p className="text-xs uppercase tracking-widest text-theme-dark font-extrabold font-mooli opacity-85">
           Scores
         </p>

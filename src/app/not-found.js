@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div className="w-[min(800px,calc(100%-36px))] mx-auto py-20 font-mooli text-slate-800 text-center space-y-6">
+    <div className="readability-backdrop w-[min(800px,calc(100%-36px))] mx-auto py-20 font-mooli text-slate-800 text-center space-y-6">
       <div className="w-20 h-20 bg-theme-soft text-theme-dark rounded-full flex items-center justify-center mx-auto text-3xl font-black shadow-inner">
         404
       </div>

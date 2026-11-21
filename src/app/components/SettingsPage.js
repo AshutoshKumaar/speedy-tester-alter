@@ -120,7 +120,7 @@ export default function SettingsPage() {
 
           <button 
             id="soundPreviewBtn" 
-            className="w-full py-3.5 rounded-2xl font-bold font-mooli text-sm text-slate-900 bg-theme-accent hover:bg-theme-accent/95 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2" 
+            className="w-full py-3.5 rounded-2xl font-bold font-mooli text-sm text-slate-900 bg-theme-accent hover:bg-theme-accent/95 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95 disabled:bg-slate-300 disabled:pointer-events-none flex items-center justify-center gap-2"
             type="button"
             onClick={handlePreviewBtnClick}
             disabled={selectedSound === "off"}

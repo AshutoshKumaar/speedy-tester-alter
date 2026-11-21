@@ -7,7 +7,7 @@
 @layer base {
   body {
     font-family: 'Mooli', sans-serif;
-    color: #3f434a;
+    color: #000;
     background: #ffffff;
     transition: background 260ms ease, color 200ms ease;
   }
@@ -25,7 +25,7 @@
   --orange: #ff7f24;
   --red: #ef5d5d;
   --ink: #3f434a;
-  --muted: #707986;
+  --muted: #586575;
   --line: #d9dfe5;
   --panel: #ffffff;
   --page: #f3f3f3;
@@ -40,6 +40,90 @@
   --theme-accent: #ffc83d;
   --theme-glow: color-mix(in srgb, var(--theme-main), white 74%);
   --theme-transition: 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Readable defaults for small supporting labels used across the app. */
+.text-muted {
+  color: #586575;
+}
+
+.text-slate-400,
+.text-slate-350 {
+  color: #64748b;
+}
+
+.placeholder\:text-slate-400::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+
+.text-theme-main {
+  color: var(--theme-dark);
+}
+
+/* White labels need the theme's dark companion color on small controls. */
+.bg-theme-main.text-white {
+  background-color: var(--theme-dark);
+}
+
+/* HUD labels sit on nearly black panels, so use a light neutral there. */
+.game-hud .text-slate-400 {
+  color: #cbd5e1;
+}
+
+.app-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(10, 18, 38, 0.34);
+  pointer-events: none;
+}
+
+/* Local backing layers for headings that sit over the shared theme artwork. */
+.readability-backdrop,
+.readability-backdrop-dark {
+  position: relative;
+  isolation: isolate;
+}
+
+.readability-backdrop::before,
+.readability-backdrop-dark::before {
+  content: "";
+  position: absolute;
+  inset: -0.75rem;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 1.25rem;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
+.readability-backdrop::before {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.readability-backdrop-dark::before {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(15, 23, 42, 0.72);
+}
+
+/* Keep keyboard focus visible on both light cards and dark themed panels. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid #172554;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Global Theme Background Layering & Saturation */

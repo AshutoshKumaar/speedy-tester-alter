@@ -104,7 +104,7 @@ export default function ContactForm() {
           <input id="website" name="website" value={values.website} onChange={updateField} tabIndex={-1} autoComplete="off" />
         </div>
 
-        <fieldset disabled={deliveryConfigured !== true} className="space-y-5 disabled:opacity-70">
+        <fieldset disabled={deliveryConfigured !== true} className="space-y-5">
         <div>
           <label htmlFor="fullName" className="text-sm font-bold text-slate-800">Full name <span aria-hidden="true" className="text-rose-700">*</span></label>
           <input className={inputClass} id="fullName" name="fullName" autoComplete="name" maxLength={100} value={values.fullName} onChange={updateField} required aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? "fullName-error" : undefined} />
@@ -144,7 +144,7 @@ export default function ContactForm() {
 
         {status && <p className={`rounded-xl border p-4 text-sm leading-relaxed ${status.type === "success" ? "border-emerald-300 bg-emerald-50 text-emerald-950" : "border-rose-300 bg-rose-50 text-rose-950"}`} role={status.type === "success" ? "status" : "alert"}>{status.message}</p>}
 
-        <button type="submit" disabled={submitting || deliveryConfigured !== true} className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-sky-800 px-5 py-3 font-bold text-white shadow-sm transition hover:bg-sky-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-800 disabled:cursor-not-allowed disabled:bg-slate-400 sm:w-auto">
+        <button type="submit" disabled={submitting || deliveryConfigured !== true} className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-sky-800 px-5 py-3 font-bold text-white shadow-sm transition hover:bg-sky-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-800 disabled:cursor-not-allowed disabled:bg-slate-600 sm:w-auto">
           {submitting ? "Sending…" : deliveryConfigured === false ? "Email form unavailable" : deliveryConfigured === null ? "Checking availability…" : "Send enquiry"}
         </button>
         <p className="text-xs leading-relaxed text-slate-500">A required honeypot field helps screen automated spam. Do not include passwords, payment details, or other sensitive information.</p>

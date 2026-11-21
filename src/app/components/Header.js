@@ -30,10 +30,10 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between min-h-[64px] px-4 sm:px-6 text-white border-b border-white/10 backdrop-blur-md transition-all duration-300 bg-gradient-to-r from-theme-dark to-theme-main shadow-[0_10px_28px_rgba(17,34,46,0.24)]">
+    <header className="app-header relative isolate sticky top-0 z-30 flex items-center justify-between min-h-[64px] px-4 sm:px-6 text-white border-b border-white/10 backdrop-blur-md transition-all duration-300 bg-gradient-to-r from-theme-dark to-theme-main shadow-[0_10px_28px_rgba(17,34,46,0.24)]">
       <Link
         href="/"
-        className="inline-flex items-center gap-2.5 text-white no-underline text-xl sm:text-2xl font-bold font-mooli group transition-all duration-200 shrink-0"
+        className="relative z-10 inline-flex items-center gap-2.5 text-white no-underline text-xl sm:text-2xl font-bold font-mooli group transition-all duration-200 shrink-0"
         onClick={() => {
           setActivePage("tests");
           setMobileMenuOpen(false);
@@ -48,7 +48,7 @@ export default function Header() {
       </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex items-center gap-1.5 ml-auto" aria-label="Main navigation">
+      <nav className="relative z-10 hidden lg:flex items-center gap-1.5 ml-auto" aria-label="Main navigation">
         {navItems.map((item) => {
           const active = isItemActive(item);
           return (
@@ -67,7 +67,7 @@ export default function Header() {
       </nav>
 
       {/* Mobile Menu Button */}
-      <div className="flex items-center gap-2 lg:hidden">
+      <div className="relative z-10 flex items-center gap-2 lg:hidden">
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -108,7 +108,7 @@ export default function Header() {
               </Link>
             );
           })}
-          <div className="mt-2 pt-2 border-t border-white/10 flex flex-wrap gap-2 text-xs text-white/70">
+          <div className="mt-2 pt-2 border-t border-white/10 flex flex-wrap gap-2 text-xs text-white/90">
             <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-white px-2 py-1">About</Link>
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-white px-2 py-1">Contact</Link>
             <Link href="/privacy-policy" onClick={() => setMobileMenuOpen(false)} className="hover:text-white px-2 py-1">Privacy</Link>

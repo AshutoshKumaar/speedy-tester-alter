@@ -1,16 +1,27 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useTheme } from "../ThemeContext";
-import TestsPage from "./TestsPage";
-import LessonsPage from "./LessonsPage";
-import GamesPage from "./GamesPage";
-import ThemesPage from "./ThemesPage";
-import ScoresPage from "./ScoresPage";
-import SettingsPage from "./SettingsPage";
-import TypingPage from "./TypingPage";
-import ResultsPage from "./ResultsPage";
+
+function ViewLoading() {
+  return (
+    <div className="mx-auto flex min-h-40 w-full items-center justify-center gap-3 py-12 text-sm font-semibold text-slate-700" role="status" aria-live="polite">
+      <span className="h-5 w-5 animate-spin rounded-full border-2 border-slate-300 border-t-sky-800" aria-hidden="true" />
+      <span>Loading your activity…</span>
+    </div>
+  );
+}
+
+const TestsPage = dynamic(() => import("./TestsPage"), { loading: ViewLoading });
+const LessonsPage = dynamic(() => import("./LessonsPage"), { loading: ViewLoading });
+const GamesPage = dynamic(() => import("./GamesPage"), { loading: ViewLoading });
+const ThemesPage = dynamic(() => import("./ThemesPage"), { loading: ViewLoading });
+const ScoresPage = dynamic(() => import("./ScoresPage"), { loading: ViewLoading });
+const SettingsPage = dynamic(() => import("./SettingsPage"), { loading: ViewLoading });
+const TypingPage = dynamic(() => import("./TypingPage"), { loading: ViewLoading });
+const ResultsPage = dynamic(() => import("./ResultsPage"), { loading: ViewLoading });
 
 export default function TypingApp({
   defaultView,

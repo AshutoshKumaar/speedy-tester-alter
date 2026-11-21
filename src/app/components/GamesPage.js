@@ -606,7 +606,7 @@ function KeyboardJumpGame({ gameData, onBack }) {
   }, []);
 
   return (
-    <section className="bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
+    <section className="game-hud bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
       {/* Sleek retro HUD panel */}
       <div className="flex justify-between items-center bg-slate-950/80 backdrop-blur border border-white/10 rounded-2xl px-5 py-3 mb-5 gap-4 shadow-lg">
         <div className="flex items-center gap-3">
@@ -1231,7 +1231,7 @@ function DinoRunnerGame({ gameData, onBack }) {
   }, []);
 
   return (
-    <section className="bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
+    <section className="game-hud bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
       {/* Sleek retro HUD panel */}
       <div className="flex justify-between items-center bg-slate-950/80 backdrop-blur border border-white/10 rounded-2xl px-5 py-3 mb-5 gap-4 shadow-lg">
         <div className="flex items-center gap-3">
@@ -1751,7 +1751,7 @@ function SpaceNinjaGame({ gameData, onBack }) {
   }, []);
 
   return (
-    <section className="bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
+    <section className="game-hud bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
       {/* Sleek retro HUD panel */}
       <div className="flex justify-between items-center bg-slate-950/80 backdrop-blur border border-white/10 rounded-2xl px-5 py-3 mb-5 gap-4 shadow-lg">
         <div className="flex items-center gap-3">
@@ -2279,7 +2279,7 @@ function BubblePopperGame({ gameData, onBack }) {
   }, []);
 
   return (
-    <section className="bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
+    <section className="game-hud bg-slate-900 border-4 border-slate-700/80 p-6 rounded-[34px] shadow-2xl relative max-w-4xl mx-auto overflow-hidden animate-page-settle font-mooli text-white select-none">
       <div className="flex justify-between items-center bg-slate-950/80 backdrop-blur border border-white/10 rounded-2xl px-5 py-3 mb-5 gap-4 shadow-lg">
         <div className="flex items-center gap-3">
           <button type="button" onClick={onBack} className="px-4 py-1.5 bg-white/10 hover:bg-white/20 active:scale-95 border border-white/20 rounded-xl font-bold text-xs text-white transition-all shadow">Lobby</button>
@@ -2454,7 +2454,7 @@ export default function GamesPage() {
 
   return (
     <section id="gamesPage" className="max-w-6xl mx-auto px-6 py-12 animate-page-settle" aria-label="Typing games">
-      <div className="mb-10 text-center md:text-left">
+      <div className="readability-backdrop mb-10 text-center md:text-left">
         <p className="text-xs uppercase tracking-widest text-theme-dark font-extrabold font-mooli opacity-85">
           Arcade Zone
         </p>
@@ -2499,7 +2499,7 @@ export default function GamesPage() {
                 <div className="flex justify-between items-center w-full mb-3">
                   <span 
                     className="px-3.5 py-1 text-xs font-bold font-mooli rounded-full text-white uppercase tracking-wider shadow-sm"
-                    style={{ backgroundColor: data.main }}
+                    style={{ backgroundColor: data.dark }}
                   >
                     {gameDifficulties[game.id] === "easy" ? "Easy" : gameDifficulties[game.id] === "medium" ? "Moderate" : "Difficult"}
                   </span>
@@ -2536,7 +2536,7 @@ export default function GamesPage() {
                             ? "bg-[var(--card-main)] text-white shadow-[0_0_12px_rgba(255,255,255,0.15)]"
                             : "text-slate-400 hover:text-white"
                         }`}
-                        style={active ? { backgroundColor: data.main } : {}}
+                        style={active ? { backgroundColor: data.dark } : {}}
                       >
                         {label}
                       </button>
@@ -2548,7 +2548,7 @@ export default function GamesPage() {
                   type="button"
                   onClick={() => handlePlayGame(game)}
                   className="px-6 py-3 rounded-2xl font-bold font-mooli text-sm text-white shadow-md hover:shadow-lg transform transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 flex items-center gap-2 group/btn"
-                  style={{ backgroundColor: data.main }}
+                  style={{ backgroundColor: data.dark }}
                 >
                   <span>Play Game</span>
                   <svg 
