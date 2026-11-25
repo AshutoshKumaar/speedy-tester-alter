@@ -11,12 +11,14 @@ export const metadata = {
     canonical: "/typing-accuracy",
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Improve Typing Accuracy: Free Practice | Speedy Type",
     description: "Reduce typing mistakes with focused accuracy drills. Learn why accuracy matters more than raw speed and train to type cleaner.",
     url: "https://www.speedytypeapp.com/typing-accuracy",
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary_large_image",
     title: "Improve Typing Accuracy: Free Practice | Speedy Type",
     description: "Reduce typing mistakes with focused accuracy drills. Learn why accuracy matters more than raw speed and train to type cleaner.",

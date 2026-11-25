@@ -7,6 +7,7 @@ export const metadata = {
   description: "Learn about Speedy Type, a free typing test and touch typing practice app built to help you type faster and more accurately.",
   alternates: { canonical: "/about" },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "About Speedy Type | Free Typing Test & Practice App",
     description: "Learn about Speedy Type, a free typing test and touch typing practice app built to help you type faster and more accurately.",
     url: "https://www.speedytypeapp.com/about",
@@ -14,6 +15,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary",
     title: "About Speedy Type | Free Typing Test & Practice App",
     description: "Learn about Speedy Type, a free typing test and touch typing practice app built to help you type faster and more accurately.",

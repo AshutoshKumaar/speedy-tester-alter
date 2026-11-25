@@ -6,6 +6,7 @@ export const metadata = {
   description: "Get in touch with the Speedy Type team for feedback, questions or support.",
   alternates: { canonical: "/contact" },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Contact Speedy Type",
     description: "Get in touch with the Speedy Type team for feedback, questions or support.",
     url: "https://www.speedytypeapp.com/contact",
@@ -13,6 +14,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary",
     title: "Contact Speedy Type",
     description: "Get in touch with the Speedy Type team for feedback, questions or support.",

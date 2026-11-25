@@ -9,12 +9,14 @@ export const metadata = {
     canonical: "/games",
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Free Typing Games to Boost Your WPM | Speedy Type",
     description: "Make typing practice fun with free typing games. Improve speed and accuracy while playing in colorful 3D worlds.",
     url: "https://www.speedytypeapp.com/games",
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary_large_image",
     title: "Free Typing Games to Boost Your WPM | Speedy Type",
     description: "Make typing practice fun with free typing games. Improve speed and accuracy while playing in colorful 3D worlds.",

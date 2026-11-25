@@ -11,12 +11,14 @@ export const metadata = {
     canonical: "/typing-test",
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Free Typing Test: Check Your WPM & Accuracy | Speedy Type",
     description: "Take a free online typing test with 1, 3, 5 and 10-minute options. See your words per minute (WPM) and accuracy instantly, no signup needed.",
     url: "https://www.speedytypeapp.com/typing-test",
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary_large_image",
     title: "Free Typing Test: Check Your WPM & Accuracy | Speedy Type",
     description: "Take a free online typing test with 1, 3, 5 and 10-minute options. See your words per minute (WPM) and accuracy instantly, no signup needed.",
@@ -108,6 +110,8 @@ export default function TypingTestPage() {
             { href: "/typing-practice", label: "Practice key rows" },
             { href: "/typing-speed", label: "Understand WPM results" },
             { href: "/typing-accuracy", label: "Improve typing accuracy" },
+            { href: "/blog/average-typing-speed-by-age", label: "Average typing speed by age" },
+            { href: "/blog/what-is-a-good-typing-speed", label: "What is a good typing speed?" },
           ]}
         />
 

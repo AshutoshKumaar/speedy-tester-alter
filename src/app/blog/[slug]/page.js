@@ -121,6 +121,7 @@ export async function generateMetadata({ params }) {
       canonical: `/blog/${article.slug}`,
     },
     openGraph: {
+      images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
       title: article.title,
       description: article.description,
       url: `https://www.speedytypeapp.com/blog/${article.slug}`,
@@ -129,6 +130,7 @@ export async function generateMetadata({ params }) {
       modifiedTime: article.updatedAt,
     },
     twitter: {
+      images: ["/og-default.png"],
       card: "summary_large_image",
       title: article.title,
       description: article.description,

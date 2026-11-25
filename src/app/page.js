@@ -10,6 +10,7 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Free Typing Test & Practice Online | Speedy Type",
     description: "Test your typing speed and accuracy with free 1, 3, 5 and 10-minute typing tests. Practice touch typing, track your progress and improve your WPM with Speedy Type.",
     url: "https://www.speedytypeapp.com",
@@ -17,6 +18,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary_large_image",
     title: "Free Typing Test & Practice Online | Speedy Type",
     description: "Test your typing speed and accuracy with free 1, 3, 5 and 10-minute typing tests. Practice touch typing, track your progress and improve your WPM with Speedy Type.",

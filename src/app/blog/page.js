@@ -9,12 +9,14 @@ export const metadata = {
     canonical: "/blog",
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Typing Tips, Guides & WPM Benchmarks | Speedy Type Blog",
     description: "Guides on typing speed, accuracy, touch typing and average WPM by age. Practical tips to type faster and make fewer mistakes.",
     url: "https://www.speedytypeapp.com/blog",
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary_large_image",
     title: "Typing Tips, Guides & WPM Benchmarks | Speedy Type Blog",
     description: "Guides on typing speed, accuracy, touch typing and average WPM by age. Practical tips to type faster and make fewer mistakes.",

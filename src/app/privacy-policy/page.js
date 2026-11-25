@@ -8,10 +8,12 @@ export const metadata = {
     canonical: "/privacy-policy",
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Privacy Policy | Speedy Type",
     description: "Learn what information Speedy Type stores in your browser and how advertising and embedded media may use data.",
   },
   twitter: {
+    images: ["/og-default.png"],
     title: "Privacy Policy | Speedy Type",
     description: "Learn what information Speedy Type stores in your browser and how advertising and embedded media may use data.",
   },

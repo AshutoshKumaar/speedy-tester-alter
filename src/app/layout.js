@@ -29,6 +29,7 @@ export const metadata = {
     telephone: false,
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Speedy Type — Free Online Typing Test & Practice",
     description: "Test your typing speed and accuracy with free timed typing tests, interactive lessons, and 12 colorful animated worlds.",
     url: "https://www.speedytypeapp.com",
@@ -37,6 +38,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
+    images: ["/og-default.png"],
     card: "summary_large_image",
     title: "Speedy Type — Free Online Typing Test & Practice",
     description: "Free online typing test and touch typing practice with 12 custom worlds, sound studio, and games.",
@@ -54,11 +56,12 @@ export const metadata = {
   },
 };
 
+export const viewport = { width: "device-width", initialScale: 1 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3201639516497362"

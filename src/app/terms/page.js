@@ -8,10 +8,12 @@ export const metadata = {
     canonical: "/terms",
   },
   openGraph: {
+    images: [{ url: "/og-default.png", width: 1024, height: 1024, alt: "Speedy Type - free online typing test and practice" }],
     title: "Terms of Service | Speedy Type",
     description: "Review the terms that apply when you use Speedy Type's free typing tests, practice tools and website.",
   },
   twitter: {
+    images: ["/og-default.png"],
     title: "Terms of Service | Speedy Type",
     description: "Review the terms that apply when you use Speedy Type's free typing tests, practice tools and website.",
   },

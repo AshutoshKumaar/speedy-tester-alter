@@ -2,7 +2,7 @@
 
 import React, { useId, useState } from "react";
 
-export default function FaqAccordion({ items = [], keepAnswersInDom = false }) {
+export default function FaqAccordion({ items = [] }) {
   const [openIndex, setOpenIndex] = useState(0);
   const accordionId = useId().replace(/:/g, "");
 
@@ -38,8 +38,7 @@ export default function FaqAccordion({ items = [], keepAnswersInDom = false }) {
                 </svg>
               </span>
             </button>
-            {(keepAnswersInDom || isOpen) && (
-              <div
+            <div
                 id={answerId}
                 role="region"
                 aria-labelledby={triggerId}
@@ -47,8 +46,7 @@ export default function FaqAccordion({ items = [], keepAnswersInDom = false }) {
                 className="px-5 pb-5 pt-1 text-sm text-slate-600 leading-relaxed font-mooli border-t border-slate-100/60 bg-slate-50/30"
               >
                 {item.answer}
-              </div>
-            )}
+            </div>
           </div>
         );
       })}
