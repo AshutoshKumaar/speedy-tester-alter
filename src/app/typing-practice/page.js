@@ -51,6 +51,14 @@ const durationOptions = [
   { seconds: 600, label: "10 minutes" },
 ];
 
+const fingerMap = [
+  { finger: "Pinky", left: "Q A Z 1", right: "P ; / 0" },
+  { finger: "Ring finger", left: "W S X 2", right: "O L . 9" },
+  { finger: "Middle finger", left: "E D C 3", right: "I K , 8" },
+  { finger: "Index finger", left: "R F V 4 and T G B 5", right: "U J M 7 and Y H N 6" },
+  { finger: "Thumb", left: "Space bar", right: "Space bar" },
+];
+
 export default function TypingPracticePage() {
   const [selectedDrill, setSelectedDrill] = useState("home");
   const [selectedDuration, setSelectedDuration] = useState(null);
@@ -67,6 +75,18 @@ export default function TypingPracticePage() {
     {
       question: "How long should I practice each day?",
       answer: "There is no single daily duration that suits everyone. Choose a session length you can repeat comfortably, and stop or take a break if your hands feel strained."
+    },
+    {
+      question: "Is Speedy Type typing practice free?",
+      answer: "Yes. The typing drills and tests are free to use in your browser, and your results are saved locally on your device."
+    },
+    {
+      question: "What is touch typing?",
+      answer: "Touch typing means typing without looking at the keys, with each finger responsible for a fixed set of keys. You find your position with the small bumps on the F and J keys and keep your eyes on the screen."
+    },
+    {
+      question: "How can I stop looking at the keyboard while typing?",
+      answer: "Start with the home row, use the bumps on F and J to find your position, and slow down enough that you can reach each key without looking. Accuracy comes first; speed tends to follow with regular practice."
     }
   ];
 
@@ -212,6 +232,64 @@ export default function TypingPracticePage() {
           </div>
         </section>
 
+        <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-12 shadow-lg">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4">
+            Touch Typing Practice: Where Your Fingers Belong
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+            Touch typing means typing without looking at the keys, with each finger responsible for a fixed set of keys. Rest your fingers on the home row (A S D F for the left hand, J K L ; for the right) and use the small bumps on F and J to find your position without looking. Your thumbs rest on the space bar.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="text-sm text-slate-700">
+              <caption className="sr-only">Which finger types which key in touch typing</caption>
+              <thead>
+                <tr className="border-b border-slate-200">
+                  <th scope="col" className="py-2 pr-4 text-left">Finger</th>
+                  <th scope="col" className="py-2 pr-4 text-left">Left hand keys</th>
+                  <th scope="col" className="py-2 pr-4 text-left">Right hand keys</th>
+                </tr>
+              </thead>
+              <tbody>
+                {fingerMap.map((item) => (
+                  <tr key={item.finger} className="border-b border-slate-200">
+                    <th scope="row" className="py-2 pr-4 text-left font-bold">{item.finger}</th>
+                    <td className="py-2 pr-4">{item.left}</td>
+                    <td className="py-2 pr-4">{item.right}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed mt-6">
+            Learn one row at a time: start with the home row drill, then the top row, bottom row and finally numbers and symbols. For a full walkthrough, read{" "}
+            <Link href="/blog/touch-typing-for-beginners" className="font-semibold text-theme-dark underline underline-offset-2">touch typing for beginners</Link>
+            {" "}and the{" "}
+            <Link href="/blog/qwerty-keyboard-guide" className="font-semibold text-theme-dark underline underline-offset-2">QWERTY keyboard guide</Link>.
+          </p>
+        </section>
+
+        <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-12 shadow-lg">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4">
+            A Simple Daily Typing Practice Routine
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+            Short, regular sessions are easier to keep up than occasional long ones. Many learners find 10-15 minutes a manageable daily session; adjust it to what your hands and schedule allow.
+          </p>
+          <ol className="list-decimal space-y-2 pl-6 text-sm sm:text-base text-slate-600 leading-relaxed">
+            <li>Warm up with the Home Row Mastery drill for 1 minute at a comfortable pace.</li>
+            <li>Spend 3-5 minutes on the row or keys that cause you the most mistakes.</li>
+            <li>Slow down when errors appear. Accuracy first, then add speed gradually.</li>
+            <li>Finish with a short <Link href="/typing-test" className="font-semibold text-theme-dark underline underline-offset-2">timed typing test</Link> to see your WPM and accuracy.</li>
+            <li>Note your WPM and accuracy and compare them with sessions that used a similar drill and duration.</li>
+          </ol>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed mt-6">
+            More ideas: <Link href="/blog/daily-typing-exercises-for-beginners" className="font-semibold text-theme-dark underline underline-offset-2">a 15-minute practice routine for beginners</Link>,{" "}
+            <Link href="/blog/type-faster-without-looking" className="font-semibold text-theme-dark underline underline-offset-2">how to practise typing without looking at the keyboard</Link>,{" "}
+            <Link href="/blog/how-long-to-learn-touch-typing" className="font-semibold text-theme-dark underline underline-offset-2">how long it takes to learn touch typing</Link> and{" "}
+            <Link href="/blog/how-to-improve-typing-accuracy" className="font-semibold text-theme-dark underline underline-offset-2">how to improve typing accuracy</Link>.
+          </p>
+        </section>
+
         <section className="bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-3xl p-8 sm:p-10 shadow-md">
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
             Understand Your WPM and Accuracy
@@ -226,7 +304,7 @@ export default function TypingPracticePage() {
             Continue Your Typing Practice
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-5">
-            Use a timed test to benchmark a run, or read how SpeedyType calculates WPM and accuracy.
+            Use a timed test to benchmark a run, follow a structured lesson, or read the guides below.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/typing-test" className="rounded-xl border border-theme-main/20 bg-theme-soft/30 px-4 py-2.5 text-sm font-bold text-theme-dark hover:bg-theme-soft/60 hover:underline">
@@ -234,6 +312,21 @@ export default function TypingPracticePage() {
             </Link>
             <Link href="/typing-speed" className="rounded-xl border border-theme-main/20 bg-theme-soft/30 px-4 py-2.5 text-sm font-bold text-theme-dark hover:bg-theme-soft/60 hover:underline">
               Read the Typing Speed Guide
+            </Link>
+            <Link href="/lessons" className="rounded-xl border border-theme-main/20 bg-theme-soft/30 px-4 py-2.5 text-sm font-bold text-theme-dark hover:bg-theme-soft/60 hover:underline">
+              Follow free typing lessons
+            </Link>
+            <Link href="/typing-accuracy" className="rounded-xl border border-theme-main/20 bg-theme-soft/30 px-4 py-2.5 text-sm font-bold text-theme-dark hover:bg-theme-soft/60 hover:underline">
+              Improve typing accuracy
+            </Link>
+            <Link href="/games" className="rounded-xl border border-theme-main/20 bg-theme-soft/30 px-4 py-2.5 text-sm font-bold text-theme-dark hover:bg-theme-soft/60 hover:underline">
+              Try typing games
+            </Link>
+            <Link href="/blog/average-typing-speed-by-age" className="rounded-xl border border-theme-main/20 bg-theme-soft/30 px-4 py-2.5 text-sm font-bold text-theme-dark hover:bg-theme-soft/60 hover:underline">
+              Average typing speed by age
+            </Link>
+            <Link href="/blog" className="rounded-xl border border-theme-main/20 bg-theme-soft/30 px-4 py-2.5 text-sm font-bold text-theme-dark hover:bg-theme-soft/60 hover:underline">
+              Read typing guides
             </Link>
           </div>
         </section>
