@@ -245,6 +245,12 @@ export default async function BlogPostPage({ params }) {
           <span className="text-slate-500">{article.readTime}</span>
           <span className="text-slate-400">&bull;</span>
           <span className="text-slate-500">Published {article.publishedAt}</span>
+          {article.updatedAt && article.updatedAt !== article.publishedAt && (
+            <>
+              <span className="text-slate-400">&bull;</span>
+              <span className="text-slate-500">Updated {article.updatedAt}</span>
+            </>
+          )}
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 leading-tight mb-6">
