@@ -2,10 +2,18 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy — Speedy Type",
-  description: "Read how Speedy Type uses browser storage, advertising scripts, and optional embedded media.",
+  title: "Privacy Policy | Speedy Type",
+  description: "Learn what information Speedy Type stores in your browser and how advertising and embedded media may use data.",
   alternates: {
     canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Speedy Type",
+    description: "Learn what information Speedy Type stores in your browser and how advertising and embedded media may use data.",
+  },
+  twitter: {
+    title: "Privacy Policy | Speedy Type",
+    description: "Learn what information Speedy Type stores in your browser and how advertising and embedded media may use data.",
   },
 };
 

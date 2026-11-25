@@ -3,20 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "About Speedy Type | Our Story and Operator",
-  description: "Meet the independent operator of Speedy Type and learn how its typing tools and scores work.",
+  title: "About Speedy Type | Free Typing Test & Practice App",
+  description: "Learn about Speedy Type, a free typing test and touch typing practice app built to help you type faster and more accurately.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Speedy Type",
-    description: "Learn about Speedy Type, its operator, and its approach to typing practice.",
+    title: "About Speedy Type | Free Typing Test & Practice App",
+    description: "Learn about Speedy Type, a free typing test and touch typing practice app built to help you type faster and more accurately.",
     url: "https://www.speedytypeapp.com/about",
     siteName: "Speedy Type",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "About Speedy Type",
-    description: "Meet the independent operator of Speedy Type and learn how the platform works.",
+    title: "About Speedy Type | Free Typing Test & Practice App",
+    description: "Learn about Speedy Type, a free typing test and touch typing practice app built to help you type faster and more accurately.",
   },
 };
 

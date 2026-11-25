@@ -7,7 +7,7 @@ export const metadata = {
   title: "Free Typing Test & Practice Online | Speedy Type",
   description: "Test your typing speed and accuracy with free 1, 3, 5 and 10-minute typing tests. Practice touch typing, track your progress and improve your WPM with Speedy Type.",
   alternates: {
-    canonical: "https://www.speedytypeapp.com",
+    canonical: "/",
   },
   openGraph: {
     title: "Free Typing Test & Practice Online | Speedy Type",
@@ -15,6 +15,11 @@ export const metadata = {
     url: "https://www.speedytypeapp.com",
     siteName: "Speedy Type",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Typing Test & Practice Online | Speedy Type",
+    description: "Test your typing speed and accuracy with free 1, 3, 5 and 10-minute typing tests. Practice touch typing, track your progress and improve your WPM with Speedy Type.",
   },
 };
 
@@ -91,7 +96,7 @@ export default function HomePage() {
 
       {/* Main Interactive Typing Application */}
       <section aria-label="Interactive typing test and practice area" className="w-full">
-        <TypingApp />
+        <TypingApp testsHeadingLevel="h2" />
       </section>
 
       {/* Educational Content Section Below Main Tool */}
@@ -103,9 +108,9 @@ export default function HomePage() {
             <span className="text-xs uppercase tracking-widest text-theme-dark font-extrabold">
               Free Online Typing Platform
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-2 mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-black text-slate-900 mt-2 mb-4 leading-tight">
               Typing Tests, Practice Drills, Lessons, and Games
-            </h2>
+            </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
               <strong>Speedy Type</strong> provides browser-based typing tests, practice drills, optional lessons, games, themes, and saved results. Choose a tool that fits the keys or task you want to practise.
             </p>

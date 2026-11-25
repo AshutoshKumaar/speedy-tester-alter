@@ -5,21 +5,21 @@ import FaqAccordion from "../components/FaqAccordion";
 import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
-  title: "Typing Speed Test & WPM Guide — Speedy Type",
-  description: "Learn how Speedy Type calculates WPM, compare your own results under similar test conditions, and choose practical ways to practise typing speed and accuracy.",
+  title: "Typing Speed: Average WPM & How to Improve | Speedy Type",
+  description: "Find out what a good typing speed is, how WPM is calculated, and how to type faster. Compare your speed with the average and start improving.",
   alternates: {
     canonical: "/typing-speed",
   },
   openGraph: {
-    title: "Typing Speed Test & WPM Guide — Speedy Type",
-    description: "See how WPM is calculated and how to compare your own typing results fairly.",
+    title: "Typing Speed: Average WPM & How to Improve | Speedy Type",
+    description: "Find out what a good typing speed is, how WPM is calculated, and how to type faster. Compare your speed with the average and start improving.",
     url: "https://www.speedytypeapp.com/typing-speed",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Typing Speed Test & WPM Guide — Speedy Type",
-    description: "Learn the WPM formula and compare your own speed and accuracy under similar test conditions.",
+    title: "Typing Speed: Average WPM & How to Improve | Speedy Type",
+    description: "Find out what a good typing speed is, how WPM is calculated, and how to type faster. Compare your speed with the average and start improving.",
   },
 };
 
@@ -58,7 +58,7 @@ export default function TypingSpeedPage() {
 
       {/* Interactive Tool */}
       <section aria-label="Interactive Speed Test Area">
-        <TypingApp defaultDuration={60} defaultMode="easy" />
+        <TypingApp defaultDuration={60} defaultMode="easy" testsHeadingLevel="h2" />
       </section>
 
       {/* Detailed Speed Content */}

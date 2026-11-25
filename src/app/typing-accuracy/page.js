@@ -5,21 +5,21 @@ import FaqAccordion from "../components/FaqAccordion";
 import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
-  title: "Typing Accuracy Test & Precision Drills — Speedy Type",
-  description: "Improve your typing accuracy with precision-focused drills on Speedy Type. Learn how error reduction and 98%+ accuracy unlocks effortless typing speed.",
+  title: "Improve Typing Accuracy: Free Practice | Speedy Type",
+  description: "Reduce typing mistakes with focused accuracy drills. Learn why accuracy matters more than raw speed and train to type cleaner.",
   alternates: {
     canonical: "/typing-accuracy",
   },
   openGraph: {
-    title: "Typing Accuracy Test & Precision Drills — Speedy Type",
-    description: "Improve typing accuracy with precision-focused drills and learn how fewer errors support faster, smoother typing.",
+    title: "Improve Typing Accuracy: Free Practice | Speedy Type",
+    description: "Reduce typing mistakes with focused accuracy drills. Learn why accuracy matters more than raw speed and train to type cleaner.",
     url: "https://www.speedytypeapp.com/typing-accuracy",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Typing Accuracy Test & Precision Drills — Speedy Type",
-    description: "Improve typing accuracy with precision-focused drills for smoother typing.",
+    title: "Improve Typing Accuracy: Free Practice | Speedy Type",
+    description: "Reduce typing mistakes with focused accuracy drills. Learn why accuracy matters more than raw speed and train to type cleaner.",
   },
 };
 
@@ -58,7 +58,7 @@ export default function TypingAccuracyPage() {
 
       {/* Interactive Tool */}
       <section aria-label="Interactive Accuracy Test Area">
-        <TypingApp defaultDuration={180} defaultMode="medium" />
+        <TypingApp defaultDuration={180} defaultMode="medium" testsHeadingLevel="h2" />
       </section>
 
       {/* Accuracy Guide */}

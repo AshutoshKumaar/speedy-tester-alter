@@ -1,24 +1,26 @@
 import { getAllArticles } from "./data/articles";
 
+const LAST_UPDATED = "2026-11-25";
+
 export default function sitemap() {
   const baseUrl = "https://www.speedytypeapp.com";
 
   // Keep these dates aligned with the latest meaningful source change for each route.
   // Omit lastModified where the repository does not provide a dependable date.
   const staticRoutes = [
-    { url: `${baseUrl}`, lastModified: "2026-10-18", changeFrequency: "daily", priority: 1.0 },
-    { url: `${baseUrl}/typing-test`, lastModified: "2026-10-18", changeFrequency: "daily", priority: 0.95 },
-    { url: `${baseUrl}/typing-practice`, lastModified: "2026-10-18", changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/typing-speed`, lastModified: "2026-10-18", changeFrequency: "weekly", priority: 0.85 },
-    { url: `${baseUrl}/typing-accuracy`, lastModified: "2026-09-26", changeFrequency: "weekly", priority: 0.85 },
-    { url: `${baseUrl}/lessons`, lastModified: "2026-09-26", changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/games`, lastModified: "2026-09-26", changeFrequency: "weekly", priority: 0.85 },
-    { url: `${baseUrl}/blog`, lastModified: "2026-10-18", changeFrequency: "daily", priority: 0.9 },
-    { url: `${baseUrl}/about`, lastModified: "2026-10-18", changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/contact`, lastModified: "2026-10-18", changeFrequency: "monthly", priority: 0.75 },
-    { url: `${baseUrl}/privacy-policy`, lastModified: "2026-10-18", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/terms`, lastModified: "2026-10-18", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/disclaimer`, lastModified: "2026-10-18", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}`, lastModified: LAST_UPDATED, changeFrequency: "daily", priority: 1.0 },
+    { url: `${baseUrl}/typing-test`, lastModified: LAST_UPDATED, changeFrequency: "daily", priority: 0.95 },
+    { url: `${baseUrl}/typing-practice`, lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/typing-speed`, lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${baseUrl}/typing-accuracy`, lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${baseUrl}/lessons`, lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/games`, lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${baseUrl}/blog`, lastModified: LAST_UPDATED, changeFrequency: "daily", priority: 0.9 },
+    { url: `${baseUrl}/about`, lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/contact`, lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${baseUrl}/privacy-policy`, lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/terms`, lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/disclaimer`, lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   // Dynamic blog articles

@@ -3,21 +3,21 @@ import TypingApp from "../components/TypingApp";
 import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
-  title: "3D Typing Games — Princess Rescue & Dinosaur Dash | Speedy Type",
-  description: "Play free 3D typing games on Speedy Type. Practice rapid word typing with WebGL arcade adventures designed to boost finger reflexes.",
+  title: "Free Typing Games to Boost Your WPM | Speedy Type",
+  description: "Make typing practice fun with free typing games. Improve speed and accuracy while playing in colorful 3D worlds.",
   alternates: {
     canonical: "/games",
   },
   openGraph: {
-    title: "3D Typing Games — Princess Rescue & Dinosaur Dash | Speedy Type",
-    description: "Play free WebGL typing games that build rapid word recognition, finger reflexes, and keyboard confidence.",
+    title: "Free Typing Games to Boost Your WPM | Speedy Type",
+    description: "Make typing practice fun with free typing games. Improve speed and accuracy while playing in colorful 3D worlds.",
     url: "https://www.speedytypeapp.com/games",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "3D Typing Games — Princess Rescue & Dinosaur Dash | Speedy Type",
-    description: "Play free typing games that build rapid word recognition and keyboard confidence.",
+    title: "Free Typing Games to Boost Your WPM | Speedy Type",
+    description: "Make typing practice fun with free typing games. Improve speed and accuracy while playing in colorful 3D worlds.",
   },
 };
 

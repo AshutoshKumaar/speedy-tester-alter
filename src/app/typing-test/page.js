@@ -5,21 +5,21 @@ import FaqAccordion from "../components/FaqAccordion";
 import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
-  title: "Timed Typing Test — 1, 3, 5 & 10 Minute WPM Tests | Speedy Type",
-  description: "Take free timed typing tests on Speedy Type. Choose 1-minute, 3-minute, 5-minute, or 10-minute tests with live WPM calculation, accuracy tracking, and score history.",
+  title: "Free Typing Test: Check Your WPM & Accuracy | Speedy Type",
+  description: "Take a free online typing test with 1, 3, 5 and 10-minute options. See your words per minute (WPM) and accuracy instantly, no signup needed.",
   alternates: {
     canonical: "/typing-test",
   },
   openGraph: {
-    title: "Timed Typing Test — 1, 3, 5 & 10 Minute WPM Tests | Speedy Type",
-    description: "Take free 1, 3, 5, or 10-minute typing tests with live WPM calculation and accuracy tracking.",
+    title: "Free Typing Test: Check Your WPM & Accuracy | Speedy Type",
+    description: "Take a free online typing test with 1, 3, 5 and 10-minute options. See your words per minute (WPM) and accuracy instantly, no signup needed.",
     url: "https://www.speedytypeapp.com/typing-test",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Timed Typing Test — 1, 3, 5 & 10 Minute WPM Tests | Speedy Type",
-    description: "Take free timed typing tests with live WPM calculation and accuracy tracking.",
+    title: "Free Typing Test: Check Your WPM & Accuracy | Speedy Type",
+    description: "Take a free online typing test with 1, 3, 5 and 10-minute options. See your words per minute (WPM) and accuracy instantly, no signup needed.",
   },
 };
 

@@ -9,7 +9,7 @@ export const metadata = {
   },
   robots: {
     index: false,
-    follow: true,
+    follow: false,
   },
 };
 

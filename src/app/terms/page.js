@@ -2,10 +2,18 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms & Conditions — Speedy Type",
-  description: "Read the Terms & Conditions governing your use of Speedy Type's free online typing tests, lessons, and educational services.",
+  title: "Terms of Service | Speedy Type",
+  description: "Review the terms that apply when you use Speedy Type's free typing tests, practice tools and website.",
   alternates: {
     canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | Speedy Type",
+    description: "Review the terms that apply when you use Speedy Type's free typing tests, practice tools and website.",
+  },
+  twitter: {
+    title: "Terms of Service | Speedy Type",
+    description: "Review the terms that apply when you use Speedy Type's free typing tests, practice tools and website.",
   },
 };
 

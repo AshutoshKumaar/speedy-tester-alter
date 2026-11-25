@@ -28,9 +28,6 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Speedy Type — Free Online Typing Test & Practice",
     description: "Test your typing speed and accuracy with free timed typing tests, interactive lessons, and 12 colorful animated worlds.",

@@ -3,21 +3,21 @@ import TypingApp from "../components/TypingApp";
 import RelatedTypingTools from "../components/RelatedTypingTools";
 
 export const metadata = {
-  title: "Typing Lessons & Video Missions — Speedy Type",
-  description: "Learn touch typing with structured video lessons, interactive missions, and progressive keyboard training on Speedy Type.",
+  title: "Free Touch Typing Lessons for Beginners | Speedy Type",
+  description: "Learn touch typing step by step with free interactive lessons. Start from the home row and build up to full keyboard speed.",
   alternates: {
     canonical: "/lessons",
   },
   openGraph: {
-    title: "Typing Lessons & Video Missions — Speedy Type",
-    description: "Learn touch typing with structured video lessons, interactive missions, and progressive keyboard training.",
+    title: "Free Touch Typing Lessons for Beginners | Speedy Type",
+    description: "Learn touch typing step by step with free interactive lessons. Start from the home row and build up to full keyboard speed.",
     url: "https://www.speedytypeapp.com/lessons",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Typing Lessons & Video Missions — Speedy Type",
-    description: "Learn touch typing with structured video lessons and interactive missions.",
+    title: "Free Touch Typing Lessons for Beginners | Speedy Type",
+    description: "Learn touch typing step by step with free interactive lessons. Start from the home row and build up to full keyboard speed.",
   },
 };
 

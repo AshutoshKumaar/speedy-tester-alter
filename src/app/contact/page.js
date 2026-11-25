@@ -2,12 +2,12 @@ import React from "react";
 import ContactForm from "../components/ContactForm";
 
 export const metadata = {
-  title: "Contact Us | Speedy Type",
-  description: "Contact Speedy Type operator Ashutosh Sinha about the website, typing tools, or privacy.",
+  title: "Contact Speedy Type",
+  description: "Get in touch with the Speedy Type team for feedback, questions or support.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Speedy Type",
-    description: "Reach the independent operator of Speedy Type with a question or feedback.",
+    description: "Get in touch with the Speedy Type team for feedback, questions or support.",
     url: "https://www.speedytypeapp.com/contact",
     siteName: "Speedy Type",
     type: "website",
@@ -15,7 +15,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "Contact Speedy Type",
-    description: "Contact Speedy Type operator Ashutosh Sinha.",
+    description: "Get in touch with the Speedy Type team for feedback, questions or support.",
   },
 };
 

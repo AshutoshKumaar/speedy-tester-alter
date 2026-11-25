@@ -2,10 +2,18 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Disclaimer — Speedy Type",
-  description: "Read the Speedy Type measurement, educational, and third-party services disclaimer.",
+  title: "Disclaimer | Speedy Type",
+  description: "Read the limitations and disclosures for Speedy Type's typing measurements, educational content and third-party services.",
   alternates: {
     canonical: "/disclaimer",
+  },
+  openGraph: {
+    title: "Disclaimer | Speedy Type",
+    description: "Read the limitations and disclosures for Speedy Type's typing measurements, educational content and third-party services.",
+  },
+  twitter: {
+    title: "Disclaimer | Speedy Type",
+    description: "Read the limitations and disclosures for Speedy Type's typing measurements, educational content and third-party services.",
   },
 };
 

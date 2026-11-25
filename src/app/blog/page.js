@@ -3,16 +3,21 @@ import Link from "next/link";
 import { getAllArticles } from "../data/articles";
 
 export const metadata = {
-  title: "Typing Blog & Touch Typing Guides — Speedy Type",
-  description: "Read practical guides to typing speed, accuracy, touch typing, keyboard practice, and WPM scoring, with exercises linked to Speedy Type tools.",
+  title: "Typing Tips, Guides & WPM Benchmarks | Speedy Type Blog",
+  description: "Guides on typing speed, accuracy, touch typing and average WPM by age. Practical tips to type faster and make fewer mistakes.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Typing Blog & Touch Typing Guides — Speedy Type",
-    description: "Practical guides to typing speed, accuracy, touch typing, keyboard practice, and WPM scoring.",
+    title: "Typing Tips, Guides & WPM Benchmarks | Speedy Type Blog",
+    description: "Guides on typing speed, accuracy, touch typing and average WPM by age. Practical tips to type faster and make fewer mistakes.",
     url: "https://www.speedytypeapp.com/blog",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Typing Tips, Guides & WPM Benchmarks | Speedy Type Blog",
+    description: "Guides on typing speed, accuracy, touch typing and average WPM by age. Practical tips to type faster and make fewer mistakes.",
   },
 };
 
