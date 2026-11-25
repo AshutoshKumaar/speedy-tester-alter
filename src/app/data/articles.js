@@ -433,46 +433,83 @@ For children and teens, age alone does not determine a useful target. Classroom 
   },
   {
     slug: "average-typing-speed-by-age",
-    title: "Average Typing Speed by Age: What the Evidence Can and Cannot Tell You",
-    description: "Age-based WPM charts can hide differences in practice and testing. Review what limited studies measured and how to set a more useful personal goal.",
+    title: "Average Typing Speed by Age: WPM for Kids & Adults",
+    description: "Average typing speed by age: about 2-5 WPM in kindergarten, 30-40 WPM in high school and 40+ for adults. See benchmarks, studies and how to test yourself.",
     publishedAt: "2026-09-30",
-    updatedAt: "2026-10-18",
-    readTime: "4 min read",
+    updatedAt: "2026-11-25",
+    readTime: "5 min read",
     category: "Benchmarks & Standards",
-    excerpt: "There is no age-based WPM table in this guide because the available studies use specific groups and methods that do not support a universal benchmark.",
+    excerpt: "School-age typists move from 2-5 WPM in kindergarten to 30-40 WPM in high school, and adults are typically 40+ WPM. Here are the benchmarks, what the studies actually show, and how to test yourself.",
     sections: [
       {
-        heading: "The short answer: age alone cannot set your WPM target",
-        content: `A single “normal” typing speed for a particular age is not a sound personal target without knowing the test, keyboard, language, practice history, and accuracy rule. This article does not publish age-by-age averages because the studies reviewed here do not establish a universal chart for all learners.
+        heading: "Average typing speed by age: the quick answer",
+        content: `School-age typists build up from a few words per minute (WPM) in kindergarten to around 30-40 WPM by high school, and adults are typically listed at 40+ WPM. These are the grade-level averages published by [Typing.com](https://support.typing.com/en/articles/9045953), with approximate US ages added for convenience:
 
-For a practical comparison, take the same [typing test](/typing-test) more than once and record duration, WPM, and accuracy. Compare your result with your own earlier result, not a number with unknown test conditions.`
+- **Kindergarten (about 5-6 years):** 2-5 WPM
+- **1st grade (about 6-7 years):** 5-7 WPM
+- **2nd grade (about 7-8 years):** 7-10 WPM
+- **Grades 3-5 (about 8-11 years):** 8-20 WPM
+- **Grades 6-8 (about 11-14 years):** 20-30 WPM
+- **Grades 9-12 (about 14-18 years):** 30-40 WPM
+- **College and adults (18+):** 40+ WPM
+
+Treat these as planning ranges, not pass or fail marks. Your speed also depends on the test, the keyboard, your practice history and how strictly errors are counted.`
       },
       {
-        heading: "What published studies measured",
-        content: `A 1989 field study followed 197 students aged 11–18 through a particular ten-lesson keyboard training program. It reported speed improvements across its age groups and associations between age and speed or improvement in that setting. Those participants, lessons, and test methods do not establish current age norms for all children. See the study abstract indexed by [PubMed](https://pubmed.ncbi.nlm.nih.gov/15676725/).
+        heading: "What larger studies say about teen and adult typing",
+        content: `The largest public dataset comes from a 2018 CHI study, [Observations on Typing from 136 Million Keystrokes](https://userinterfaces.aalto.fi/136Mkeystrokes/). It analysed 168,960 volunteers who typed 15 English sentences in an online test. Their average speed was 51.56 WPM, with an average uncorrected error rate of 1.167%.
 
-An earlier study of adult typists aged 19–72 examined typing-like tasks and reported that age-related differences in tapping and reaction tasks did not translate into slower typing speed in that sample. It is not a study of children or a modern population benchmark. See [Salthouse's study record on PubMed](https://pubmed.ncbi.nlm.nih.gov/6237168/).
+Read that number carefully. The volunteers chose to take a typing test, and the sample was mainly teenagers and young adults (mean age 24.5, with 75% aged 11-30). The study did not report a speed-by-age chart, so treat 51.56 WPM as a reference for motivated online test-takers, not the average for everyone.
 
-These examples show why a study result should be reported with its sample and method, not turned into a universal age table.`
+For older adults, a classic study of typists aged 19-72 reported that age-related slowing in tapping and reaction tasks did not translate into slower typing in that sample ([Salthouse, PubMed](https://pubmed.ncbi.nlm.nih.gov/6237168/)). That comes from one sample, so it is a reason not to assume older typists are slower, not a rule.`
       },
       {
-        heading: "Set a goal that fits the learner",
-        content: `For a child or teen, ask what keyboard skills the class or task requires: locating keys, composing a sentence, using capitals, or typing a longer assignment. A teacher's curriculum target may be useful for that classroom, but it is not automatically a population average.
+        heading: "Accuracy targets by age",
+        content: `Speed means little if accuracy drops. Typing.com suggests these minimum accuracy goals alongside the speeds above:
 
-For adults, consider the type of work and any stated employer test requirement. In either case, track WPM and accuracy using the same duration and similar text. Use [typing practice](/typing-practice) to work on one row, then review [how WPM and accuracy are calculated](/blog/wpm-explained).`
+- **Grades 3-5:** 85% or higher
+- **Grades 6-8:** 90% or higher
+- **Grades 9-12:** 95% or higher
+- **College and adults:** 98% or higher
+
+If your accuracy is below the goal for your level, slow down and fix the errors before chasing a higher WPM. See [WPM vs. accuracy](/blog/wpm-vs-accuracy-what-matters-more) for how to balance the two.`
+      },
+      {
+        heading: "How to check your own typing speed",
+        content: `Take a [free typing test](/typing-test) and keep the conditions the same each time: the same duration, a similar text and the same keyboard. A 1-minute test gives a quick snapshot; a 3 or 5-minute test shows how well you hold your pace. Write down both your WPM and your accuracy, then compare with the ranges above and, more importantly, with your own earlier results.
+
+To understand how the score is calculated, read [how WPM is calculated](/blog/wpm-explained) and [what counts as a good typing speed](/blog/what-is-a-good-typing-speed).`
+      },
+      {
+        heading: "How to improve your typing speed at any age",
+        content: `Short, regular practice works better than long, occasional sessions. A simple routine:
+
+1. Learn the home row and keep your eyes on the screen ([touch typing for beginners](/blog/touch-typing-for-beginners)).
+2. Practise 10-15 minutes a day with [typing drills](/typing-practice) or [structured lessons](/lessons).
+3. Aim for accuracy first, then add speed gradually ([how to increase typing speed](/blog/how-to-increase-typing-speed)).
+4. For children, mix practice with [typing games](/games) so sessions stay fun.
+5. Retest every week or two with the same test.`
       }
     ],
     faqs: [
       {
         question: "How fast should a 10-year-old type?",
-        answer: "This guide cannot give a defensible universal number for every 10-year-old. Consider the learner's instruction and task, then compare their results using the same test and accuracy method over time."
+        answer: "Most 10-year-olds are in grades 4-5, where Typing.com lists an average of 8-20 WPM with an accuracy goal of 85% or higher. Children vary widely with instruction and practice, so compare a child's results with their own progress over time."
       },
       {
-        question: "Is a low score evidence that a learner is behind?",
-        answer: "A single score does not establish that. Check test duration, familiarity with the keyboard, instruction, language, and accuracy, and discuss classroom expectations with the learner's teacher when relevant."
+        question: "What is the average typing speed for adults?",
+        answer: "Typing.com lists 40+ WPM for college students and adults. A large 2018 online study of mostly young volunteers averaged 51.56 WPM, but those people chose to take a typing test, so it should not be read as the average for everyone."
+      },
+      {
+        question: "What is a good typing speed for a teenager?",
+        answer: "Typing.com gives 30-40 WPM with 95% accuracy or higher for grades 9-12, which is roughly ages 14-18. Use the same test each time so you can see real progress."
+      },
+      {
+        question: "Does typing speed decline with age?",
+        answer: "Not necessarily. A classic study of adult typists aged 19-72 found that age-related slowing in tapping and reaction tasks did not translate into slower typing in that sample. Practice and typing experience still matter, so test yourself and track your own results."
       }
     ],
-    relatedSlugs: ["what-is-a-good-typing-speed", "how-long-to-learn-touch-typing", "wpm-explained"]
+    relatedSlugs: ["what-is-a-good-typing-speed", "how-to-increase-typing-speed", "wpm-explained", "how-long-to-learn-touch-typing"]
   },
   {
     slug: "wpm-vs-accuracy-what-matters-more",
